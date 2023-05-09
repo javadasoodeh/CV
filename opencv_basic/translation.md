@@ -34,4 +34,4 @@ The `translation.py` script uses the OpenCV library to translate an image. Here'
 
 # Conclusion
 
-The `translation.py` script is a simple yet powerful example of how to use the OpenCV library to translate an image. By following the instructions in this README file, you can easily run the script and see the results for yourself. If you have any questions or comments, please feel free to contact `info@Javadasoodeh.ir`.
+The `translation.py` script is a simple yet powerful example of how to use the OpenCV library to translate an image. By following the instructions in this file, you can easily run the script and see the results for yourself. If you have any questions or comments, please feel free to contact `info@Javadasoodeh.ir`.
