@@ -32,6 +32,34 @@ The `translation.py` script uses the OpenCV library to translate an image. Here'
 
 7. The script waits for the user to press a key, and then exits using the `cv2.destroyAllWindows()` function.
 
+
+> ######Transformation Matrix (`M1`, `M2`)
+>
+> A transformation matrix represents an affine transformation that can be applied to an image using OpenCV. An affine transformation is a linear mapping followed by a translation. It can include operations such as rotation, scaling, shearing, and translation.
+>
+>The transformation matrix is a <b>2x3</b> matrix of the form:
+>
+> `[[a, b, tx],` <br>
+>  `[c, d, ty]]` 
+>
+>
+> where:
+>
+> - `a` and `d` represent scaling factors in the x and y directions, respectively.
+> - `b` and `c` represent shearing factors.
+> - `tx` and `ty` represent the translation amounts in the x and y directions.
+>
+> The breakdown of the different components of the transformation matrix:
+>
+> - `a` and `d` control the scaling along the x and y axes, respectively. A value of 1 means no scaling, while values less than 1 represent scaling down, and values greater than 1 represent scaling up.ely.
+>
+> - `b` and `c` represent the shearing factors. They determine the amount of shearing or skewing that is applied to the image along the x and y axes, respectively. A value of 0 means no shearing.
+> 
+> - `tx` and `ty` represent the translation amounts in the x and y directions, respectively. They determine how much the image is shifted horizontally and vertically.
+>
+> Adjusting the values in the transformation matrix allows you to achieve various transformations like translation, rotation, scaling, and shearing. For translation, you modify tx and ty to specify the desired translation amounts while keeping the other components of the matrix unchanged.
+
+
 # Conclusion
 
-The `translation.py` script is a simple yet powerful example of how to use the OpenCV library to translate an image. By following the instructions in this file, you can easily run the script and see the results for yourself. If you have any questions or comments, please feel free to contact `info@Javadasoodeh.ir`.
+The `translation.py` script is a simple yet powerful example of how to use the OpenCV library to translate an image. By following the instructions in this file, you can easily run the script and see the results for yourself. If you have any questions or comments, please feel free to contact [info@javadasoodeh.ir](mailto:info@javadasoodeh.ir).
