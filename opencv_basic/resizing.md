@@ -53,6 +53,16 @@ This function takes three parameters: **image**, **new_width**, and **interpolat
 It calculates the new dimensions based on the desired width while preserving the aspect ratio.
  The **cv2.resize()** function is used to resize the image with the specified interpolation method.
  
+ #### Aspect Ratio
+ 
+ The aspect ratio of an image refers to the proportional relationship between its width and height.
+  It represents the shape or orientation of the image. 
+  The aspect ratio is expressed as the ratio of the width to the height, such as 4:3 or 16:9.
+
+Maintaining the aspect ratio when resizing an image is important for **preserving the original proportions 
+and preventing distortion**. When the aspect ratio is not maintained, the resized image may appear stretched 
+or squeezed, resulting in unnatural or disproportionate visuals.
+ 
  ### Step 3: Loading the Image
  
  ```python
