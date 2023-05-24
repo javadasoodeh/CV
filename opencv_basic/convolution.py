@@ -29,7 +29,6 @@ def convolution(image, kernel):
 
     return output
 
-
 # Load an image
 image = cv2.imread('HBD.jpg', cv2.IMREAD_GRAYSCALE)
 
