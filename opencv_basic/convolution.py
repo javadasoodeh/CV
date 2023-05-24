@@ -33,6 +33,7 @@ def convolution(image, kernel):
 # Load an image
 image = cv2.imread('HBD.jpg', cv2.IMREAD_GRAYSCALE)
 
+
 # Define a kernel (3x3 Gaussian blur filter)
 kernel = np.array([[1, 2, 1],
                    [2, 4, 2],
