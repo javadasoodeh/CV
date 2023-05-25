@@ -32,7 +32,6 @@ def convolution(image, kernel):
 # Load an image
 image = cv2.imread('HBD.jpg', cv2.IMREAD_GRAYSCALE)
 
-
 # Define a kernel (3x3 Gaussian blur filter)
 kernel = np.array([[1, 2, 1],
                    [2, 4, 2],
@@ -41,11 +40,16 @@ kernel = np.array([[1, 2, 1],
 # Apply the convolution operation
 output = convolution(image, kernel)
 
+# Apply the convolution operation using OpenCV's filter2D function
+# Faster than a naive implementation with nested loops
+output_cv = cv2.filter2D(image, -1, kernel)
+
 # Convert the output image to 8-bit unsigned integer (grayscale)
 output = np.uint8(output)
 
 # Display the original image and the convolved image
 cv2.imshow('Original Image', image)
 cv2.imshow('Convolved Image', output)
+cv2.imshow('Convolved Image with OpenCV', output_cv)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
