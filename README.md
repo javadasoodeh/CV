@@ -41,6 +41,8 @@ Computer Vision, Deep Learning, ML
 
 - Erosion and dilation
 - Opening and closing
+- Gradient
+- Top hat & black hat
 - Structuring elements
 
 ### Image Filtering:
