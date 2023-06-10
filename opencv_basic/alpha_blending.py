@@ -18,8 +18,11 @@ cv2.rectangle(mask, (100, 100), (540, 380), (255, 255, 255), -1)
 # Convert the mask to a float image
 mask = mask.astype(float) / 255.0
 
+mask_flat = mask.astype(float).flatten()
+
+
 # Perform alpha blending with the two images using the mask
-blended = cv2.addWeighted(img1, 1.0 - mask, img2, mask, 0.0)
+blended = cv2.addWeighted(img1, np.ones_like(img1).astype(float), img2, np.ones_like(img2).astype(float), 0.0)
 
 # Display the blended image
 cv2.imshow('Blended Image', blended)
