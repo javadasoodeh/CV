@@ -32,13 +32,6 @@ Computer Vision, Deep Learning, ML
 - Histogram equalization
 - Histograms and masks
 
-### Smoothing and Blurring:
-
-- Averaging
-- Gaussian blur
-- Median blur
-- Bilateral blur
-
 ### Gradients and Edge Detection:
 
 - Laplacian and Sobel operators
@@ -53,7 +46,7 @@ Computer Vision, Deep Learning, ML
 ### Image Filtering:
 
 - 2D convolution
-- Image blurring techniques
+- Image blurring techniques (Averaging, Gaussian blur, Median blur, Bilateral blur)
 - Image sharpening
 
 ### Image Pyramids:
