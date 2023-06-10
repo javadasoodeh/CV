@@ -39,21 +39,10 @@ Computer Vision, Deep Learning, ML
 - Median blur
 - Bilateral blur
 
-### Thresholding:
-
-- Simple thresholding
-- Adaptive thresholding
-- Otsu and Riddler-Calvard thresholding
-
 ### Gradients and Edge Detection:
 
 - Laplacian and Sobel operators
 - Canny edge detection
-
-### Contours:
-
-- Counting coins
-- Contour detection and analysis
 
 ### Morphological Operations:
 
