@@ -23,5 +23,7 @@ blended = cv2.addWeighted(img1, 1.0 - mask, img2, mask, 0.0)
 
 # Display the blended image
 cv2.imshow('Blended Image', blended)
+
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()
