@@ -9,39 +9,54 @@ background = cv2.imread('background.jpg')
 foreground = cv2.resize(foreground, (640, 480))
 background = cv2.resize(background, (640, 480))
 
-# Create a mask image of the same size as the images
-mask = np.zeros((480, 640), dtype=np.uint8)
+# Set the weights for each image (alpha and beta)
+alpha = 0.5
+beta = 0.5
 
-# Draw a rectangle on the mask
-cv2.rectangle(mask, (100, 100), (600, 400), (255, 255, 255), -1)
-
-# Convert the mask to a float image
-alpha_mask = mask.astype(float) / 255.0
-
-# alpha_array = np.ones(foreground.shape[:2]) * 0.5  # Array of same size as foreground, filled with 0.5
-# beta_array = np.ones(background.shape[:2]) * 0.5
-
-# Resize the foreground and background images to match the alpha mask size
-foreground = cv2.resize(foreground, (alpha_mask.shape[1], alpha_mask.shape[0]))
-background = cv2.resize(background, (alpha_mask.shape[1], alpha_mask.shape[0]))
+# Set the scalar value added to each pixel after blending (gamma)
+gamma = 0
 
 
-def customAddWeighted(src1, alpha, src2, beta, gamma=0):
-    # Check if the images have the same size
-    if src1.shape != src2.shape:
-        raise ValueError("Input images must have the same size.")
+# if alpha and beta are going to be an numpy array
+# def customAddWeighted(src1:np.ndarray, alpha: np.ndarray, src2:np.ndarray, beta: np.ndarray, gamma=0):
+#     # Check if the images have the same size
+#     if src1.shape != src2.shape:
+#         raise ValueError("Input images must have the same size.")
+#
+#     # Perform alpha blending
+#     blended_image = np.clip(src1 * alpha[:, :, np.newaxis] + src2 * beta[:, :, np.newaxis] + gamma, 0, 255).astype(
+#         np.uint8)
+#
+#     return blended_image
 
-    # Perform alpha blending
-    blended_image = np.clip(src1 * alpha[:, :, np.newaxis] + src2 * beta[:, :, np.newaxis] + gamma, 0, 255).astype(
-        np.uint8)
+def add_weighted(src1, alpha, src2, beta, gamma):
+    # Check if the input images have the same size and type
+    if src1.shape != src2.shape or src1.dtype != src2.dtype:
+        raise ValueError("Input images must have the same size and type")
 
-    return blended_image
+    # # Slow
+    # # Compute the blended output image using loops
+    # # Create an output image with the same size and type as the input images
+    # dst = np.zeros(src1.shape, dtype=src1.dtype)
+    #
+    # # Loop through each pixel and blend the images using the formula
+    # for i in range(src1.shape[0]):
+    #     for j in range(src1.shape[1]):
+    #         dst[i, j] = alpha * src1[i, j] + beta * src2[i, j] + gamma
+
+    # Fast
+    # Compute the blended output image using NumPy vectorization
+    dst = alpha * src1.astype(np.float32) + beta * src2.astype(np.float32) + gamma
+    dst = np.clip(dst, 0, 255).astype(src1.dtype)
+
+    return dst
 
 
-# Perform alpha blending using the mask
-blended_image = customAddWeighted(foreground, alpha_mask, background, 1 - alpha_mask)
+# Blend the two images using the addWeighted function
+blended_img = add_weighted(foreground, alpha, background, beta, gamma)
+# blended_img = cv2.addWeighted(foreground, alpha, background, beta, gamma)
 
 # Display the blended image
-cv2.imshow('Blended Image', blended_image)
+cv2.imshow('Blended Image', blended_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
