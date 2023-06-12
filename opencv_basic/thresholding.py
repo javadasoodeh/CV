@@ -11,6 +11,7 @@ _, to_zero_threshold = cv2.threshold(image, 128, 255, cv2.THRESH_TOZERO)
 _, to_zero_inverse_threshold = cv2.threshold(image, 128, 255, cv2.THRESH_TOZERO_INV)
 
 # Otsu's thresholding
+# automatically determine the optimal threshold for image segmentation
 _, otsu_threshold = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
 # Display the input and thresholded images

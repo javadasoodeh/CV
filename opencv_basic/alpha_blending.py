@@ -11,7 +11,7 @@ background = cv2.resize(background, (640, 480))
 
 # Set the weights for each image (alpha and beta)
 alpha = 0.5
-beta = 0.5
+beta = 1 - alpha
 
 # Set the scalar value added to each pixel after blending (gamma)
 gamma = 0
