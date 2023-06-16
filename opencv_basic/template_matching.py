@@ -7,6 +7,11 @@ template = cv2.imread('background.jpg')
 
 # Convert the template image to grayscale
 template_gray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
+main_image = cv2.cvtColor(main_image, cv2.COLOR_BGR2GRAY)
+
+# Ensure the template and main images have the correct depth and type
+template_gray = np.uint8(template_gray)
+main_image = np.uint8(main_image)
 
 # Perform template matching
 result = cv2.matchTemplate(main_image, template_gray, cv2.TM_CCOEFF_NORMED)
