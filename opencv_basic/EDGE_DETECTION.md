@@ -23,6 +23,12 @@ Step-by-step explanation of the code:
 The Canny edge detection algorithm is a multi-stage process that involves several steps:
 
 1. Gaussian smoothing: The input image is convolved with a Gaussian kernel to reduce noise and eliminate small details.
+
+```math
+
+G(x, y) = \frac{1}{2\pi\sigma^2}e^{-\frac{x^2+y^2}{2\sigma^2}}
+
+```
 2. Gradient computation: The gradient magnitude and orientation of the image are computed using the Sobel operator or other gradient operators.
 3. Non-maximum suppression: The gradient magnitude is suppressed in regions where the gradient direction is not perpendicular to the edge.
 4. Double thresholding: The gradient magnitude is thresholded to identify strong and weak edges.
