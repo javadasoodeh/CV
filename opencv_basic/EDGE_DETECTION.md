@@ -45,10 +45,52 @@ The expected output is two windows showing the original image and the edge-detec
 
 Here are some additional tips and tricks for using and modifying the code:
 
-- Experiment with different threshold values for the Canny edge detection algorithm to see how they affect the results.
-- Try applying other edge detection algorithms, such as the Sobel or Laplacian operators.
-- Consider preprocessing the image before applying edge detection, such as resizing or color conversion.
-- Use the edge-detected image as input to other computer vision algorithms, such as object detection or segmentation.
+1. Experiment with different threshold values for the Canny edge detection algorithm to see how they affect the results:
+
+To experiment with different threshold values, simply change the two threshold values (100 and 200) in the `cv2.Canny()` function to different values and see how the edge detection results change. For example, you can try:
+
+```python
+edges = cv2.Canny(gray, 50, 150)
+```
+
+This will use lower threshold values than before, resulting in more edges being detected.
+
+2. Try applying other edge detection algorithms, such as the Sobel or Laplacian operators:
+
+To try other edge detection algorithms, you can replace the cv2.Canny() function with other functions that perform edge detection. For example, you can use the Sobel operator like this:
+
+```python
+
+sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=5)
+sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=5)
+edges = cv2.magnitude(sobelx, sobely)
+
+```
+
+This computes the horizontal and vertical gradient images using the Sobel operator and then combines them using the magnitude function.
+
+3. Consider preprocessing the image before applying edge detection, such as resizing or color conversion:
+
+To preprocess the image, you can add additional OpenCV functions before the edge detection step. For example, you can resize the image to a smaller size to reduce the amount of computation required:
+
+```python
+
+image = cv2.resize(image, (0,0), fx=0.5, fy=0.5)
+
+```
+
+This resizes the image to half its original size.
+
+You can also convert the image to a different color space before performing edge detection. For example, you can convert the image to the HSV color space like this:
+
+```python
+
+hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+gray = hsv[:,:,2]
+
+```
+
+This extracts the value channel of the HSV color space, which is often a better representation of image intensity than the RGBcolor space.
 
 # Conclusion:
 
