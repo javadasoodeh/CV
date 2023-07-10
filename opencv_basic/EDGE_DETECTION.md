@@ -30,7 +30,7 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     
     ```
     
-    where x and y are the coordinates of the filter kernel, and sigma is the standard deviation of the Gaussian distribution. The size of the filter kernel and the value of sigma affect the smoothing effect of the filter.
+    where $x$ and $y$ are the coordinates of the filter kernel, and sigma is the standard deviation of the Gaussian distribution. The size of the filter kernel and the value of sigma affect the smoothing effect of the filter.
     
     The Gaussian filter is applied to the image by convolving the image with the filter kernel. The convolution operation is defined as:
     
@@ -39,11 +39,11 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     I'(x, y) = \sum_{i=-k}^{k} \sum_{j=-k}^{k} G(i, j) \cdot I(x+i, y+j)
     
     ```
-    where I is the input image, I' is the smoothed image, k is the size of the filter kernel, and G(i, j) is the value of the Gaussian filter at position (i, j).
+    where $I$ is the input image, $I'$ is the smoothed image, $k$ is the size of the filter kernel, and $G(i, j)$ is the value of the Gaussian filter at position $(i, j)$.
 
-2. Gradient computation: The second step of the Canny edge detection algorithm involves computing the gradient magnitude and orientation of the smoothed image. The gradient of an image represents the rate of change of the image intensity in the x and y directions. The gradient can be computed using various gradient operators, such as the Sobel, Prewitt, or Scharr operators.
+2. Gradient computation: The second step of the Canny edge detection algorithm involves computing the gradient magnitude and orientation of the smoothed image. The gradient of an image represents the rate of change of the image intensity in the $x$ and $y$ directions. The gradient can be computed using various gradient operators, such as the Sobel, Prewitt, or Scharr operators.
 
-    The Sobel operator is a commonly used gradient operator that approximates the gradient of the image by convolving the image with two kernels in the x and y directions. The x and y derivatives of the image are given by:
+    The Sobel operator is a commonly used gradient operator that approximates the gradient of the image by convolving the image with two kernels in the $x$ and $y$ directions. The $x$ and $y$ derivatives of the image are given by:
     
     ```math
     
@@ -57,7 +57,7 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     
     ```
     
-    The gradient magnitude and orientation of the image are then calculated from the x and y derivatives using the following formulas:
+    The gradient magnitude and orientation of the image are then calculated from the $x$ and $y$ derivatives using the following formulas:
     
     ```math
     
@@ -71,7 +71,7 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     
     ```
     
-    where M(x, y) is the gradient magnitude at position (x, y), $'G_x(x, y)'$ and $'G_y(x, y)'$ are the x and y derivatives of the image at position (x, y), and $'\theta(x, y)'$ is the gradient orientation at position (x, y).
+    where $M(x, y)$ is the gradient magnitude at position $(x, y)$, $G_x(x, y)$ and $G_y(x, y)$ are the $x$ and $y$ derivatives of the image at position $(x, y)$, and $\theta(x, y)$ is the gradient orientation at position $(x, y)$.
 
 3. Non-maximum suppression: The third step of the Canny edge detection algorithm involves performing non-maximum suppression on the gradient magnitude image to obtain a thin edge with a sharp boundary. This step involves suppressing non-maximum gradient values along the direction of the edge.
 
