@@ -112,7 +112,7 @@ Here are some additional tips and tricks for using and modifying the code:
     
     This will use lower threshold values than before, resulting in more edges being detected.
     
-    Also, If you want to change the threshold values T1 and T2 and observe the result in real-time, you can run the following Python code:
+    Similarly, If you want to change the threshold values T1 and T2 and observe the result in real-time, you can run the following Python code:
     
     ```python
        
