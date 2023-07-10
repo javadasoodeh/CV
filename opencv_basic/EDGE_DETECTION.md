@@ -102,50 +102,127 @@ Here are some additional tips and tricks for using and modifying the code:
 
 1. Experiment with different threshold values for the Canny edge detection algorithm to see how they affect the results:
 
-To experiment with different threshold values, simply change the two threshold values (100 and 200) in the `cv2.Canny()` function to different values and see how the edge detection results change. For example, you can try:
+    To experiment with different threshold values, simply change the two threshold values (100 and 200) in the `cv2.Canny()` function to different values and see how the edge detection results change. For example, you can try:
+    
+    ```python
+    
+    edges = cv2.Canny(gray, 50, 150)
+ 
+    ```
+    
+    This will use lower threshold values than before, resulting in more edges being detected.
+    
+    Also, If you want to change the threshold values T1 and T2 and observe the result in real-time, you can run the following Python code:
+    
+    ```python
+       
+        import matplotlib.pyplot as plt
+        import numpy as np
+        import cv2
+        from matplotlib.widgets import Slider
+        
+        # Load and convert the image to grayscale
+        image = cv2.imread('HBD.jpg')
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        
+        # Create a figure and subplots
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+        plt.subplots_adjust(bottom=0.25)
+        
+        # Initialize T1 and T2 values
+        T1_initial = 0
+        T2_initial = np.max(gray_image)
+        
+        # Apply Canny edge detection with initial T1 and T2 values
+        edges = cv2.Canny(gray_image, T1_initial, T2_initial)
+        
+        # Display the original image in the first subplot
+        ax1.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+        ax1.set_title('Original Image')
+        
+        # Display the edges in the second subplot
+        edges_plot = ax2.imshow(edges, cmap='gray')
+        ax2.set_title('Canny Edges')
+        
+        # Create sliders for T1 and T2
+        ax_T1 = plt.axes([0.2, 0.1, 0.6, 0.03])
+        ax_T2 = plt.axes([0.2, 0.05, 0.6, 0.03])
+        slider_T1 = Slider(ax_T1, 'T1', 0, np.max(gray_image), valinit=T1_initial)
+        slider_T2 = Slider(ax_T2, 'T2', 0, np.max(gray_image), valinit=T2_initial)
+        
+        # Define the update function for the sliders
+        def update(val):
+            T1 = slider_T1.val
+            T2 = slider_T2.val
+            edges = cv2.Canny(gray_image, T1, T2)
+            edges_plot.set_data(edges)
+            fig.canvas.draw_idle()
+        
+        # Bind the update function to the slider values
+        slider_T1.on_changed(update)
+        slider_T2.on_changed(update)
+        
+        # Display the plot
+        plt.show()
+   
+    
+    ```   
+    
+    A frame of result:
+    
+    ![rotation matrix](canny-thresholding-custom.JPG)
+    
+    Now, you are able to visualize and compare the original image and the Canny edges side by side while adjusting the T1 and T2 values in real-time. 
+    
+    Here's a general guideline for adjusting the T1 and T2 parameters in the Canny edge detection algorithm:
 
-```python
-edges = cv2.Canny(gray, 50, 150)
-```
+     - Start with T1 = 0 and T2 = maximum gradient magnitude: This setting will detect all edges, including both strong and weak edges. It provides a good overview of the image's edge structure.
 
-This will use lower threshold values than before, resulting in more edges being detected.
+     - Increase T1 while keeping T2 the same: Gradually increase T1 to filter out weaker edges. This will help reduce noise and false detections in the image.
 
-2. Try applying other edge detection algorithms, such as the Sobel or Laplacian operators:
+     - Fine-tune T2: Adjust T2 to control the threshold for strong edges. Increasing T2 will result in fewer strong edges being detected, while decreasing T2 will include more strong edges. Find a value that emphasizes the desired level of edge detail in the image.
 
-To try other edge detection algorithms, you can replace the cv2.Canny() function with other functions that perform edge detection. For example, you can use the Sobel operator like this:
+     - Adjust T1 and T2 together: Fine-tune both T1 and T2 together to strike a balance between detecting enough relevant edges and suppressing unwanted noise. Experiment with different combinations until the desired edge detection results are achieved.
 
-```python
+     - Consider image characteristics: Keep in mind the specific characteristics of the image being processed. Images with high levels of noise may require higher T1 and T2 values to reduce false detections. Images with low contrast may require lower threshold values to detect weaker edges.
+     
 
-sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=5)
-sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=5)
-edges = cv2.magnitude(sobelx, sobely)
-
-```
-
-This computes the horizontal and vertical gradient images using the Sobel operator and then combines them using the magnitude function.
-
-3. Consider preprocessing the image before applying edge detection, such as resizing or color conversion:
-
-To preprocess the image, you can add additional OpenCV functions before the edge detection step. For example, you can resize the image to a smaller size to reduce the amount of computation required:
-
-```python
-
-image = cv2.resize(image, (0,0), fx=0.5, fy=0.5)
-
-```
-
-This resizes the image to half its original size.
-
-You can also convert the image to a different color space before performing edge detection. For example, you can convert the image to the HSV color space like this:
-
-```python
-
-hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-gray = hsv[:,:,2]
-
-```
-
-This extracts the value channel of the HSV color space, which is often a better representation of image intensity than the RGBcolor space.
+    2. Try applying other edge detection algorithms, such as the Sobel or Laplacian operators:
+    
+    To try other edge detection algorithms, you can replace the cv2.Canny() function with other functions that perform edge detection. For example, you can use the Sobel operator like this:
+    
+    ```python
+    
+    sobelx = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=5)
+    sobely = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=5)
+    edges = cv2.magnitude(sobelx, sobely)
+    
+    ```
+    
+    This computes the horizontal and vertical gradient images using the Sobel operator and then combines them using the magnitude function.
+    
+    3. Consider preprocessing the image before applying edge detection, such as resizing or color conversion:
+    
+    To preprocess the image, you can add additional OpenCV functions before the edge detection step. For example, you can resize the image to a smaller size to reduce the amount of computation required:
+    
+    ```python
+    
+    image = cv2.resize(image, (0,0), fx=0.5, fy=0.5)
+    
+    ```
+    
+    This resizes the image to half its original size.
+    
+    You can also convert the image to a different color space before performing edge detection. For example, you can convert the image to the HSV color space like this:
+    
+    ```python
+    
+    hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    gray = hsv[:,:,2]
+    
+    ```
+    
+   This extracts the value channel of the HSV color space, which is often a better representation of image intensity than the RGBcolor space.
 
 # Conclusion:
 
