@@ -71,7 +71,7 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     
     ```
     
-    where M(x, y) is the gradient magnitude at position (x, y), G_x(x, y) and G_y(x, y) are the x and y derivatives of the image at position (x, y), and \theta(x, y) is the gradient orientation at position (x, y).
+    where M(x, y) is the gradient magnitude at position (x, y), $'G_x(x, y)'$ and $'G_y(x, y)'$ are the x and y derivatives of the image at position (x, y), and $'\theta(x, y)'$ is the gradient orientation at position (x, y).
 
 3. Non-maximum suppression: The third step of the Canny edge detection algorithm involves performing non-maximum suppression on the gradient magnitude image to obtain a thin edge with a sharp boundary. This step involves suppressing non-maximum gradient values along the direction of the edge.
 
@@ -187,7 +187,7 @@ Here are some additional tips and tricks for using and modifying the code:
      - Consider image characteristics: Keep in mind the specific characteristics of the image being processed. Images with high levels of noise may require higher T1 and T2 values to reduce false detections. Images with low contrast may require lower threshold values to detect weaker edges.
      
 
-    2. Try applying other edge detection algorithms, such as the Sobel or Laplacian operators:
+2. Try applying other edge detection algorithms, such as the Sobel or Laplacian operators:
     
     To try other edge detection algorithms, you can replace the cv2.Canny() function with other functions that perform edge detection. For example, you can use the Sobel operator like this:
     
@@ -201,7 +201,7 @@ Here are some additional tips and tricks for using and modifying the code:
     
     This computes the horizontal and vertical gradient images using the Sobel operator and then combines them using the magnitude function.
     
-    3. Consider preprocessing the image before applying edge detection, such as resizing or color conversion:
+3. Consider preprocessing the image before applying edge detection, such as resizing or color conversion:
     
     To preprocess the image, you can add additional OpenCV functions before the edge detection step. For example, you can resize the image to a smaller size to reduce the amount of computation required:
     
