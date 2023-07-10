@@ -34,11 +34,11 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
     
     The Gaussian filter is applied to the image by convolving the image with the filter kernel. The convolution operation is defined as:
     
-    ```math
     
-        I'(x, y) = \sum_{i=-k}^{k} \sum_{j=-k}^{k} G(i, j) \cdot I(x+i, y+j)
     
-    ```
+        $$I'(x, y) = \sum_{i=-k}^{k} \sum_{j=-k}^{k} G(i, j) \cdot I(x+i, y+j)$$
+    
+    
     where $I$ is the input image, $I'$ is the smoothed image, $k$ is the size of the filter kernel, and $G(i, j)$ is the value of the Gaussian filter at position $(i, j)$.
 
 2. Gradient computation: The second step of the Canny edge detection algorithm involves computing the gradient magnitude and orientation of the smoothed image. The gradient of an image represents the rate of change of the image intensity in the $x$ and $y$ directions. The gradient can be computed using various gradient operators, such as the Sobel, Prewitt, or Scharr operators.
