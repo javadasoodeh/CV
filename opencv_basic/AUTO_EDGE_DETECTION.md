@@ -1,0 +1,2 @@
+# Introduction:
+In image processing, the Canny edge detector is a popular algorithm for identifying the edges in an image. One of the main challenges with using the Canny edge detector is selecting appropriate threshold values for the lower and upper thresholds. Choosing the right values can be a time-consuming and iterative process, and it can be difficult to find the optimal values for a given image. In this tutorial, we will explore how to automatically select the threshold values for the Canny edge detector.

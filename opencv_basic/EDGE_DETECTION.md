@@ -30,9 +30,9 @@ The Canny edge detection algorithm is a multi-stage process that involves severa
 
 ```
     
-where $x$ and $y$ are the coordinates of the filter kernel, and sigma is the standard deviation of the Gaussian distribution. The size of the filter kernel and the value of sigma affect the smoothing effect of the filter.
-
-The Gaussian filter is applied to the image by convolving the image with the filter kernel. The convolution operation is defined as:
+    where $x$ and $y$ are the coordinates of the filter kernel, and sigma is the standard deviation of the Gaussian distribution. The size of the filter kernel and the value of sigma affect the smoothing effect of the filter.
+    
+    The Gaussian filter is applied to the image by convolving the image with the filter kernel. The convolution operation is defined as:
     
 ```math
 
