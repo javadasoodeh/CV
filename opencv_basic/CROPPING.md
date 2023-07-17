@@ -1,4 +1,4 @@
-# Image Cropping with OpenCV
+# Image Cropping
 The code aims to crop an image by specifying a region of interest using its top-left corner coordinates, width, and height values.
 
 
