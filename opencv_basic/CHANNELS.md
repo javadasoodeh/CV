@@ -113,11 +113,11 @@ Upon successful execution, you should see a Matplotlib window with five subplots
 
 ![Channels](channels.JPG)
 
-The first subplot shows the original image.
-The second subplot displays only the blue channel.
-The third subplot displays only the green channel.
-The fourth subplot displays only the red channel.
-The fifth subplot shows the merged image, reconstructing the original image.
+- The first subplot shows the original image.
+- The second subplot displays only the blue channel.
+- The third subplot displays only the green channel.
+- The fourth subplot displays only the red channel.
+- The fifth subplot shows the merged image, reconstructing the original image.
 
 ## Conclusion:
 
