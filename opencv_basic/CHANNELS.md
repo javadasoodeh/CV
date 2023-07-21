@@ -2,13 +2,11 @@
 
 ## Introduction:
 
-The provided code snippet is a Python script for computer vision tasks using the OpenCV library. The purpose of this code is to demonstrate how to split an image into its individual color channels (Blue, Green, and Red) and then merge them back to reconstruct the original image. This process is a fundamental operation in computer vision and image processing.
-
-To follow along with this tutorial, you should have basic knowledge of Python programming and some familiarity with image processing concepts. Additionally, ensure that you have installed the OpenCV library, which is commonly used for computer vision tasks in Python.
+The provided code snippet is a Python script for computer vision tasks using the OpenCV library. The purpose of this code is to demonstrate how to split an image into its individual color channels (Blue, Green, and Red) and then merge them back to reconstruct the original image. This process is a fundamental operation in computer vision and image processing. This process is a fundamental concept in computer vision and image processing, as it allows us to manipulate and analyze images based on their color channels. The code uses the OpenCV library for image processing, NumPy for array manipulations, and Matplotlib for visualization.
 
 ## Code Overview:
 
-The main goal of this code is to take an input image ('HBD.jpg'), split it into its color channels (Blue, Green, and Red), create separate images for each channel, and then merge the channels back together to reconstruct the original image. Finally, it displays the original image, as well as the split and merged images, for visual comparison.
+The main goal of the code is to demonstrate how to split an image into its color channels, create separate images for each channel, and then merge them back to reconstruct the original image. The code takes an input image 'HBD.jpg', loads it using OpenCV, performs channel splitting, individual channel image creation, and then displays the original and channel-separated images using Matplotlib.
 
 Code Breakdown:
 Let's go through each part of the code step-by-step:
@@ -17,10 +15,10 @@ Let's go through each part of the code step-by-step:
 
 import cv2
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 ```
-These lines import the necessary libraries. `cv2` is the OpenCV library used for computer vision tasks, and `numpy` is imported as `np` to work with numerical arrays in Python.
+These lines import the necessary libraries. `cv2` is the OpenCV library used for computer vision tasks, `numpy` is imported as `np` to work with numerical arrays in Python, and `matplotlib.pyplot` for visualization.
 
 ```python
 
@@ -69,17 +67,32 @@ This line merges the three separated color channels (`b`, `g`, and `r`) back int
 
 ```python
 
-cv2.imshow('Original Image', image)
-cv2.imshow('Blue Channel', blue_channel)
-cv2.imshow('Green Channel', green_channel)
-cv2.imshow('Red Channel', red_channel)
-cv2.imshow('Merged Image', merged_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+plt.figure(figsize=(12, 6))
+
+plt.subplot(2, 3, 1)
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+plt.title('Original Image')
+plt.axis('off')
+
+# ... Similar code for displaying the individual channel images ...
+
+plt.tight_layout()
+plt.show()
 
 ```
 
-The `cv2.imshow` and `cv2.waitKey` functions are used to display the original image and the split/merged images. `cv2.destroyAllWindows()` is used to close all open windows when a key is pressed.
+This part sets up a Matplotlib figure with multiple subplots to display the original image and the individual channel images.
+- `plt.figure(figsize=(12, 6))`:
+This line creates a new Matplotlib figure to hold the subplots. The figsize parameter specifies the size of the figure, where the first value represents the width in inches, and the second value represents the height in inches. In this case, we set the figure size to 12 inches wide and 6 inches tall.
+
+- `plt.subplot(2, 3, 1)`:
+This code defines the first subplot in a 2x3 grid of subplots. The parameters for plt.subplot(rows, columns, index) determine the grid layout and the position of the subplot within the grid. Here, we set it to the first position (index 1) in a 2x3 grid.
+
+- `plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))`: This line displays the original image. However, before displaying it, we use cv2.cvtColor to convert the BGR image format (used by OpenCV) to the RGB format (used by Matplotlib). The conversion is necessary because OpenCV reads images in the BGR format, while Matplotlib expects images in the RGB format.
+
+- `plt.title('Original Image')`: This line sets the title of the subplot to 'Original Image'.
+
+- `plt.axis('off')`: This line removes the axis ticks and labels from the subplot, resulting in a cleaner image display without the axis markings.
 
 ## Detailed Explanation:
 
@@ -96,13 +109,15 @@ The `np.zeros_like` function creates an array of zeros with the same shape as th
 
 ## Output
 
-Upon successful execution, you should see five windows displaying the original image and the split/merged images:
+Upon successful execution, you should see a Matplotlib window with five subplots:
 
-'Original Image': The input image 'HBD.jpg' as it is.
-'Blue Channel': The original image displayed with only the Blue channel.
-'Green Channel': The original image displayed with only the Green channel.
-'Red Channel': The original image displayed with only the Red channel.
-'Merged Image': The original image reconstructed by merging the Blue, Green, and Red channels.
+![Channels](channels.JPG)
+
+The first subplot shows the original image.
+The second subplot displays only the blue channel.
+The third subplot displays only the green channel.
+The fourth subplot displays only the red channel.
+The fifth subplot shows the merged image, reconstructing the original image.
 
 ## Conclusion:
 
