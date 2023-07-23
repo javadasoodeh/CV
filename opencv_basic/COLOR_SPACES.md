@@ -99,7 +99,7 @@ These cone cells come in three types - long (L), medium (M), and short (S) - eac
 
 The Concept of Color Spaces:
 
-The colors we perceive are a subjective experience and exist within our minds. To bridge the gap between the physical properties of light and our perception, we need a system to consistently represent colors. Enter "color spaces." A color space is a standardized mathematical model that allows us to map colors in a way that computers can understand.
+The colors we perceive are a subjective experience and exist within our minds. To communicate and transfer color sensations , for example, between two artists, a system is needed to represent and define colors consistently. This system is called a "color space." A color space is a standardized mathematical model that allows us to map colors in a way that computers can understand.
 
 Different color spaces serve various purposes, and each comes with its unique set of primary colors and coordinates. These primary colors act as building blocks, and any color within the color space can be expressed as a combination of these primaries. For instance, the RGB (Red, Green, Blue) color space is widely used in digital imaging and displays. By adjusting the intensity of these primary colors, we can reproduce a vast array of colors on computer screens and other display devices.
 
