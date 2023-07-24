@@ -93,11 +93,16 @@ These lines allow the user to interact with the displayed images. The `waitKey(0
 
 The Nature of Color and Perception:
 
-Before we dive into color spaces, let's explore how we perceive colors in the first place. When light falls upon an object and reflects off its surface, it carries an array of different wavelengths, each corresponding to a distinct color. Our eyes, equipped with specialized cone cells, sense these wavelengths and translate them into electrical signals.
+Before we explore color spaces, let's understand how we see colors in the first place. When light falls on an object and bounces back, it carries different colors (wavelengths) with it. Our eyes have special cells called cones that detect these colors (wavelengths) and send signals to our brain. This helps us see and interpret specific colors.
 
-These cone cells come in three types - long (L), medium (M), and short (S) - each sensitive to a specific range of wavelengths. When light interacts with these cones, they get activated, and our brain interprets these signals, taking into account the sensitivity of each type of cone cell. This process, in conjunction with the spectral power distribution (SPD) of the light, enables us to perceive and differentiate various colors.
+To build your intuition, let's see the following diagram. When light from the surrounding environment falls on the apple's surface, it interacts with the apple's color pigments. The light is then split into its various colors, just like a rainbow. Our cones, sensitive to different colors, detect these hues, allowing us to see the red color of that apple.
 
 ![color perception](color-perception.jpg)
+
+There are three types of cones: long (L), medium (M), and short (S), each sensitive a specific range of colors (wavelengths). When light enters our eyes, it activates some of these cones. Scientists use cone sensitivity functions to show how these cones respond to different colors (wavelengths), creating a unique pattern of activation for each cone type. This pattern helps us see and recognize various colors around us. (Each pattern is mapped to a specific color.)
+
+Understanding cone sensitivity functions helps us grasp how humans perceive colors and how we can recreate different colors in art, design, and technology.
+
 
 The Concept of Color Spaces:
 
