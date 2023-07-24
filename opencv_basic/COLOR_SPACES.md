@@ -97,6 +97,8 @@ Before we dive into color spaces, let's explore how we perceive colors in the fi
 
 These cone cells come in three types - long (L), medium (M), and short (S) - each sensitive to a specific range of wavelengths. When light interacts with these cones, they get activated, and our brain interprets these signals, taking into account the sensitivity of each type of cone cell. This process, in conjunction with the spectral power distribution (SPD) of the light, enables us to perceive and differentiate various colors.
 
+![color perception](color-perception.jpg)
+
 The Concept of Color Spaces:
 
 The colors we perceive are a subjective experience and exist within our minds. To communicate and transfer color sensations , for example, between two artists, a system is needed to represent and define colors consistently. This system is called a "color space." A color space is a standardized mathematical model that allows us to map colors in a way that computers can understand.
