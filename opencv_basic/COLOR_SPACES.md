@@ -97,7 +97,7 @@ Before we explore color spaces, let's understand how we see colors in the first 
 
 To build your intuition, let's see the following diagram. When light from the surrounding environment falls on the apple's surface, it interacts with the apple's color pigments. The light is then split into its various colors, just like a rainbow. Our cones, sensitive to different colors, detect these hues, allowing us to see the red color of that apple.
 
-![color perception](color-perception.jpg)
+![color perception](color-perception0.jpg)
 
 There are three types of cones: long (L), medium (M), and short (S), each sensitive a specific range of colors (wavelengths). When light enters our eyes, it activates some of these cones. Scientists use cone sensitivity functions to show how these cones respond to different colors (wavelengths), creating a unique pattern of activation for each cone type. This pattern helps us see and recognize various colors around us. (Each pattern is mapped to a specific color.)
 
