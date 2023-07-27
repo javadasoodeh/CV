@@ -8,9 +8,9 @@ make decisions, and predict outcomes without being explicitly programmed to do s
 
 <p float="left">
 
-<img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="250"> 
+<img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="350"> 
 
-<img src="/machine_learning_basic/ML2.jpg" alt="Machine learning" width="300">
+<img src="/machine_learning_basic/ML2.jpg" alt="Machine learning" width="450">
 
 </p>
 
@@ -19,7 +19,8 @@ For example, a machine learning model could learn from historical weather data t
 predict tomorrow's weather, or it could learn from thousands of dog and cat images 
 to tell the difference between a dog and a cat.
 
-![dog and cat prediction](dog-cat.jpg)
+<img src="/machine_learning_basic/dog-cat.jpg" alt="dog and cat prediction" width="450">
+
 
 ## Section 1.2: Understanding Artificial General Intelligence (AGI)
 Artificial General Intelligence (AGI), also referred to as strong AI, 
