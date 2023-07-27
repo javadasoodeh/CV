@@ -19,7 +19,9 @@ For example, a machine learning model could learn from historical weather data t
 predict tomorrow's weather, or it could learn from thousands of dog and cat images 
 to tell the difference between a dog and a cat.
 
+<p align="center">
 <img src="/machine_learning_basic/dog-cat.jpg" alt="dog and cat prediction" width="450">
+</p>
 
 
 ## Section 1.2: Understanding Artificial General Intelligence (AGI)
