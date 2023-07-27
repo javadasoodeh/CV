@@ -8,9 +8,9 @@ make decisions, and predict outcomes without being explicitly programmed to do s
 
 <p float="left">
 
-<img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="30%"> 
+<img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="250"> 
 
-<img src="/machine_learning_basic/ML2.jpg" alt="Machine learning" width="70%">
+<img src="/machine_learning_basic/ML2.jpg" alt="Machine learning" width="300">
 
 </p>
 
