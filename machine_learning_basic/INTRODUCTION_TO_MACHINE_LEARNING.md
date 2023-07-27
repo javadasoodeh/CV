@@ -6,16 +6,15 @@ computer algorithms that improve automatically through experience and by using d
 In other words, machine learning is all about enabling computers to learn from data, 
 make decisions, and predict outcomes without being explicitly programmed to do so.
 
-<img src="ML-AI.jpg" alt= “ML and AI” width="30%" height="200px">
+![ML and AI](ML-AI.jpg | width=250)
 
-<img src="ML2.jpg" alt= “Machine learning 2” width="70%" height="200px">
-
+![Machine learning](ML2.jpg | width=350)
 
 For example, a machine learning model could learn from historical weather data to 
 predict tomorrow's weather, or it could learn from thousands of dog and cat images 
 to tell the difference between a dog and a cat.
 
-![dog and cat prediction](dog-cat.jpg)
+![dog and cat prediction](dog-cat.jpg | height=300)
 
 ## Section 1.2: Understanding Artificial General Intelligence (AGI)
 Artificial General Intelligence (AGI), also referred to as strong AI, 
