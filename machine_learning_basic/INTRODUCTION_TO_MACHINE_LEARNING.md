@@ -6,9 +6,9 @@ computer algorithms that improve automatically through experience and by using d
 In other words, machine learning is all about enabling computers to learn from data, 
 make decisions, and predict outcomes without being explicitly programmed to do so.
 
-![ML and AI](ML-AI.jpg | width=250)
+![ML and AI](ML-AI.jpg =250*)
 
-![Machine learning](ML2.jpg | width=350)
+![Machine learning](ML2.jpg =350*)
 
 For example, a machine learning model could learn from historical weather data to 
 predict tomorrow's weather, or it could learn from thousands of dog and cat images 
