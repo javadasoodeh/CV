@@ -6,7 +6,7 @@ computer algorithms that improve automatically through experience and by using d
 In other words, machine learning is all about enabling computers to learn from data, 
 make decisions, and predict outcomes without being explicitly programmed to do so.
 
-<p float="left">
+<p align="center">
 
 <img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="350"> 
 
