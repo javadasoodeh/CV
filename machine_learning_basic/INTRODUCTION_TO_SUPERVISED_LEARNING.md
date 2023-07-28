@@ -23,13 +23,15 @@ Let's take, for example, a house of size 5 (the x-axis value). The corresponding
 
 <p align="center">
 
-<img src="/machine_learning_basic/housing-price.jpg" alt="housing price - line" width="450">
+<img src="/machine_learning_basic/housing-price.jpg" alt="housing price - line" width="550">
 
 </p> 
 
 Let’s add another model (the blue line):
 
-<img src="/machine_learning_basic/housing-price2.jpg" alt="housing price - curve" width="450"> 
+<p align="center">
+<img src="/machine_learning_basic/housing-price2.jpg" alt="housing price - curve" width="550">
+</p> 
 
 As you can see, the predicted price for the same house can vary significantly depending on the model used (linear or curved). 
 
