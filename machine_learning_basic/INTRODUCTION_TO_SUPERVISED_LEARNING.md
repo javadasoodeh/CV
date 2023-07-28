@@ -21,9 +21,18 @@ Let's generate some sample data and fit a line to it. Note that in a real-world 
 
 Let's take, for example, a house of size 5 (the x-axis value). The corresponding price according to our model (the red line) would be approximately 2×5=102×5=10 (the y-axis value).
 
-<img src="/machine_learning_basic/housing-price.jpg" alt="housing price - line" width="450"> 
+<p align="center">
+
+<img src="/machine_learning_basic/housing-price.jpg" alt="housing price - line" width="450">
+
+</p> 
 
 Let’s add another model (the blue line):
 
 <img src="/machine_learning_basic/housing-price2.jpg" alt="housing price - curve" width="450"> 
+
+As you can see, the predicted price for the same house can vary significantly depending on the model used (linear or curved). 
+
+- The green point and dashed line represent the predicted price for a house of size 5 according to our initial linear model (red line).
+- The purple point and dashed line represent the predicted price for the same house according to the new curve (blue line).
 
