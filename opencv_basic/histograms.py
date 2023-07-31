@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 
 # Load the image
 image_path = 'HBD.jpg'  # Replace with the path to your image
@@ -47,7 +48,20 @@ plt.title('2D Color Histogram')
 plt.tight_layout()
 plt.show()
 
-# Display the image
-cv2.imshow('Image', image)
+
+fig = plt.figure()
+hist_3d = cv2.calcHist(chans, [0, 1, 2], None, [32, 32, 32], [0, 256, 0, 256, 0, 256])
+ax = fig.add_subplot(1, 2, 1, projection='3d')
+hist_3d = hist_3d.flatten()
+colors = np.array([[(i, j, k) for i in range(32)] for j in range(32) for k in range(32)]).reshape(-1, 3)
+positions = np.array([[(i, j, k) for i in range(32)] for j in range(32) for k in range(32)]).reshape(-1, 3)
+ax.bar3d(positions[:, 0], positions[:, 1], positions[:, 2], 1, 1, hist_3d, color=colors / 32)
+
+fig.add_subplot(1, 2, 2)
+plt.imshow(image)
+plt.title('3 Channels Image')
+plt.show()
+
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
