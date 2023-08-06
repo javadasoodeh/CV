@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the image
-image = cv2.imread('HBD.jpg', cv2.IMREAD_GRAYSCALE)
+image = cv2.imread('moon-orange.jpg', cv2.IMREAD_GRAYSCALE)
 
 # Calculate and display the histogram
 hist = cv2.calcHist([image], [0], None, [256], [0, 256])

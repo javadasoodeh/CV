@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 img = cv2.imread('HBD.jpg')
 
 # Define the gamma value
-gamma = 0.5
+gamma = 2
 
 # Apply gamma correction using the OpenCV LUT function
 lookUpTable = np.empty((1,256), np.uint8)
