@@ -46,3 +46,5 @@ A: For an RGB image, each channel has 256 intensity levels. Therefore, a 3D hist
 Q: What is the purpose of calculating multi-channel histograms if they aren't commonly visualized as a 3D plot?
 
 A: Multi-channel histograms are valuable for tasks like color-based image segmentation, where you want to separate parts of an image based on color. In these cases, the histogram is used as part of the processing or analysis, rather than being visualized.
+
+ 

@@ -36,3 +36,4 @@ plt.plot(equalized_hist)
 
 # Show all plots
 plt.show()
+
