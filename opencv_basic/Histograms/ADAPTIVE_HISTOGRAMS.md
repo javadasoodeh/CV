@@ -3,3 +3,4 @@ ADAPTIVE HISTOGRAM
 # TODO ordinary histogram equalization vs adaptive histogram equalization
 # TODO under the hood of histogram equalization 
 # TODO change the structure 
+# TODO add images 
