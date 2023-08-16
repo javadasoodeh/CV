@@ -2,7 +2,7 @@
 
 ### What Is Deep Learning?
 Deep Learning is a subfield of machine learning that focuses on training computers to learn from and make decisions based on data, 
-by automatically identifying patterns and features. Here's how to understand deep learning:
+similar to how humans learn from experience. Here's how to understand deep learning:
 
 - **Inspiration from the Human Brain:** Imagine how our brains function with billions of neurons interconnected. Deep learning models mimic this structure using something called "artificial neural networks."
 
