@@ -13,13 +13,21 @@ similar to how humans learn from experience. Here's how to understand deep learn
 - **Automatic Feature Extraction:** Unlike traditional methods where humans have to specify what features a machine should recognize, deep learning models automatically figure out the features that are important.
 
 
-### Single-Layer Neural Networks: Paving the Path
-Before we immerse ourselves into the intricacies of deep neural networks, let's revisit the basics. A single-layer neural network, also known as a perceptron, serves as the foundation for more complex architectures. It comprises three fundamental components: inputs, weights, and a weighted sum.
+**2. Single-layer Neural Networks (Perceptron)**
 
-Consider an image being fed into a single-layer neural network. Each pixel of the image can be considered an input. Associated with each input is a weight, which determines its significance in the overall computation. The weighted sum is calculated by multiplying each input by its corresponding weight and then summing up these products.
+A perceptron is the simplest form of a neural network used for binary classification. Here’s a more detailed breakdown:
 
-After obtaining the weighted sum, a step function (also known as the activation function) is applied. This function decides whether the neuron should "fire" or not based on the calculated value. If the result exceeds a certain threshold, the neuron fires; otherwise, it remains dormant.
+- **Inputs:** These are the data or features that you provide to the network for processing. They can be anything from pixel values in an image to any other form of data.
 
+- **Weights:** Associated with each input, a weight represents the importance of that particular input for the output. During the learning phase, the network adjusts these weights based on the error of the prediction.
+
+- **Weighted Sum:** Before passing it to the activation function, the perceptron computes the weighted sum. It multiplies each input by its associated weight and sums up all these products. Mathematically, if we have inputs \( x_1, x_2,..., x_n \) and weights \( w_1, w_2,..., w_n \), the weighted sum (often termed as net input) would be \( \sum_{i=1}^{n} x_i w_i \).
+
+- **Step Function (Activation Function):** The weighted sum is then passed through an activation function. For a basic perceptron, this is typically a step function, which produces a binary output. If the weighted sum is above a certain threshold, the neuron fires (produces an output of 1), otherwise, it doesn't (produces an output of 0).
+
+- **Output:** The result of the step function determines the perceptron's output. For binary classification tasks, this would typically be a "0" or a "1".
+
+---
 ### Multi-Layer Neural Networks: Unleashing Complexity
 While single-layer neural networks are valuable for linearly separable problems, they fall short in handling intricate patterns present in complex data. This limitation led to the creation of multi-layer neural networks, also referred to as deep neural networks.
 
