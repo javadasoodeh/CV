@@ -21,7 +21,7 @@ A perceptron is the simplest form of a neural network used for binary classifica
 
 - **Weights:** Associated with each input, a weight represents the importance of that particular input for the output. During the learning phase, the network adjusts these weights based on the error of the prediction.
 
-- **Weighted Sum:** Before passing it to the activation function, the perceptron computes the weighted sum. It multiplies each input by its associated weight and sums up all these products. Mathematically, if we have inputs \( x_1, x_2,..., x_n \) and weights \( w_1, w_2,..., w_n \), the weighted sum (often termed as net input) would be \( \sum_{i=1}^{n} x_i w_i \).
+- **Weighted Sum:** Before passing it to the activation function, the perceptron computes the weighted sum. It multiplies each input by its associated weight and sums up all these products. Mathematically, if we have inputs $ x_1, x_2,..., x_n $ and weights $w_1, w_2,..., w_n$, the weighted sum (often termed as net input) would be $ \sum_{i=1}^{n} x_i w_i $.
 
 - **Step Function (Activation Function):** The weighted sum is then passed through an activation function. For a basic perceptron, this is typically a step function, which produces a binary output. If the weighted sum is above a certain threshold, the neuron fires (produces an output of 1), otherwise, it doesn't (produces an output of 0).
 
