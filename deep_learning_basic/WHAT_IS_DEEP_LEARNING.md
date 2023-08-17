@@ -1,6 +1,6 @@
 # Dive Into Deep Learning
 
-### What Is Deep Learning?
+## What Is Deep Learning?
 Deep Learning is a subfield of machine learning that focuses on training computers to learn from and make decisions based on data, 
 similar to how humans learn from experience. Here's how to understand deep learning:
 
@@ -13,7 +13,7 @@ similar to how humans learn from experience. Here's how to understand deep learn
 - **Automatic Feature Extraction:** Unlike traditional methods where humans have to specify what features a machine should recognize, deep learning models automatically figure out the features that are important.
 
 
-**2. Single-layer Neural Networks (Perceptron)**
+## Single-layer Neural Networks (Perceptron)
 
 A perceptron is the simplest form of a neural network used for binary classification. Here’s a more detailed breakdown:
 
@@ -21,26 +21,40 @@ A perceptron is the simplest form of a neural network used for binary classifica
 
 - **Weights:** Associated with each input, a weight represents the importance of that particular input for the output. During the learning phase, the network adjusts these weights based on the error of the prediction.
 
-- **Weighted Sum:** Before passing it to the activation function, the perceptron computes the weighted sum. It multiplies each input by its associated weight and sums up all these products. Mathematically, if we have inputs $x_1, x_2,..., x_n$ and weights $w_1, w_2,..., w_n$, the weighted sum (often termed as net input) would be $\sum_{i=1}^{n} x_i w_i$.
+- **Bias:** This is a constant value that provides the neuron with the flexibility to better fit the data. It's like an added tuning knob for the neuron's output.
 
-- **Step Function (Activation Function):** The weighted sum is then passed through an activation function. For a basic perceptron, this is typically a step function, which produces a binary output. If the weighted sum is above a certain threshold, the neuron fires (produces an output of 1), otherwise, it doesn't (produces an output of 0).
+- **Weighted Sum:** Before passing it to the activation function, the perceptron computes the weighted sum. It multiplies each input by its associated weight, sums up all these products, and then add the bias. Mathematically, if we have inputs $x_1, x_2,..., x_n$ and weights $w_1, w_2,..., w_n$, the weighted sum (often termed as net input), and the bias $b$ would be  $ \sum_{i=1}^{n} x_i w_i + b$.
+
+- **Step Function (Activation Function):** The weighted sum is then passed through an activation function. For a basic perceptron, this is typically a step function, which produces a binary output. This function can take various forms, such as sigmoid, ReLU (Rectified Linear Unit), tanh (hyperbolic tangent), etc. If the weighted sum is above a certain threshold, the neuron fires (produces an output of 1), otherwise, it doesn't (produces an output of 0). By and large, The goal of the activation function is to introduce non-linearity into the neural network, allowing it to learn and represent complex relationships in the data.
 
 - **Output:** The result of the step function determines the perceptron's output. For binary classification tasks, this would typically be a "0" or a "1".
 
----
-### Multi-Layer Neural Networks: Unleashing Complexity
-While single-layer neural networks are valuable for linearly separable problems, they fall short in handling intricate patterns present in complex data. This limitation led to the creation of multi-layer neural networks, also referred to as deep neural networks.
 
-In a deep neural network, the architecture comprises multiple layers, including an input layer, one or more hidden layers, and an output layer. These hidden layers are crucial for capturing and representing intricate features within the data. Each neuron in these layers computes its weighted sum, passes it through an activation function, and then forwards it to the next layer.
+## Multi-layer Neural Networks 
 
-### The Basics of Neural Networks: Peeking Inside a Neuron
-Within a neural network, each neuron encapsulates a miniature decision-making unit. For a single neuron, the process starts with the weighted sum of its inputs and corresponding weights. This sum is then transformed by the activation function, which introduces non-linearity into the model, enabling it to learn complex relationships within the data.
+When we move beyond a single layer and start stacking multiple layers of these neurons, we have what's called a multi-layer neural network or more commonly, a multi-layer perceptron (MLP). This typically consists of:
 
-The activation function also imparts the property of differentiability, which facilitates the learning process through optimization algorithms like gradient descent. This is vital for adjusting the weights during training to minimize the difference between predicted and actual outcomes.
+* **Input Layer:** The layer that receives input from the dataset.
+* **Hidden Layers:** Layers in between the input and output layers. The complexity of the neural network increases with more hidden layers, allowing it to capture intricate patterns and relationships in the data.
+* **Output Layer:** The final layer that produces the result for given inputs.
 
-### Bridging the Gap: Deep Learning vs. Traditional Machine Learning
-At this juncture, let's differentiate between deep learning and traditional machine learning. Traditional machine learning models often involve manual feature engineering, where domain knowledge is used to craft relevant features from raw data. These engineered features are then used as input for algorithms like SVMs or decision trees. In the context of image processing, this might involve extracting edges, corners, or textures from images.
+## Difference between Deep Learning and Traditional Machine Learning
 
-Conversely, deep learning operates on a different principle. It is inherently feature learning, which means that the neural network learns to automatically extract pertinent features from raw data during training. This alleviates the need for manual feature engineering, allowing the network to adapt to the complexities of the data.
+At a high level, traditional machine learning algorithms are often hand-crafted and require feature engineering, which means that the inputs must be transformed or tweaked to improve the model's performance. In contrast, deep learning models, especially Convolutional Neural Networks (CNNs) for images, are adept at automatically extracting features from raw data.
 
-Imagine a scenario where we need to classify images of cats and dogs. In traditional machine learning, the pipeline would entail hand-crafting features like fur texture and ear shape. This would be followed by training a classifier on these features. In contrast, deep learning would involve directly feeding raw pixel values into a deep neural network, allowing it to learn distinctive features, edges, and patterns necessary for accurate classification.
+**Example Pipeline for Input Images:**
+
+*Traditional Machine Learning:*
+1. Pre-process the image (resize, normalize).
+2. Manually extract features (edges, textures, color histograms).
+3. Use these features as input to a machine learning model like SVM or Random Forest.
+4. Model predicts the output based on the features.
+
+*Deep Learning:*
+1. Pre-process the image (resize, normalize).
+2. Feed the image directly into a deep learning model (e.g., CNN).
+3. The model automatically extracts hierarchical features and processes them through multiple layers.
+4. Model predicts the output based on the learned features.
+
+In essence, while traditional machine learning requires manual effort to extract meaningful features from images, deep learning automates this process, allowing for a more direct and often more accurate mapping between raw input data and the desired output.
+
