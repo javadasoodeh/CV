@@ -12,6 +12,7 @@ similar to how humans learn from experience. Here's how to understand deep learn
 
 - **Automatic Feature Extraction:** Unlike traditional methods where humans have to specify what features a machine should recognize, deep learning models automatically figure out the features that are important.
 
+\#Todo add images
 
 ## Single-layer Neural Networks (Perceptron)
 
