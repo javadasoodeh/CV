@@ -30,6 +30,11 @@ A perceptron is the simplest form of a neural network used for binary classifica
 
 - **Output:** The result of the step function determines the perceptron's output. For binary classification tasks, this would typically be a "0" or a "1".
 
+<p align="center">
+
+<img src="/deep_learning_basic/perceptron.png" alt="Perceptron" width="350"> 
+
+</p>
 
 ## Multi-layer Neural Networks 
 
