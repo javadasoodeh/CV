@@ -32,7 +32,7 @@ A perceptron is the simplest form of a neural network used for binary classifica
 
 <p align="center">
 
-<img src="/deep_learning_basic/perceptron.png" alt="Perceptron" width="350"> 
+<img src="/deep_learning_basic/perceptron.jpg" alt="Perceptron" width="550"> 
 
 </p>
 
