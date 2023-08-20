@@ -38,3 +38,5 @@ As you can see, the predicted price for the same house can vary significantly de
 - The green point and dashed line represent the predicted price for a house of size 5 according to our initial linear model (red line).
 - The purple point and dashed line represent the predicted price for the same house according to the new curve (blue line).
 
+
+\# TODO add classification 
