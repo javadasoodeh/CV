@@ -40,3 +40,4 @@ As you can see, the predicted price for the same house can vary significantly de
 
 
 \# TODO add classification 
+\# TODO add images 
