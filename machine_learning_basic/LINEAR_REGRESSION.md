@@ -1,0 +1,1 @@
+\#TODO introduction, cost function, gradient descent 
