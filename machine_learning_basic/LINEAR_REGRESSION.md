@@ -3,11 +3,17 @@
 **The Linear Equation**
 
 For a single input, the linear regression model can be represented as:
+
 $Y = wX + b$
+
 Where:
+
 $Y$ is the predicted value.
+
 $X$ is the independent variable.
+
 $w$ is the weight (or coefficient).
+
 $b$ is the bias (or intercept).
 
 **Learning in Linear Regression**
