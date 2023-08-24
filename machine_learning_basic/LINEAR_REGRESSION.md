@@ -24,3 +24,6 @@ We use a cost function, often the Mean Squared Error (MSE), to measure the diffe
 
 Using optimization techniques like Gradient Descent, we iteratively adjust the weights and bias to minimize the error.
  
+ \#TODO change the structure 
+ \# TODO add images 
+ \# TODO Math & implementation  
