@@ -45,7 +45,7 @@ Machine learning allows us to turn raw data into actionable insights,
 helping businesses optimize their operations, doctors diagnose diseases more accurately,
  and individuals get personalized recommendations, among many other applications.
 
-## Section 1.4: Types of Machine Learning Algorithms
+## Types of Machine Learning Algorithms
 Machine learning algorithms can be broadly classified into three types:
 1.	**Supervised Learning:** In supervised learning, the algorithm learns from labeled data. 
 We provide the model with input-output pairs, and the model learns to map the input to 
