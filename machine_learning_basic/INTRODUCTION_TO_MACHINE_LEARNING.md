@@ -1,6 +1,6 @@
 # A Gentle Introduction to Machine Learning
 
-## Section 1.1: Defining Machine Learning
+## Defining Machine Learning
 Machine learning is a subfield of artificial intelligence that focuses on the development of 
 computer algorithms that improve automatically through experience and by using data. 
 In other words, machine learning is all about enabling computers to learn from data, 
@@ -23,21 +23,14 @@ to tell the difference between a dog and a cat.
 <img src="/machine_learning_basic/dog-cat.jpg" alt="dog and cat prediction" width="450">
 </p>
 
+## What is the Goal of Machine Learning?
+The ultimate goal of machine learning is to create models that can generalize well from the data 
+they've seen to new, unseen data. This makes it a crucial stepping stone towards achieving Artificial General Intelligence (AGI), 
+a form of intelligence where machines can perform any intellectual task that a human can do. 
+While AGI is still more of a concept than a reality, machine learning helps us inch closer to that vision 
+by solving specific problems intelligently.
 
-## Section 1.2: Understanding Artificial General Intelligence (AGI)
-Artificial General Intelligence (AGI), also referred to as strong AI, 
-is a form of artificial intelligence that has the ability to understand, 
-learn, and apply knowledge across a wide range of tasks at a level equal 
-to or beyond a human being. Unlike Narrow Artificial Intelligence, which 
-is designed to perform a specific task, such as recommending a product 
-or recognizing a face, AGI can transfer learning from one domain to another, 
-adapt to new situations, and solve problems it has never encountered before.
-As of the time of writing, AGI remains largely a theoretical concept. 
-While we've made great strides in developing narrow AI applications, creating
- a system with human-like cognitive abilities is a considerable challenge that 
- researchers are still working on.
-
-## Section 1.3: Why We Need Machine Learning
+## Why We Need Machine Learning
 In the modern world, we are generating data at an unprecedented rate. 
 From social media posts and online shopping habits to healthcare records 
 and weather observations, we are surrounded by a wealth of information. 
