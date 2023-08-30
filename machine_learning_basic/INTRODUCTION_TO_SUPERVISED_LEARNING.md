@@ -60,6 +60,37 @@ The goal of the learning algorithm in regression is to fit a line (or in more co
  In our housing price prediction example, the algorithm tries to find the line or curve that 
  most accurately represents the relationship between the square footage of the house and its price.
 
+\# TODO add images
 
-\# TODO add classification 
-\# TODO add images 
+## Breast Cancer Detection
+
+Classification is another type of supervised learning, 
+but instead of predicting a continuous value, we are sorting data into categories. 
+In our example, the categories are straightforward: either the presence or absence of breast cancer in a tissue sample.
+
+In classification, the output variable (or label) is a category such as 'Yes' or 'No', 'True' or 'False', 
+or 'Type A', 'Type B', and 'Type C'. In the case of breast cancer detection, we may have features like cell size, 
+cell shape, and other metrics obtained from medical images. The model then learns to predict if the sample is
+ malignant or benign based on these features.
+ 
+### Breast Cancer Detection with One Input
+Let's consider a simplified example where we are using just one feature—let's say, cell size—to classify 
+the tissue as malignant or benign. We'll plot this on a graph where the x-axis represents cell size 
+and the y-axis represents whether the tissue is malignant (1) or benign (0).
+
+### Breast Cancer Detection with Multiple Input
+
+
+## Comparing Regression and Classification
+
+By now, you might have noticed some fundamental differences between regression and classification:
+
+**Type of Output:** In regression, the output is continuous, like the price of a house. In classification, the output is categorical, like identifying whether a tissue sample is malignant or benign.
+
+**Decision Boundary:** In regression, there's no concept of a decision boundary. In classification, the decision boundary separates different classes.
+
+**Objective:** In regression, we aim to minimize the difference between the predicted and actual continuous values. In classification, we aim to place data points in the correct categories.
+
+**Examples:** Regression is often used for tasks like price prediction, weather forecasting, and stock market analysis. Classification is used in applications like spam filtering, disease diagnosis, and sentiment analysis.
+
+ 
