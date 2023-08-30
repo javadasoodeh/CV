@@ -48,10 +48,12 @@ As you can see, the predicted price for the same house can vary significantly de
 - The green arrow points to the price predicted by the Linear Model for a house with 1,500 sqft. The prediction is around $275,000.
 - The red arrow indicates the price predicted by the Quadratic Model for the same house, which is approximately $267,500.
 
+### Regression
+
 At this point, you may have observed that we employed two distinct models—the Linear Model 
 and the Quadratic Model—to forecast the house price based on its square footage. 
-This exercise of predicting a continuous output (house price, in this case) 
-from one or more input features (square footage here) is known as regression in machine learning.
+This exercise of **predicting a continuous output** (house price, in this case) 
+from one or more input features (square footage here) is known as **regression** in machine learning.
 
 The goal of the learning algorithm in regression is to fit a line (or in more complex scenarios, a curve)
  that best captures the relationship between the input features and the output label. 
