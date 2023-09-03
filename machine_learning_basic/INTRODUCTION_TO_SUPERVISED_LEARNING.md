@@ -90,6 +90,11 @@ and the y-axis represents whether the tissue is malignant (1) or benign (0).
 
 ### Breast Cancer Detection with Multiple Input
 
+Now, imagine that we have more than one feature to consider—say, cell size and cell shape. In this case, our decision boundary would not be a line but a plane or a curve in a multi-dimensional space.
+
+Let's visualize what this might look like:
+
+
 <p align="center">
 
 <img src="/machine_learning_basic/Breast-Cancer-Detection-with-Multiple-Input.jpg" alt="housing price - line" width="550">
