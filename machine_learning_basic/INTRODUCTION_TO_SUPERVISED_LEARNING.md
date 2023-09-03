@@ -76,7 +76,17 @@ cell shape, and other metrics obtained from medical images. The model then learn
 ### Breast Cancer Detection with One Input
 Let's consider a simplified example where we are using just one feature—let's say, cell size—to classify 
 the tissue as malignant or benign. We'll plot this on a graph where the x-axis represents cell size 
-and the y-axis represents whether the tissue is malignant (1) or benign (0).
+and the y-axis represents whether the tissue is malignant or benign.
+
+<p align="center">
+
+<img src="/machine_learning_basic/Breast-Cancer-Detection-with-One-Input.jpg" alt="housing price - line" width="550">
+
+</p> 
+
+- The triangles represent malignant tissue samples, while the circles represent benign samples.
+- The x-axis represents cell size, an important feature for our classification.
+- The red dashed line is the "Decision Boundary." In this simple example, it lies at 0.5 on the y-axis. Any data point above this line would be classified as malignant, and any point below would be considered benign.
 
 ### Breast Cancer Detection with Multiple Input
 
