@@ -109,7 +109,7 @@ Let's visualize what this might look like:
 
 **Diagnosis for the New Patient**
 
-According to our model, the predicted diagnosis for the new patient is 1, which indicates that the tissue is likely to be malignant.
+According to our model, _**the predicted diagnosis for the new patient is 1( based on the color bar), which indicates that the tissue is more likely to be malignant**_.
 
 The decision is based on the patient's position relative to the decision boundary in the feature space. As the point lies in the region classified as 'Malignant' by our model, the prediction is in line with that classification.
 
