@@ -76,7 +76,7 @@ cell shape, and other metrics obtained from medical images. The model then learn
 ### Breast Cancer Detection with One Input
 Let's consider a simplified example where we are using just one feature—let's say, cell size—to classify 
 the tissue as malignant or benign. We'll plot this on a graph where the x-axis represents cell size 
-and the y-axis represents whether the tissue is malignant or benign.
+and the y-axis represents whether the tissue is malignant (1) or benign (0).
 
 <p align="center">
 
