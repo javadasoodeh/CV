@@ -15,7 +15,7 @@ Here are some examples of supervised learning applications:
 | Email content	| Spam or not spam	|Spam filtering |
 | Customer demographic data, purchase history	| Will make a purchase in the next month or not	| Customer retention prediction |
 | Patient health records	| Presence or absence of disease	| Medical diagnosis|
-| House features (size, location, number of rooms, etc.)	| Price	| Real estate price prediction |
+| House features (size, location, number of rooms, etc.)	| Price	| Housing price prediction |
 
 
 ## Housing Price Prediction
@@ -62,7 +62,7 @@ The goal of the learning algorithm in regression is to fit a line (or in more co
 
 \# TODO add images
 
-## Breast Cancer Detection
+## What is a Classification Problem?
 
 Classification is another type of supervised learning, 
 but instead of predicting a continuous value, we are sorting data into categories. 
