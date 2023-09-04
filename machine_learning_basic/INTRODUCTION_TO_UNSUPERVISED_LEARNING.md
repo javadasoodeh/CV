@@ -21,21 +21,22 @@ specifically clustering, can come in handy.
  we aim to group tissue samples based on their features (cell size and shape). 
  Our hope would be that these natural groupings might correspond to benign and malignant samples.
 
-<p align="center">
+    <p align="center">
+    
+    <img src="/machine_learning_basic/Clustering-Breast-Cancer-Detection.jpg" alt="Clustring Breaset Cancer Detection" width="550">
+    
+    </p> 
 
-<img src="/machine_learning_basic/Clustering-Breast-Cancer-Detection.jpg" alt="Clustring Breaset Cancer Detection" width="550">
+   **Data Points:** Each point represents a tissue sample, with its position determined by the cell size and cell shape.
 
-</p> 
+   **Clusters:** We've used a clustering algorithm to group these samples into two clusters. These clusters are visually represented by the two circles in the graph, with the 'x' marking the centroid (or the center) of each cluster.
 
-**Data Points:** Each point represents a tissue sample, with its position determined by the cell size and cell shape.
-
-**Clusters:** We've used a clustering algorithm to group these samples into two clusters. These clusters are visually represented by the two circles in the graph, with the 'x' marking the centroid (or the center) of each cluster.
-
-**Labels:** In unsupervised learning, we don't have prior knowledge about what each cluster represents (i.e., benign or malignant). Instead, the algorithm tries to find natural groupings in the data. It's up to us (or medical experts) to interpret the meaning of these clusters based on further investigation or domain knowledge.
+   **Labels:** In unsupervised learning, we don't have prior knowledge about what each cluster represents (i.e., benign or malignant). Instead, the algorithm tries to find natural groupings in the data. It's up to us (or medical experts) to interpret the meaning of these clusters based on further investigation or domain knowledge.
 
 However, there's a critical distinction:
 
 **Supervised Learning:** We tell the algorithm which samples are benign and which are malignant, and it learns the pattern.
+
 **Unsupervised Learning (Clustering):** The algorithm tries to find groupings on its own. Our job is to then interpret these clusters. For instance, one cluster might largely represent benign samples, while another might represent malignant ones.
 
 # Applications of Clustering
