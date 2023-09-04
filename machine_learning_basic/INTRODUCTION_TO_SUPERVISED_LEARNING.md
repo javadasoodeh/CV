@@ -80,7 +80,7 @@ and the y-axis represents whether the tissue is malignant (1) or benign (0).
 
 <p align="center">
 
-<img src="/machine_learning_basic/Breast-Cancer-Detection-with-One-Input.jpg" alt="housing price - line" width="550">
+<img src="/machine_learning_basic/Breast-Cancer-Detection-with-One-Input.jpg" alt="Breast Cancer Detection with One Input" width="550">
 
 </p> 
 
@@ -97,7 +97,7 @@ Let's visualize what this might look like:
 
 <p align="center">
 
-<img src="/machine_learning_basic/Breast-Cancer-Detection-with-Multiple-Input.jpg" alt="housing price - line" width="550">
+<img src="/machine_learning_basic/Breast-Cancer-Detection-with-Multiple-Input.jpg" alt="Breast Cancer Detection with Multiple Input" width="550">
 
 </p> 
 
