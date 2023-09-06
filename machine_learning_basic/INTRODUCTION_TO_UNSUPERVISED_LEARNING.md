@@ -58,7 +58,7 @@ In each of these applications, the mechanism of clustering remains similar: **gr
 
 While clustering is a widely recognized form of unsupervised learning, it's just the tip of the iceberg. 
 Unsupervised learning encompasses a variety of techniques designed to uncover hidden patterns, 
-reduce dimensionality, detect anomalies, and more. Let's delve into some of these unsupervised learning techniques 
+reduce dimensionality, detect anomalies, and more. Let's delve into two more of these unsupervised learning techniques 
 and understand their applications.
 
 **1. Anomaly Detection**
