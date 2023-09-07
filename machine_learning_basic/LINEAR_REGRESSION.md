@@ -35,7 +35,7 @@ that best captures the underlying trend.
 
 ## Training Set and Its Notation
 
-In machine learning, when we refer to a **training set**, we're talking about the dataset we use to train our model. 
+In machine learning, when we refer to a **training set/data**, we're talking about the dataset we use to train our model. 
 This set includes both the input data (in our case, square footage) and the correct answers (in our case, housing prices). 
 The model uses this data to learn the relationships between inputs and outputs.
 
@@ -67,7 +67,7 @@ At the highest level, the process can be visualized as follows:
 
 #### Diagram
 
-- _(**Training Data** feeds into --> **Learning Algorithm** which produces --> **Function $f$**)_ 
+- _( **Training Data** feeds into --> **Learning Algorithm** which produces --> **Function $f$** )_ 
 
 For our housing price prediction example:
 
