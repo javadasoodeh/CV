@@ -63,11 +63,11 @@ At the highest level, the process can be visualized as follows:
 
 1. **Training Data:** We begin with a set of training data. Each piece of data consists of an input paired with the correct output.
 2. **Learning Algorithm:** This data is fed into a learning algorithm which processes the data.
-3. **Output Function:** The algorithm then outputs a function (often denoted as $**f**$).
+3. **Output Function:** The algorithm then outputs a function (often denoted as **$f$**).
 
 #### Diagram
 
-- **Training Data** feeds into --> **Learning Algorithm** which produces --> **Function $f$** 
+- _(**Training Data** feeds into --> **Learning Algorithm** which produces --> **Function $f$**)_ 
 
 For our housing price prediction example:
 
@@ -96,7 +96,7 @@ Let's visualize this on a graph.
 
 <p align="center">
 
-<img src="/machine_learning_basic/Housing-Price-Prediction-Linear.jpeg" alt="housing price prediction linear" width="550">
+<img src="/machine_learning_basic/Housing-Price-Prediction-Linear.jpeg" alt="housing price prediction linear" width="650">
 
 </p> 
 
