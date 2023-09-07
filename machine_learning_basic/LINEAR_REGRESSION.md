@@ -47,8 +47,8 @@ The model uses this data to learn the relationships between inputs and outputs.
 
 For our dataset:
 - $m = 10$ (since we have 10 houses in our dataset).
-- $x^{(1)} = 650$ and $y^{(1)} = $772,000$ represent the square footage and housing price of the first house, respectively.
-- $x^{(2)} = 785$ and $y^{(2)} = $998,000$ represent the square footage and housing price of the second house, and so on.
+- $x^{(1)} = 650$ and $y^{(1)} = \$772,000$ represent the square footage and housing price of the first house, respectively.
+- $x^{(2)} = 785$ and $y^{(2)} = \$998,000$ represent the square footage and housing price of the second house, and so on.
 
 Using this notation provides a standardized way to reference the elements of our training set, 
 making it easier to describe algorithms and mathematical operations on the data.
@@ -67,7 +67,7 @@ At the highest level, the process can be visualized as follows:
 
 #### Diagram
 
-- _**Training Data** feeds into --> **Learning Algorithm** which produces --> ** Function $f$ **_ 
+- **Training Data** feeds into --> **Learning Algorithm** which produces --> **Function $f$** 
 
 For our housing price prediction example:
 
@@ -81,7 +81,7 @@ Now, when we feed a new sample (say, a house with a square footage of 1250) into
 
 For our housing scenario, since we're assuming **$f$** to be a straight line (linear relationship), the function can be represented as:
 
-$$ f(x) = w x + b$$
+**$$ f(x) = w x + b$$**
 
 Where:
 
@@ -106,7 +106,7 @@ In the visualization:
   
 - **Red Line**: This is the function **$f$** that our linear regression model produced. Given any square footage **$x$**, the function **$f$** will estimate the housing price.
 
-This function $f$ is a straight line because we're using a linear regression model with one variable (square footage). The mathematical representation of this line is $f(x)$ = w x + b$. Here, $b$ is where the line intersects the y-axis (y-intercept), and $w$ determines the slope of the line.
+This function $f$ is a straight line because we're using a linear regression model with one variable (square footage). The mathematical representation of this line is $f(x) = w x + b$. Here, $b$ is where the line intersects the y-axis (y-intercept), and $w$ determines the slope of the line.
 
 We use a linear function in this scenario as a foundation. It's simple, interpretable, and can serve as a building block to more complex, non-linear functions. The model we've discussed, where we're predicting a continuous output based on one variable using a straight line, is referred to as **linear regression with one variable**.
 
