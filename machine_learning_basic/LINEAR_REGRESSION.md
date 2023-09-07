@@ -47,8 +47,8 @@ The model uses this data to learn the relationships between inputs and outputs.
 
 For our dataset:
 - $m = 10$ (since we have 10 houses in our dataset).
-- $x^{(1)} = 650$ and $y^{(1)} = \$772,000$ represent the square footage and housing price of the first house, respectively.
-- $x^{(2)} = 785$ and $y^{(2)} = \$998,000$ represent the square footage and housing price of the second house, and so on.
+- $x^{(1)} = 650$ and $y^{(1)}$ $=$ \$$772,000$ represent the square footage and housing price of the first house, respectively.
+- $x^{(2)} = 785$ and $y^{(2)}$ $=$ \$$998,000$ represent the square footage and housing price of the second house, and so on.
 
 Using this notation provides a standardized way to reference the elements of our training set, 
 making it easier to describe algorithms and mathematical operations on the data.
