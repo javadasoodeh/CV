@@ -113,6 +113,6 @@ We use a linear function in this scenario as a foundation. It's simple, interpre
 In more advanced scenarios, we might incorporate multiple variables or use non-linear functions to capture more intricate patterns in the data. But understanding this foundational concept is crucial before diving into those complexities.
 
 
-\# add image 
+
 
 
