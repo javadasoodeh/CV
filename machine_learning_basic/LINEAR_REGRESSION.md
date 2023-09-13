@@ -116,7 +116,7 @@ In more advanced scenarios, we might incorporate multiple variables or use non-l
 ## Interactive Visualization of a Linear Regression Model using Python Code
 Using the Python programming language, along with some powerful libraries, 
 we'll show you an interactive demonstration of the linear regression model. 
-This demonstration will allow you to manually adjust the parameters of the model and observe its behavior in real-time. 
+This demonstration will allow you to adjust the parameters of the model and observe its behavior in real-time. 
 Also, allow users to experiment and understand the role of `w` and `b` in the linear regression model.
 
 ### 1. Importing necessary libraries:
@@ -337,3 +337,11 @@ plt.show()
 **7.2. `plt.show`**:
 - **Function Overview**: This function in `matplotlib.pyplot` displays the figure. It's the culmination of all the plotting commands and displays the final visualization.
 - **Usage in Code**: It renders the entire plot, complete with the data points, linear model, sliders, and labels.
+
+### output 
+
+After you run <a href="/machine_learning_basic/linear_regression_1.py" > the code </a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
+
+<p align="center">
+<img src="/machine_learning_basic/Linear-Regression-1.jpg" alt="housing price - line" width="550">
+</p> 
