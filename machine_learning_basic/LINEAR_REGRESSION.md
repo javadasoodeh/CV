@@ -340,7 +340,7 @@ plt.show()
 
 ### output 
 
-After you run <a href="/machine_learning_basic/linear_regression_1.py" > the code </a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
+After you run <a href="linear_regression_1.py" > the code </a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
 
 <p align="center">
 <img src="/machine_learning_basic/Linear-Regression-1.jpg" alt="housing price - line" width="550">
