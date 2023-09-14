@@ -369,7 +369,7 @@ The goal of the cost function is to find values for $w$ and $b$ such that the su
 
 For our linear regression model, a commonly used cost function is the Mean Squared Error (MSE). It is defined as:
 
-$J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$
+$$J(w, b) = \frac{1}{2m} \sum_{i=1}^m (\hat{y}^{(i)} - y^{(i)})^2$$
 
 Where:
 - $m$ is the number of training examples.
