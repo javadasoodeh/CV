@@ -43,8 +43,8 @@ function_text = plt.text(0.15, 0.02, f'f(x) = {initial_w}x + {initial_b}', color
 ax_slider_w = plt.axes([0.15, 0.05, 0.65, 0.03], facecolor='lightgoldenrodyellow')
 ax_slider_b = plt.axes([0.15, 0.1, 0.65, 0.03], facecolor='lightgoldenrodyellow')
 
-slider_w = Slider(ax_slider_w, 'W (Slope)', 500, 1500, valinit=initial_w, valstep=10)
-slider_b = Slider(ax_slider_b, 'B (Intercept)', -100000, 200000, valinit=initial_b, valstep=500)
+slider_w = Slider(ax_slider_w, 'w (Slope)', 500, 1500, valinit=initial_w, valstep=10)
+slider_b = Slider(ax_slider_b, 'b (Intercept)', -100000, 200000, valinit=initial_b, valstep=500)
 
 
 # Update function to redraw the model when w or b changes

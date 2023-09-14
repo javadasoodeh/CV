@@ -340,8 +340,53 @@ plt.show()
 
 ### output 
 
-After you run <a href="linear_regression_1.py" > the code </a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
+After you run <a href="linear_regression_1.py" >the code</a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
 
 <p align="center">
 <img src="/machine_learning_basic/Linear-Regression-1.jpg" alt="housing price - line" width="550">
 </p> 
+
+
+### Cost Function: An Overview
+
+When training a model, we aim to find the best possible parameters (in our case, $w$ and $b$) such that the predictions made by the model are as close as possible to the actual values. But how do we quantify "as close as possible"? This is where the cost function comes into play.
+
+The cost function, often denoted as $J$, quantifies the difference between the predicted values and the actual values. In essence, it measures the "cost" or "error" of using a particular set of parameters.
+
+### The Goal
+
+The primary objective of a learning algorithm is to minimize the cost function. In mathematical terms, our goal is:
+
+$\text{Minimize } J(w, b)$
+
+### Visualizing on the Linear Regression Graph
+
+When we plot our training data and the linear regression line, the difference between the actual price (target $y$) and the predicted price (estimated $\hat{y}$) for each data point is the vertical distance between the point and the line.
+
+The goal of the cost function is to find values for $w$ and $b$ such that the sum of these vertical distances (squared) across all data points is minimized. Essentially, we want our line (described by $w$ and $b$) to be as close as possible to all data points.
+
+### Cost Function for Linear Regression
+
+For our linear regression model, a commonly used cost function is the Mean Squared Error (MSE). It is defined as:
+
+$J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$
+
+Where:
+- $m$ is the number of training examples.
+- $\hat{y}^{(i)}$ is the predicted value for the $i^{th}$ training example.
+- $y^{(i)}$ is the actual value for the $i^{th}$ training example.
+
+Breaking it down:
+1. $\hat{y}^{(i)} - y^{(i)}$: This represents the difference between the predicted and actual values for the $i^{th}$ training example.
+2. Why square the difference? Squaring ensures that all differences are positive and emphasizes larger differences. For instance, an error of 10 is not just twice as bad as an error of 5; it's four times worse.
+3. $\frac{1}{2m}$: Averaging the squared differences gives us the mean squared error. The factor of $\frac{1}{2}$ is often included for mathematical convenience when deriving gradient descent equations (it cancels out the square's power when differentiated).
+
+In essence, the cost function tells us how "off" our predictions are when using a specific $w$ and $b$. By minimizing this function, we adjust $w$ and $b$ to get the best possible linear regression line for our data.
+
+Now, let's visualize the training data, the linear regression line, and the differences (errors) between the predictions and actual values on a graph.
+
+<p align="center">
+<img src="/machine_learning_basic/Cost-Function-1.jpg" alt="housing price - cost function" width="550">
+</p> 
+
+
