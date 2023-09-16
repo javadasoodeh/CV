@@ -60,14 +60,14 @@ Computer Vision, Deep Learning, ML
 - Erosion, Dilation, Opening, and Closing
 - Advanced Morphological Techniques: Top Hat, Black Hat, Morphological Gradient
 
-### Gradients, Edges, and Contours
+### Techniques for Feature Detection
 
 - Image Derivatives
 - Detailed Analysis of Image Gradients and Orientations
 - Edge Detection Techniques: Sobel, Laplacian, Canny
 - Contour Detection and Analysis
 
-### Image Pyramids, Multi-Scale Analysis and Advanced Image Representations
+### Advanced Image Analysis and Representations
 
 - Image Pyramids and Scale-Space Representations
 - Histogram of Oriented Gradients (HOG) and its Applications
