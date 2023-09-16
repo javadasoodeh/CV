@@ -1,5 +1,5 @@
 # CV
-Computer Vision, Deep Learning, ML
+Computer Vision, Machine Learning, and Deep Learning
 
 
 ## Foundations of Image Processing with OpenCV in Python
@@ -10,10 +10,10 @@ Computer Vision, Deep Learning, ML
 - <a href="/opencv_basic/Introduction/INTRODUCTION.md#real-world-applications-of-image-processing"> Real-world Applications of Image Processing </a>
 - <a href="/opencv_basic/Introduction/INTRODUCTION.md#overview-of-python-and-opencv"> Overview of Python and OpenCV </a>
 
-### <a href="/opencv_basic/Introduction/SETTING_UP_THE ENVIRONMENT.md"> Setting Up the Environment </a>
+### <a href="/opencv_basic/Introduction/SETTING_UP_THE_ENVIRONMENT.md"> Setting Up the Environment </a>
 
-- <a href="/opencv_basic/Introduction/SETTING_UP_THE ENVIRONMENT.md#python-foundations-for-image-processing"> Python Foundations for Image Processing </a>
-- <a href="/opencv_basic/Introduction/SETTING_UP_THE ENVIRONMENT.md#opencv-installation-and-configuration"> OpenCV Installation and Configuration </a>
+- <a href="/opencv_basic/Introduction/SETTING_UP_THE_ENVIRONMENT.md#python-foundations-for-image-processing"> Python Foundations for Image Processing </a>
+- <a href="/opencv_basic/Introduction/SETTING_UP_THE_ENVIRONMENT.md#opencv-installation-and-configuration"> OpenCV Installation and Configuration </a>
 
 ### Image Basics:
 
