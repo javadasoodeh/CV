@@ -7,8 +7,8 @@ Computer Vision, Deep Learning, ML
 ### <a href="/opencv_basic/Introduction/INTRODUCTION.md"> Introduction </a>
 
 - <a href="/opencv_basic/Introduction/INTRODUCTION.md#the-evolution-of-image-processing"> The Evolution of Image Processing </a>
-- <a href="/opencv_basic/Introduction/Introduction.md#real-world-applications-of-image-processing"> Real-world Applications of Image Processing </a>
-- <a href="/opencv_basic/Introduction/Introduction.md#overview-of-python-and-opencv"> Overview of Python and OpenCV </a>
+- <a href="/opencv_basic/Introduction/INTRODUCTION.md#real-world-applications-of-image-processing"> Real-world Applications of Image Processing </a>
+- <a href="/opencv_basic/Introduction/INTRODUCTION.md#overview-of-python-and-opencv"> Overview of Python and OpenCV </a>
 
 ### Setting Up the Environment
 
