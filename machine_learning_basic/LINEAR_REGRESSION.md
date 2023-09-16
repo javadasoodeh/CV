@@ -347,7 +347,7 @@ After you run <a href="linear_regression_1.py" >the code</a>, you are able to to
 </p> 
 
 
-### Cost Function: An Overview
+## Cost Function: An Overview
 
 When training a model, we aim to find the best possible parameters (in our case, $w$ and $b$) such that the predictions made by the model are as close as possible to the actual values. But how do we quantify "as close as possible"? This is where the cost function comes into play.
 
