@@ -119,3 +119,5 @@ Computer Vision, Machine Learning, and Deep Learning
 - Performance Measurement, Profiling, and Optimization in OpenCV
 - Leveraging Multi-threading and Parallelism in Image Processing
 - Tips, Tricks, and Techniques for Efficient Image Processing
+
+## Machine Learning
