@@ -1,6 +1,6 @@
-# A Gentle Introduction to Machine Learning
+## Introduction to Machine Learning
 
-## Defining Machine Learning
+### Defining Machine Learning
 Machine learning is a subfield of artificial intelligence that focuses on the development of 
 computer algorithms that improve automatically through experience and by using data. 
 In other words, machine learning is all about enabling computers to learn from data, 
@@ -8,9 +8,9 @@ make decisions, and predict outcomes without being explicitly programmed to do s
 
 <p align="center">
 
-<img src="/machine_learning_basic/ML-AI.jpg" alt="ML and AI" width="350"> 
+<img src="/machine_learning_basic/Introduction_To_Machine_Learning/img/ML-AI.jpg" alt="ML and AI" width="350"> 
 
-<img src="/machine_learning_basic/ML2.jpg" alt="Machine learning" width="450">
+<img src="/machine_learning_basic/Introduction_To_Machine_Learning/img/ML2.jpg" alt="Machine learning" width="450">
 
 </p>
 
@@ -20,17 +20,17 @@ predict tomorrow's weather, or it could learn from thousands of dog and cat imag
 to tell the difference between a dog and a cat.
 
 <p align="center">
-<img src="/machine_learning_basic/dog-cat.jpg" alt="dog and cat prediction" width="450">
+<img src="/machine_learning_basic/Introduction_To_Machine_Learning/img/dog-cat.jpg" alt="dog and cat prediction" width="450">
 </p>
 
-## What is the Goal of Machine Learning?
+### What is the Goal of Machine Learning?
 The ultimate goal of machine learning is to create models that can generalize well from the data 
 they've seen to new, unseen data. This makes it a crucial stepping stone towards achieving Artificial General Intelligence (AGI), 
 a form of intelligence where machines can perform any intellectual task that a human can do. 
 While AGI is still more of a concept than a reality, machine learning helps us inch closer to that vision 
 by solving specific problems intelligently.
 
-## Why We Need Machine Learning
+### Why We Need Machine Learning
 In the modern world, we are generating data at an unprecedented rate. 
 From social media posts and online shopping habits to healthcare records 
 and weather observations, we are surrounded by a wealth of information. 
@@ -45,7 +45,7 @@ Machine learning allows us to turn raw data into actionable insights,
 helping businesses optimize their operations, doctors diagnose diseases more accurately,
  and individuals get personalized recommendations, among many other applications.
 
-## Types of Machine Learning Algorithms
+### Types of Machine Learning Algorithms
 Machine learning algorithms can be broadly classified into three types:
 1.	**Supervised Learning:** In supervised learning, the algorithm learns from labeled data. 
 We provide the model with input-output pairs, and the model learns to map the input to 

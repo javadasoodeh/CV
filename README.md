@@ -121,3 +121,10 @@ Computer Vision, Machine Learning, and Deep Learning
 - Tips, Tricks, and Techniques for Efficient Image Processing
 
 ## Machine Learning
+
+### <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md"> Introduction to Machine Learning </a>
+
+- <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#defining-machine-learning"> Defining Machine Learning </a>
+- <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#what-is-the-goal-of-machine-learning?"> What is the Goal of Machine Learning? </a>
+- <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#why-we-need-machine-learning"> Why We Need Machine Learning </a>
+- <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#types-of-machine-learning-algorithms"> Types of Machine Learning Algorithms </a>
