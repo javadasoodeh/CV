@@ -128,3 +128,12 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#what-is-the-goal-of-machine-learning?"> What is the Goal of Machine Learning? </a>
 - <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#why-we-need-machine-learning"> Why We Need Machine Learning </a>
 - <a href="/machine_learning_basic/Introduction_To_Machine_Learning/INTRODUCTION_TO_MACHINE_LEARNING.md#types-of-machine-learning-algorithms"> Types of Machine Learning Algorithms </a>
+
+### <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md"> Introduction to Supervised Learning </a>
+
+- <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#housing-price-prediction"> Housing Price Prediction </a>
+    - <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#regression"> Regression </a>
+- <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#what-is-a-classification-problem"> What is a Classification Problem? </a>
+    - <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#breast-cancer-detection-with-one-input"> Breast Cancer Detection with One Input </a>
+    - <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#breast-cancer-detection-with-multiple-input"> Breast Cancer Detection with Multiple Input </a>
+- <a href="/machine_learning_basic/Introduction_To_Supervised_Learning/INTRODUCTION_TO_SUPERVISED_LEARNING.md#comparing-regression-and-classification"> Comparing Regression and Classification </a>

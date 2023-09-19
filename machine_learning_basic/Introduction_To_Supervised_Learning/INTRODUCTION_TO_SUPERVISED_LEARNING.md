@@ -1,7 +1,7 @@
-# Section 2.1: An Introduction to Supervised Learning
+## Introduction to Supervised Learning
 
 In supervised learning, we train a model on a labeled dataset, which means each training example is paired with an output label. 
-The goal of supervised learning is to enable the model to learn the mapping between inputs and outputs, 
+The goal of supervised learning is to **enable the model to learn the mapping between inputs and outputs**, 
 so it can make accurate predictions on new, unseen data. It is called supervised learning because 
 the process of an algorithm learning from the training dataset can be thought of as a teacher 
 supervising the learning process. We know the correct answers, and the algorithm iteratively 
@@ -18,7 +18,7 @@ Here are some examples of supervised learning applications:
 | House features (size, location, number of rooms, etc.)	| Price	| Housing price prediction |
 
 
-## Housing Price Prediction
+### Housing Price Prediction
 
 Let's delve into the example of housing price prediction. 
 Imagine you have data on house prices in a certain city, along with features like the number of bedrooms, 
@@ -31,7 +31,7 @@ the price based on that. We can plot the data on a graph where the x-axis repres
 
 <p align="center">
 
-<img src="/machine_learning_basic/housing-price.jpg" alt="housing price - line" width="550">
+<img src="/machine_learning_basic/Introduction_To_Supervised_Learning/img/housing-price.jpg" alt="housing price - line" width="550">
 
 </p> 
 
@@ -48,7 +48,7 @@ As you can see, the predicted price for the same house can vary significantly de
 - The green arrow points to the price predicted by the Linear Model for a house with 1,500 sqft. The prediction is around $275,000.
 - The red arrow indicates the price predicted by the Quadratic Model for the same house, which is approximately $267,500.
 
-### Regression
+#### Regression
 
 At this point, you may have observed that we employed two distinct models—the Linear Model 
 and the Quadratic Model—to forecast the house price based on its square footage. 
@@ -62,7 +62,7 @@ The goal of the learning algorithm in regression is to fit a line (or in more co
 
 \# TODO add images
 
-## What is a Classification Problem?
+### What is a Classification Problem?
 
 Classification is another type of supervised learning, 
 but instead of predicting a continuous value, we are sorting data into categories. 
@@ -73,14 +73,14 @@ or 'Type A', 'Type B', and 'Type C'. In the case of breast cancer detection, we 
 cell shape, and other metrics obtained from medical images. The model then learns to predict if the sample is
  malignant or benign based on these features.
  
-### Breast Cancer Detection with One Input
+#### Breast Cancer Detection with One Input
 Let's consider a simplified example where we are using just one feature—let's say, cell size—to classify 
 the tissue as malignant or benign. We'll plot this on a graph where the x-axis represents cell size 
 and the y-axis represents whether the tissue is malignant (1) or benign (0).
 
 <p align="center">
 
-<img src="/machine_learning_basic/Breast-Cancer-Detection-with-One-Input.jpg" alt="Breast Cancer Detection with One Input" width="550">
+<img src="/machine_learning_basic/Introduction_To_Supervised_Learning/img/Breast-Cancer-Detection-with-One-Input.jpg" alt="Breast Cancer Detection with One Input" width="550">
 
 </p> 
 
@@ -88,7 +88,7 @@ and the y-axis represents whether the tissue is malignant (1) or benign (0).
 - The x-axis represents cell size, an important feature for our classification.
 - The red dashed line is the "Decision Boundary." In this simple example, it lies at 0.5 on the y-axis. Any data point above this line would be classified as malignant, and any point below would be considered benign.
 
-### Breast Cancer Detection with Multiple Input
+#### Breast Cancer Detection with Multiple Input
 
 Now, imagine that we have more than one feature to consider—say, cell size and cell shape. In this case, our decision boundary would not be a line but a plane or a curve in a multi-dimensional space.
 
@@ -97,7 +97,7 @@ Let's visualize what this might look like:
 
 <p align="center">
 
-<img src="/machine_learning_basic/Breast-Cancer-Detection-with-Multiple-Input.jpg" alt="Breast Cancer Detection with Multiple Input" width="550">
+<img src="/machine_learning_basic/Introduction_To_Supervised_Learning/img/Breast-Cancer-Detection-with-Multiple-Input.jpg" alt="Breast Cancer Detection with Multiple Input" width="550">
 
 </p> 
 
@@ -115,7 +115,7 @@ The decision is based on the patient's position relative to the decision boundar
 
 This illustrative example encapsulates how machine learning can assist healthcare professionals in making quicker and more accurate decisions. However, it's crucial to note that in a real-world clinical setting, multiple tests and expert evaluations are generally used in conjunction to arrive at a final diagnosis.
 
-## Comparing Regression and Classification
+### Comparing Regression and Classification
 
 By now, you might have noticed some fundamental differences between regression and classification:
 
