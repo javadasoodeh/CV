@@ -1,13 +1,24 @@
-# Introduction to Unsupervised Learning
-Machine learning isn't always about making predictions with labels in hand. Sometimes, we have data without any labels, and we need to find hidden structures within it. This is where unsupervised learning comes into play.
+## Introduction to Unsupervised Learning
 
-# What is Unsupervised Learning?
-Unsupervised learning is a type of machine learning where algorithms learn from data without explicit labels, aiming to identify patterns, groupings, or structures. Unlike supervised learning, where we train algorithms using labeled data, in unsupervised learning, we only have input data (features) and no corresponding output variables.
+Machine learning isn't always about making predictions with labels in hand. Sometimes, 
+we have data without any labels, and we need to find hidden structures within it. 
+This is where unsupervised learning comes into play.
 
-# Why do we say "Unsupervised"?
-The term "unsupervised" refers to the fact that these algorithms are not guided or supervised by any prior knowledge about the outcome. Instead, they discover the inherent structures in the data on their own.
+### What is Unsupervised Learning?
 
-# Breast Cancer Detection: A New Perspective
+Unsupervised learning is a type of machine learning where algorithms learn from data without explicit labels,
+ aiming to identify patterns, groupings, or structures. Unlike supervised learning, 
+ where we train algorithms using labeled data, in unsupervised learning, 
+ we only have input data (features) and no corresponding output variables.
+
+### Why do we say "Unsupervised"?
+
+The term "unsupervised" refers to the fact that these algorithms are not guided or 
+supervised by any prior knowledge about the outcome. Instead, they discover the inherent structures 
+in the data on their own.
+
+### Breast Cancer Detection: A New Perspective
+
 Let’s take our previous breast cancer detection example to build intuition. In our supervised learning scenario, 
 we used labeled data (cell size, cell shape) to predict whether a tissue sample was malignant or benign.
 
@@ -39,7 +50,8 @@ However, there's a critical distinction:
 
 **Unsupervised Learning (Clustering):** The algorithm tries to find groupings on its own. Our job is to then interpret these clusters. For instance, one cluster might largely represent benign samples, while another might represent malignant ones.
 
-# Applications of Clustering
+### Applications of Clustering
+
 Clustering has a wide array of applications across various domains:
 
 **Market Segmentation:** Businesses use clustering to segment their customers into different groups based on purchasing behavior, demographics, etc. This helps tailor marketing strategies for each group. In clustering terms, each customer's purchasing history might be a feature, and the goal is to find groups of customers with similar purchasing behaviors.
@@ -54,7 +66,7 @@ Clustering has a wide array of applications across various domains:
 
 In each of these applications, the mechanism of clustering remains similar: **group data points based on their features**. However, the nature of the features and the interpretation of the clusters vary based on the domain and the specific problem.
 
-# Beyond Clustering: Exploring Unsupervised Learning
+### Beyond Clustering: Exploring Unsupervised Learning
 
 While clustering is a widely recognized form of unsupervised learning, it's just the tip of the iceberg. 
 Unsupervised learning encompasses a variety of techniques designed to uncover hidden patterns, 
