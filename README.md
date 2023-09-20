@@ -146,3 +146,16 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="/machine_learning_basic/Introduction_To_Unsupervised_Learning/INTRODUCTION_TO_UNSUPERVISED_LEARNING.md#applications-of-clustering"> Applications of Clustering </a>
 - <a href="/machine_learning_basic/Introduction_To_Unsupervised_Learning/INTRODUCTION_TO_UNSUPERVISED_LEARNING.md#beyond-clustering-exploring-unsupervised-learning"> Beyond Clustering: Exploring Unsupervised Learning </a>
 
+### <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md"> Supervised Learning and Linear Regression </a>
+
+- <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#training-set-and-its-notation"> Training Set and Its Notation </a>
+- <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#supervised-learning-algorithms"> Supervised Learning Algorithms </a>
+    - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#how-supervised-learning-algorithms-work"> How Supervised Learning Algorithms Work </a>
+    - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#diagram"> Diagram </a>
+- <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#mathematical-representation-of-a-linear-function"> Mathematical Representation of a Linear Function </a>
+- <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#interactive-visualization-of-a-linear-regression-model-using-python-code"> Interactive Visualization of a Linear Regression Model using Python Code </a>
+- <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#cost-function-an-overview"> Cost Function: An Overview </a>
+    - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#the-goal"> The Goal </a>
+    - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#visualizing-on-the-linear-regression-graph"> Visualizing on the Linear Regression Graph </a>
+        - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#cost-function-for-linear-regression"> Cost Function for Linear Regression </a>
+

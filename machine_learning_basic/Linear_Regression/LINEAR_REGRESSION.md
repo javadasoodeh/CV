@@ -1,4 +1,5 @@
-# Supervised Learning and Linear Regression
+## Supervised Learning and Linear Regression
+
 In this section, we are going to explore the overall process of supervised learning and delve deeper into 
 one specific learning algorithm: linear regression. To build your intuition about it, let's revisit 
 the housing price prediction example we discussed earlier.
@@ -33,7 +34,7 @@ that best captures the underlying trend.
 | 2,100          | $2,120,000    |
 | 2,300          | $2,305,000    |
 
-## Training Set and Its Notation
+### Training Set and Its Notation
 
 In machine learning, when we refer to a **training set/data**, we're talking about the dataset we use to train our model. 
 This set includes both the input data (in our case, square footage) and the correct answers (in our case, housing prices). 
@@ -57,7 +58,7 @@ making it easier to describe algorithms and mathematical operations on the data.
 
 When we talk about supervised learning, the fundamental idea is that we have an algorithm that learns from labeled training data, and makes predictions based on that data. This learning process involves finding a function that maps inputs to desired outputs. Let's understand this process step by step.
 
-### How Supervised Learning Algorithms Work
+#### How Supervised Learning Algorithms Work
 
 At the highest level, the process can be visualized as follows:
 
@@ -77,7 +78,7 @@ For our housing price prediction example:
 
 Now, when we feed a new sample (say, a house with a square footage of 1250) into our function **$f$**, it provides an estimated price based on its learning from the training data.
 
-## Mathematical Representation
+### Mathematical Representation of a Linear Function
 
 For our housing scenario, since we're assuming **$f$** to be a straight line (linear relationship), the function can be represented as:
 
@@ -113,13 +114,13 @@ We use a linear function in this scenario as a foundation. It's simple, interpre
 In more advanced scenarios, we might incorporate multiple variables or use non-linear functions to capture more intricate patterns in the data. But understanding this foundational concept is crucial before diving into those complexities.
 
 
-## Interactive Visualization of a Linear Regression Model using Python Code
+### Interactive Visualization of a Linear Regression Model using Python Code
 Using the Python programming language, along with some powerful libraries, 
 we'll show you an interactive demonstration of the linear regression model. 
 This demonstration will allow you to adjust the parameters of the model and observe its behavior in real-time. 
 Also, allow users to experiment and understand the role of `w` and `b` in the linear regression model.
 
-### 1. Importing necessary libraries:
+#### 1. Importing necessary libraries:
 
 ```python
 
@@ -141,7 +142,7 @@ from matplotlib.widgets import Slider
 - **Library Overview**: The `matplotlib.widgets` module provides a set of classes for adding interactive elements (like sliders, buttons) to the plots.
 - **Usage in Code**: We use the `Slider` class to create interactive sliders on the plot, allowing users to adjust the slope and y-intercept of the linear model in real-time.
 
-### 2. Dataset:
+#### 2. Dataset:
 ```python
 
 # Given data
@@ -157,7 +158,7 @@ housing_price = np.array([772000, 998000, 1208500, 1412000, 1534500, 1650250, 17
   - It has several other optional parameters, but we're using the default settings in this code.
 - **Usage in Code**: We're using `np.array` to create two arrays: `square_footage` (containing the area of the houses in square feet) and `housing_price` (containing the corresponding prices of these houses).
 
-### 3. **Prediction Function**:
+#### 3. **Prediction Function**:
 
 ```python
 
@@ -186,7 +187,7 @@ def predict_price(x, w, b):
 - **Overview**: The loop iterates over each value in the `x` array (square footage values). For each value, it computes the predicted price using the linear equation \(f(x) = wx + b\).
 - **Usage in Code**: This loop fills in the `predicted_prices` array with values computed by our linear model.
 
-### 4. Setting up the Visualization:
+#### 4. Setting up the Visualization:
 The subsequent lines of code prepare the interactive plot.
 ```python
 
@@ -261,7 +262,7 @@ function_text = plt.text(0.15, 0.02, f'f(x) = {initial_w}x + {initial_b}', color
 - **Usage in Code**: It displays the equation of the linear model above the sliders, providing a real-time view of the equation as sliders are adjusted.
 
 
-### 5. **Interactive Sliders**:
+#### 5. **Interactive Sliders**:
 
 ```python
 
@@ -292,7 +293,7 @@ slider_b = Slider(ax_slider_b, 'B (Intercept)', -100000, 200000, valinit=initial
 - **Usage in Code**: Two sliders are created (`slider_w` for the slope $w$ and `slider_b` for the y-intercept $b$). Users can adjust these sliders to interactively modify the linear model.
 
 
-### 6. **Update Function and Interactivity**:
+#### 6. **Update Function and Interactivity**:
 
 ```python
 
@@ -321,7 +322,7 @@ slider_b.on_changed(update)
 - **Overview**: This method from the `Slider` class attaches a function to the slider. When the slider value changes, the attached function gets triggered.
 - **Usage in Code**: The `update` function is attached to both sliders. So, whenever a user adjusts either of the sliders, the `update` function is executed, and the plot updates accordingly.
 
-### 7. **Displaying the Visualization**:
+#### 7. **Displaying the Visualization**:
 
 ```python
 
@@ -338,7 +339,7 @@ plt.show()
 - **Function Overview**: This function in `matplotlib.pyplot` displays the figure. It's the culmination of all the plotting commands and displays the final visualization.
 - **Usage in Code**: It renders the entire plot, complete with the data points, linear model, sliders, and labels.
 
-### output 
+#### output 
 
 After you run <a href="linear_regression_1.py" >the code</a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
 
@@ -347,25 +348,25 @@ After you run <a href="linear_regression_1.py" >the code</a>, you are able to to
 </p> 
 
 
-## Cost Function: An Overview
+### Cost Function: An Overview
 
 When training a model, we aim to find the best possible parameters (in our case, $w$ and $b$) such that the predictions made by the model are as close as possible to the actual values. But how do we quantify "as close as possible"? This is where the cost function comes into play.
 
 The cost function, often denoted as $J$, quantifies the difference between the predicted values and the actual values. In essence, it measures the "cost" or "error" of using a particular set of parameters.
 
-### The Goal
+#### The Goal
 
 The primary objective of a learning algorithm is to minimize the cost function. In mathematical terms, our goal is:
 
 $\text{Minimize } J(w, b)$
 
-### Visualizing on the Linear Regression Graph
+#### Visualizing on the Linear Regression Graph
 
 When we plot our training data and the linear regression line, the difference between the actual price (target $y$) and the predicted price (estimated $\hat{y}$) for each data point is the vertical distance between the point and the line.
 
 The goal of the cost function is to find values for $w$ and $b$ such that the sum of these vertical distances (squared) across all data points is minimized. Essentially, we want our line (described by $w$ and $b$) to be as close as possible to all data points.
 
-### Cost Function for Linear Regression
+##### Cost Function for Linear Regression
 
 For our linear regression model, a commonly used cost function is the Mean Squared Error (MSE). It is defined as:
 

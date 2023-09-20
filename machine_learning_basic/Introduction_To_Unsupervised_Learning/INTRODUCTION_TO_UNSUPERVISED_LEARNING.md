@@ -34,7 +34,7 @@ specifically clustering, can come in handy.
 
     <p align="center">
     
-    <img src="/machine_learning_basic/Clustering-Breast-Cancer-Detection.jpg" alt="Clustring Breaset Cancer Detection" width="550">
+    <img src="/machine_learning_basic/Introduction_To_Unsupervised_Learning/img/Clustering-Breast-Cancer-Detection.jpg" alt="Clustring Breaset Cancer Detection" width="550">
     
     </p> 
 
