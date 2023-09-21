@@ -162,7 +162,7 @@ Computer Vision, Machine Learning, and Deep Learning
 
 ## Deep Learning
 
-### <a href="deep_learning_basic/INTRODUCTION_TO_DEEP_LEARNING.md"> Introduction to Deep Learning </a>
+### <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md"> Introduction to Deep Learning </a>
 
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#what-is-deep-learning"> What Is Deep Learning? </a>
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#single-layer-neural-networks-perceptron"> Single-layer Neural Networks (Perceptron) </a>
