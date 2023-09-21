@@ -1,6 +1,6 @@
-# Dive Into Deep Learning
+## Introduction to Deep Learning
 
-## What Is Deep Learning?
+### What Is Deep Learning?
 Deep Learning is a subfield of machine learning that focuses on training computers to learn from and make decisions based on data, 
 similar to how humans learn from experience. Here's how to understand deep learning:
 
@@ -14,7 +14,7 @@ similar to how humans learn from experience. Here's how to understand deep learn
 
 \#Todo add images
 
-## Single-layer Neural Networks (Perceptron)
+### Single-layer Neural Networks (Perceptron)
 
 A perceptron is the simplest form of a neural network used for binary classification. Here’s a more detailed breakdown:
 
@@ -32,11 +32,11 @@ A perceptron is the simplest form of a neural network used for binary classifica
 
 <p align="center">
 
-<img src="/deep_learning_basic/perceptron.jpg" alt="Perceptron" width="550"> 
+<img src="/deep_learning_basic/img/perceptron.jpg" alt="Perceptron" width="550"> 
 
 </p>
 
-## Multi-layer Neural Networks 
+### Multi-layer Neural Networks 
 
 When we move beyond a single layer and start stacking multiple layers of these neurons, we have what's called a multi-layer neural network or more commonly, a multi-layer perceptron (MLP). This typically consists of:
 
@@ -44,7 +44,7 @@ When we move beyond a single layer and start stacking multiple layers of these n
 * **Hidden Layers:** Layers in between the input and output layers. The complexity of the neural network increases with more hidden layers, allowing it to capture intricate patterns and relationships in the data.
 * **Output Layer:** The final layer that produces the result for given inputs.
 
-## Difference between Deep Learning and Traditional Machine Learning
+### Difference between Deep Learning and Traditional Machine Learning
 
 At a high level, traditional machine learning algorithms are often hand-crafted and require feature engineering, which means that the inputs must be transformed or tweaked to improve the model's performance. In contrast, deep learning models, especially Convolutional Neural Networks (CNNs) for images, are adept at automatically extracting features from raw data.
 

@@ -12,7 +12,7 @@ that best captures the underlying trend.
   
 <p align="center">
 
-<img src="/machine_learning_basic/Housing-Price-Prediction.jpg" alt="housing price prediction" width="550">
+<img src="/machine_learning_basic/Linear_Regression/img/Housing-Price-Prediction.jpg" alt="housing price prediction" width="550">
 
 </p> 
   
@@ -97,7 +97,7 @@ Let's visualize this on a graph.
 
 <p align="center">
 
-<img src="/machine_learning_basic/Housing-Price-Prediction-Linear.jpeg" alt="housing price prediction linear" width="650">
+<img src="/machine_learning_basic/Linear_Regression/img/Housing-Price-Prediction-Linear.jpeg" alt="housing price prediction linear" width="650">
 
 </p> 
 
@@ -344,7 +344,7 @@ plt.show()
 After you run <a href="linear_regression_1.py" >the code</a>, you are able to to adjust the parameters ($w$, $b$) of the model and observe its behavior in real-time.
 
 <p align="center">
-<img src="/machine_learning_basic/Linear-Regression-1.jpg" alt="housing price - line" width="550">
+<img src="/machine_learning_basic/Linear_Regression/img/Linear-Regression-1.jpg" alt="housing price - line" width="550">
 </p> 
 
 
@@ -387,7 +387,7 @@ In essence, the cost function tells us how "off" our predictions are when using 
 Now, let's visualize the training data, the linear regression line, and the differences (errors) between the predictions and actual values on a graph.
 
 <p align="center">
-<img src="/machine_learning_basic/Cost-Function-1.jpg" alt="housing price - cost function" width="550">
+<img src="/machine_learning_basic/Linear_Regression/img/Cost-Function-1.jpg" alt="housing price - cost function" width="550">
 </p> 
 
 
