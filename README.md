@@ -159,6 +159,7 @@ Computer Vision, Machine Learning, and Deep Learning
     - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#visualizing-on-the-linear-regression-graph"> Visualizing on the Linear Regression Graph </a>
         - <a href="/machine_learning_basic/Linear_Regression/LINEAR_REGRESSION.md#cost-function-for-linear-regression"> Cost Function for Linear Regression </a>
 
+\#TODO add a real-world project
 
 ## Deep Learning
 
@@ -168,3 +169,4 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#single-layer-neural-networks-perceptron"> Single-layer Neural Networks (Perceptron) </a>
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#multi-layer-neural-networks "> Multi-layer Neural Networks </a>
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#difference-between-deep-learning-and-traditional-machine-learning"> Difference between Deep Learning and Traditional Machine Learning </a>
+
