@@ -170,3 +170,5 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#multi-layer-neural-networks "> Multi-layer Neural Networks </a>
 - <a href="deep_learning_basic/Introduction_To_Deep_Learning/INTRODUCTION_TO_DEEP_LEARNING.md#difference-between-deep-learning-and-traditional-machine-learning"> Difference between Deep Learning and Traditional Machine Learning </a>
 
+\# TODO DO THE SAME PROJECT WITH DEEP LEARNING AND COMPARE
+
