@@ -29,7 +29,9 @@ Each channel holds pixel values from 0 to 255, determining the intensity of the 
 The final color of each pixel is the combination of the values from all three channels.
 
 **Red Channel**: Represents the intensity of the red color.
+
 **Green Channel**: Represents the intensity of the green color.
+
 **Blue Channel**: Represents the intensity of the blue color.
 
 The combination of these channels allows for the representation of millions of colors. 
