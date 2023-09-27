@@ -104,3 +104,64 @@ The choice between lossless and lossy image formats depends on the use case:
 - **Quality Preservation**: If preserving image quality is paramount, a lossless format like PNG or TIFF is advisable.
 - **File Size**: If reducing file size is a priority, especially for web use or storage considerations, a lossy format like JPEG may be suitable.
 
+### Loading, displaying, and saving images 
+
+[code](./code/loading_displaying_and_saving.py)
+
+#### Loading Images with OpenCV
+
+The process of loading images into a program is the first step in image processing. 
+In this book, we will use the OpenCV library, which is a powerful tool for image and video processing. 
+The function `cv2.imread()` is used to load an image from a file. Here is how it works:
+
+```python
+import cv2  # Import the OpenCV library
+
+img = cv2.imread("../img/HBD.jpg")  # Load the image from file
+```
+
+- `cv2` is the module we import for using OpenCV functions.
+- `cv2.imread()` is the function call to load the image, and the path to the image file is provided as an argument.
+
+#### Understanding Image Dimensions
+
+Images in OpenCV are represented as NumPy arrays. 
+A color image is a 3D array, where the dimensions represent the image height, width, and color channels (usually Red, Green, and Blue).
+
+```python
+# Get the image dimensions
+height, width, channels = img.shape
+
+# Display the image dimensions
+print(f"Input image dimensions: {width} x {height} x {channels}")
+```
+
+- `img.shape` returns the dimensions of the image as a tuple.
+- The `height`, `width`, and `channels` are then unpacked from the tuple and printed to the console.
+
+#### Displaying Images with OpenCV
+
+Once the image is loaded, we can display it using the `cv2.imshow()` function, which creates a window to display the image.
+
+```python
+# Displaying the image
+cv2.imshow("Image", img)
+cv2.waitKey(0)  # Wait for a key press to close the window
+```
+
+- `cv2.imshow()` takes two arguments: the name of the window and the image object.
+- `cv2.waitKey(0)` is a necessary line of code following `cv2.imshow()`. It waits for a key press to close the window. 
+Without this line, the image window would close immediately.
+
+#### Saving Images with OpenCV
+
+After processing, we may want to save the new image to a file. We use `cv2.imwrite()` to do this:
+
+```python
+# Save the image to a new file
+cv2.imwrite("output.jpg", img)
+print("Image saved as output.jpg")
+```
+
+- `cv2.imwrite()` takes two arguments: the filename (including the desired path and extension) and the image object.
+- This function returns `True` if the image is saved successfully and `False` otherwise.
