@@ -106,7 +106,7 @@ The choice between lossless and lossy image formats depends on the use case:
 
 ### Loading, displaying, and saving images 
 
-[code](./code/loading_displaying_and_saving.py)
+<a href="/opencv_basic/Image_Basics/code/loading_displaying_and_saving.py"> code </a>
 
 #### Loading Images with OpenCV
 
@@ -165,3 +165,14 @@ print("Image saved as output.jpg")
 
 - `cv2.imwrite()` takes two arguments: the filename (including the desired path and extension) and the image object.
 - This function returns `True` if the image is saved successfully and `False` otherwise.
+
+#### output
+Input image dimensions: 448 x 551 x 3
+
+<p align="center">
+
+<img src="/opencv_basic/Image_Basics/img/output-loading-displaying-and-saving.JPG" alt="output-loading-displaying-and-saving" width="550">
+
+</p>
+ 
+Image saved as output.jpg
