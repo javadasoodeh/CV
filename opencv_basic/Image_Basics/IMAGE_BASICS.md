@@ -106,6 +106,9 @@ The choice between lossless and lossy image formats depends on the use case:
 
 ### Loading, displaying, and saving images 
 
+In this section, we will explore how to load an image from a file, display it to the user, 
+and then save it to a new file using OpenCV, a powerful library for image processing tasks.
+
 <a href="/opencv_basic/Image_Basics/code/loading_displaying_and_saving.py"> code </a>
 
 #### Loading Images with OpenCV
@@ -151,7 +154,8 @@ cv2.waitKey(0)  # Wait for a key press to close the window
 
 - `cv2.imshow()` takes two arguments: the name of the window and the image object.
 - `cv2.waitKey(0)` is a necessary line of code following `cv2.imshow()`. It waits for a key press to close the window. 
-Without this line, the image window would close immediately.
+Without this line, the image window would close immediately. Its argument(delay) is optional and is in milliseconds. 
+If omitted or zero, it waits indefinitely for a keystroke
 
 #### Saving Images with OpenCV
 
