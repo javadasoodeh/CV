@@ -188,6 +188,8 @@ its color, which, in a color image, is typically a triplet of red, green, and bl
 In this section, we'll delve into the basics of how to access and manipulate pixels in an image using OpenCV in Python by a code snippet. 
 We'll break down the code into smaller parts and explain each part thoroughly.
 
+<a href="/opencv_basic/Image_Basics/code/accessing_and_manipulating_pixels.py"> code </a>
+
 #### Importing Necessary Library
 
 ```python
