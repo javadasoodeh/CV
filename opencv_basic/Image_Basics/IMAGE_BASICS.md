@@ -180,3 +180,114 @@ Input image dimensions: 448 x 551 x 3
 </p>
  
 Image saved as output.jpg
+
+### Accessing and Manipulating Pixels
+
+In image processing, a pixel is the smallest addressable element in an image. Each pixel has a value representing 
+its color, which, in a color image, is typically a triplet of red, green, and blue intensities (RGB).
+In this section, we'll delve into the basics of how to access and manipulate pixels in an image using OpenCV in Python by a code snippet. 
+We'll break down the code into smaller parts and explain each part thoroughly.
+
+#### Importing Necessary Library
+
+```python
+import cv2
+```
+
+Here, we import the OpenCV library using the alias `cv2`. OpenCV is a vast library that provides a plethora of image 
+and video processing functions.
+
+#### Loading an Image
+
+```python
+# Load the image using OpenCV
+image = cv2.imread("../img/HBD.jpg")
+```
+
+In this line, we use the `cv2.imread()` function to read the image file located at "../img/HBD.jpg" from 
+the disk into memory. The image data is stored in a multi-dimensional NumPy array, `image`, 
+where each element of the array corresponds to a pixel in the image.
+
+#### Accessing a Specific Pixel
+
+```python
+# Get the value of a specific pixel
+pixel_value = image[100, 100]
+blue_value, green_value, red_value = pixel_value
+print("Pixel value at (100, 100): Blue = {}, Green = {}, Red = {}".format(blue_value, green_value, red_value))
+```
+
+Here, we access the color value of the pixel at coordinates (100, 100) in the image. 
+The coordinates are specified in the (row, column) format, which corresponds to the (y, x) position in the image. 
+The `image[100, 100]` expression returns a NumPy array containing three values corresponding to 
+the Blue, Green, and Red (BGR) color channels of the pixel. 
+
+It's important to note that while we often think in RGB, OpenCV uses a BGR format.
+
+We then unpack these values into individual variables `blue_value`, `green_value`, and `red_value` and print them out.
+
+#### Setting the Value of a Specific Pixel
+
+```python
+# Set the value of a specific pixel
+image[100, 100] = [255, 0, 0]  # set the pixel to blue
+```
+
+In this snippet, we set the color of the pixel at coordinates (100, 100) to blue. 
+We specify the color as a list of BGR values, `[255, 0, 0]`. 
+This is a straightforward way to modify a single pixel's color in an image.
+
+
+#### Accessing a Range of Pixels
+
+```python
+# Get the values of a range of pixels
+pixel_values = image[50:100, 50:100]
+print("Pixel values in range (50-100, 50-100):")
+for row in pixel_values:
+    for pixel in row:
+        blue_value, green_value, red_value = pixel
+        print("Blue = {}, Green = {}, Red = {}".format(blue_value, green_value, red_value))
+```
+
+Here, we access a block of pixels in the image using the syntax `image[50:100, 50:100]`. 
+This syntax uses Python's slicing mechanism to extract a rectangular region of the image 
+from rows 50 to 99 and columns 50 to 99. The resulting `pixel_values` is a smaller image (or sub-image) 
+extracted from the original image. We then iterate through each row and each pixel in those rows, 
+printing out the BGR values of the pixels.
+
+#### Setting the Values of a Range of Pixels
+
+```python
+# Set the values of a range of pixels
+image[50:100, 50:100] = [0, 255, 0]  # set the pixels to green
+```
+
+Similar to how we accessed a range of pixels, we can also set the color values of a range of pixels. 
+Here, we set all the pixels in the rectangular region from rows 50 to 99 and columns 50 to 99 to 
+green (`[0, 255, 0]` in BGR).
+
+#### Understanding the Image Shape
+
+```python
+# Get the shape of the image
+height, width, channels = image.shape
+print("Image shape: Height = {}, Width = {}, Channels = {}".format(height, width, channels))
+```
+
+The `image.shape` attribute returns a tuple representing the dimensions of the image. 
+The tuple contains three values: the number of rows (height), the number of columns (width), 
+and the number of color channels. This information is crucial when you need to loop through pixels or 
+when you need to know the image dimensions for further processing.
+
+#### Displaying the Modified Image
+
+```python
+# Show the modified image
+cv2.imshow("Modified Image", image)
+cv2.waitKey(0)
+```
+
+Finally, we use `cv2.imshow()` to display the modified image in a window titled "Modified Image". 
+The `cv2.waitKey(0)` function waits indefinitely for a key press before closing the window. 
+This gives you time to view the image.
