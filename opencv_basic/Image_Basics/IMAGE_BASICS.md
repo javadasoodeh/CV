@@ -302,11 +302,19 @@ This gives you time to view the image.
  
 
 Pixel value at (100, 100): Blue = 211, Green = 235, Red = 241
+
 Pixel values in range (50-100, 50-100):
+
 Blue = 153, Green = 184, Red = 209
+
 .
+
 .
+
 .
+
 Blue = 211, Green = 235, Red = 241
+
 Blue = 211, Green = 235, Red = 241
+
 Image shape: Height = 551, Width = 448, Channels = 3
