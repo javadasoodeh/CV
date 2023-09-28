@@ -291,3 +291,22 @@ cv2.waitKey(0)
 Finally, we use `cv2.imshow()` to display the modified image in a window titled "Modified Image". 
 The `cv2.waitKey(0)` function waits indefinitely for a key press before closing the window. 
 This gives you time to view the image.
+
+#### Output
+
+<p align="center">
+
+<img src="/opencv_basic/Image_Basics/img/output-accessing-and-manipulating-pixels.JPG" alt="output-accessing-and-manipulating-pixels" width="550">
+
+</p>
+ 
+
+Pixel value at (100, 100): Blue = 211, Green = 235, Red = 241
+Pixel values in range (50-100, 50-100):
+Blue = 153, Green = 184, Red = 209
+.
+.
+.
+Blue = 211, Green = 235, Red = 241
+Blue = 211, Green = 235, Red = 241
+Image shape: Height = 551, Width = 448, Channels = 3
