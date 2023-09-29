@@ -34,7 +34,7 @@ Computer Vision, Machine Learning, and Deep Learning
 
 ### Drawing:
 
-- Drawing Lines, Rectangles, and Circles
+- Drawing Lines, Rectangles, Square, and Circles
 - Drawing Polygons and Text
 
 ### Image Manipulations and Transformations:
