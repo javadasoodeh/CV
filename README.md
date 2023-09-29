@@ -32,9 +32,9 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="opencv_basic/Image_Basics/IMAGE_BASICS.md#"> Loading, displaying, and saving images </a>
 - <a href="opencv_basic/Image_Basics/IMAGE_BASICS.md#"> Accessing and manipulating pixels </a>
 
-### <a href="opencv_basic/Drawing/DRAWING.md"> Drawing: </a>
+### <a href="/opencv_basic/Drawing/DRAWING.md"> Drawing: </a>
 
-- <a href="opencv_basic/Drawing/DRAWING.md"> Drawing Lines, Rectangles, Square, and Circles </a>
+- <a href="/opencv_basic/Drawing/DRAWING.md"> Drawing Lines, Rectangles, Square, and Circles </a>
 - Drawing Polygons and Text
 
 ### Image Manipulations and Transformations:

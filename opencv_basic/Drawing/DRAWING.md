@@ -2,7 +2,7 @@
 Drawing shapes on images is a fundamental aspect of image processing which aids in understanding 
 the image coordinate system, color representation, and manipulation of image data.
 In this section will explore a code snippet for drawing geometric shapes _(Lines, Rectangles, Square, and Circles)_ on images using OpenCV.
-<a href="opencv_basic/Drawing/code/drawing_lines_rectangles_square_and_circles.py"> Here is the complete Code! </a>  
+<a href="/opencv_basic/Drawing/code/drawing_lines_rectangles_square_and_circles.py"> Here is the complete Code! </a>  
 
 
 ### Importing Libraries
@@ -115,6 +115,6 @@ cv2.waitKey(0)
 
 <p align="center">
 
-<img src="opencv_basic/Drawing/img/output-drawing-lines-rectangles-square-and-circles.JPG" alt="ooutput-drawing-lines-rectangles-square-and-circles" width="550">
+<img src="/opencv_basic/Drawing/img/output-drawing-lines-rectangles-square-and-circles.JPG" alt="ooutput-drawing-lines-rectangles-square-and-circles" width="550">
 
 </p>
