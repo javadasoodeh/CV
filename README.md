@@ -34,8 +34,8 @@ Computer Vision, Machine Learning, and Deep Learning
 
 ### <a href="/opencv_basic/Drawing/DRAWING.md"> Drawing: </a>
 
-- <a href="/opencv_basic/Drawing/DRAWING.md"> Drawing Lines, Rectangles, Square, and Circles </a>
-- Drawing Polygons and Text
+- <a href="/opencv_basic/Drawing/DRAWING.md#drawing-lines-rectangles-square-and-circles"> Drawing Lines, Rectangles, Square, and Circles </a>
+- <a href="/opencv_basic/Drawing/DRAWING.md#drawing-polygons-and-text"> Drawing Polygons and Text </a>
 
 ### Image Manipulations and Transformations:
 
