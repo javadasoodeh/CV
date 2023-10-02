@@ -37,7 +37,7 @@ Computer Vision, Machine Learning, and Deep Learning
 - <a href="/opencv_basic/Drawing/DRAWING.md#drawing-lines-rectangles-square-and-circles"> Drawing Lines, Rectangles, Square, and Circles </a>
 - <a href="/opencv_basic/Drawing/DRAWING.md#drawing-polygons-and-text"> Drawing Polygons and Text </a>
 
-### Image Manipulations and Transformations:
+### <a href="/opencv_basic/Image_Manipulations_and_Transformations/IMAGE_MANIPULATIONS_AND_TRANSFORMATIONS.md"> Image Manipulations and Transformations: </a>
 
 - Image Arithmetic and Mathematical Operations
 - Bitwise Operations
