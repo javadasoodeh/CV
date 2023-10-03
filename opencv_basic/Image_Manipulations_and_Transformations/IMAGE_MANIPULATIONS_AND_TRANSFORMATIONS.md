@@ -79,7 +79,7 @@ which means that if a result of an operation is outside the valid range of value
 it will be clipped to the nearest valid value. For example, if a pixel value in an 8-bit unsigned integer image is 250,
  and we add 10 to it, the result will be 255, not 260, since 255 is the maximum value allowed for this data type.
  
- On the other hand, NumPy performs modulo arithmetic for integer overflow. So, in the same example, 
+**On the other hand**, NumPy performs modulo arithmetic for integer overflow. So, in the same example, 
  adding $10$ to a pixel value of $250$ will result in a value of $4$ in NumPy, as $(250+10)mod256=4$.
  
 To make NumPy behave similarly to OpenCV in terms of arithmetic operations, 

@@ -39,7 +39,7 @@ Computer Vision, Machine Learning, and Deep Learning
 
 ### <a href="/opencv_basic/Image_Manipulations_and_Transformations/IMAGE_MANIPULATIONS_AND_TRANSFORMATIONS.md"> Image Manipulations and Transformations: </a>
 
-- Image Arithmetic and Mathematical Operations
+- <a href="/opencv_basic/Image_Manipulations_and_Transformations/IMAGE_MANIPULATIONS_AND_TRANSFORMATIONS.md#image-arithmetic-and-mathematical-operations"> Image Arithmetic and Mathematical Operations </a>
 - Bitwise Operations
 - Masking Techniques
 - Spatial Operations: Translation, Rotation, Resizing, Flipping, Cropping
