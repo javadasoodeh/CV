@@ -175,5 +175,8 @@ and division can invert the contrast.
 
 
 
+# Bitwise Operation
+
+The code snippet demonstrates how to perform bitwise operations on binary images using OpenCV library in Python. The code creates two binary images, performs bitwise AND, OR, XOR, and NOT operations on them, and displays the original images and their bitwise operations. The tutorial assumes a basic understanding of Python and OpenCV libraries.
 
  
