@@ -221,11 +221,11 @@ bitwise_xor = cv2.bitwise_xor(image1, image2)
 bitwise_not = cv2.bitwise_not(image1)
 ```
 
-The above code performs bitwise operations using OpenCV functions:
-- `bitwise_and`: Returns the intersection of the two images.
-- `bitwise_or`: Combines both images, turning on a pixel if either of the input images has that pixel on.
-- `bitwise_xor`: Turns on a pixel only if exactly one of the input images has that pixel on.
-- `bitwise_not`: Inverts the pixel values of the input image.
+The above code performs bitwise operations using OpenCV functions and returns a new image with the following conditions applied:
+- `bitwise_and`: Sets a pixel to 255 (white) only if the corresponding pixels in both input images are 255.
+- `bitwise_or`: Sets a pixel to 255 if at least one of the corresponding pixels in the input images is 255. 
+- `bitwise_xor`:  Sets a pixel to 255 only if one (and only one) of the corresponding pixels in the input images is 255.
+- `bitwise_not`: Flips the pixel values of the input image (turns 0 to 255 and vice versa). 
 
 ### Displaying the Results
 
