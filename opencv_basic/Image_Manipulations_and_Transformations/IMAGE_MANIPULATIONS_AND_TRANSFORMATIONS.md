@@ -185,10 +185,10 @@ For our demonstration, we'll create two simple binary images. These images will 
 
 ### Importing the Libraries
 
-\```python
+```python
 import cv2
 import numpy as np
-\```
+```
 
 Here, we import two essential libraries:
 - `cv2`: This is the OpenCV library which provides us with numerous computer vision functions.
@@ -196,30 +196,30 @@ Here, we import two essential libraries:
 
 ### Creating Binary Images
 
-\```python
+```python
 image1 = np.zeros((300, 300), dtype=np.uint8)
 image1[50:150, 100:200] = 255
-\```
+```
 
 `np.zeros((300, 300), dtype=np.uint8)`: This creates a 300x300 matrix filled with zeros. The `dtype=np.uint8` specifies that the values in the matrix are 8-bit unsigned integers (ranging from 0 to 255). This is a standard format for grayscale images.
 
 `image1[50:150, 100:200] = 255`: This line uses array slicing to define a rectangle within the image and sets its pixel values to 255, making it white.
 
-\```python
+```python
 image2 = np.zeros((300, 300), dtype=np.uint8)
 image2[100:200, 150:250] = 255
-\```
+```
 
 Similarly, we create another binary image and define a different rectangular region as white.
 
 ### Applying Bitwise Operations
 
-\```python
+```python
 bitwise_and = cv2.bitwise_and(image1, image2)
 bitwise_or = cv2.bitwise_or(image1, image2)
 bitwise_xor = cv2.bitwise_xor(image1, image2)
 bitwise_not = cv2.bitwise_not(image1)
-\```
+```
 
 The above code performs bitwise operations using OpenCV functions:
 - `bitwise_and`: Returns the intersection of the two images.
@@ -229,7 +229,7 @@ The above code performs bitwise operations using OpenCV functions:
 
 ### Displaying the Results
 
-\```python
+```python
 cv2.imshow('Image 1', image1)
 cv2.imshow('Image 2', image2)
 cv2.imshow('Bitwise AND', bitwise_and)
@@ -238,7 +238,7 @@ cv2.imshow('Bitwise XOR', bitwise_xor)
 cv2.imshow('Bitwise NOT', bitwise_not)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-\```
+```
 
 `cv2.imshow()`: This function displays an image. It takes in two arguments: the name of the window and the image matrix.
 
