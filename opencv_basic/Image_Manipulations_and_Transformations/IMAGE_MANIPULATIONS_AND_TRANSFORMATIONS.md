@@ -173,17 +173,17 @@ Addition brightens the image, subtraction darkens it, multiplication can create 
 and division can invert the contrast.
 
 
-# Bitwise Operations
+### Bitwise Operations
 
-## Introduction
+#### Introduction
 Bitwise operations are fundamental in digital image processing. They enable us to combine, manipulate, or extract specific parts of images based on their binary representations. In this section, we will use the OpenCV library, a powerful tool in computer vision, to perform these operations. While the operations are simple, they lay the foundation for more advanced image processing techniques.
 
-## Code Overview
+#### Code Overview
 For our demonstration, we'll create two simple binary images. These images will be represented as matrices with values of either 0 (black) or 255 (white). We'll then apply various bitwise operations on these matrices.
 
-## Code Breakdown
+#### Code Breakdown
 
-### Importing the Libraries
+##### Importing the Libraries
 
 ```python
 import cv2
@@ -194,7 +194,7 @@ Here, we import two essential libraries:
 - `cv2`: This is the OpenCV library which provides us with numerous computer vision functions.
 - `numpy`: A library for numerical operations in Python. It's especially efficient for matrix and array operations, making it ideal for image processing.
 
-### Creating Binary Images
+##### Creating Binary Images
 
 ```python
 image1 = np.zeros((300, 300), dtype=np.uint8)
@@ -212,7 +212,7 @@ image2[100:200, 150:250] = 255
 
 Similarly, we create another binary image and define a different rectangular region as white.
 
-### Applying Bitwise Operations
+##### Applying Bitwise Operations
 
 ```python
 bitwise_and = cv2.bitwise_and(image1, image2)
@@ -228,7 +228,7 @@ The above code performs bitwise operations using OpenCV functions and returns a 
  If one pixel is white (255) and the other is black (0), the output will be white (255).
 - `bitwise_not`: Flips the pixel values of the input image (turns 0 to 255 and vice versa). 
 
-### Displaying the Results
+##### Displaying the Results
 
 ```python
 cv2.imshow('Image 1', image1)
@@ -247,7 +247,7 @@ cv2.destroyAllWindows()
 
 `cv2.destroyAllWindows()`: Closes all OpenCV windows.
 
-## Detailed Explanation
+##### Detailed Explanation
 The core of bitwise operations lies in binary logic. Let's understand this with a simple example. Consider two binary bits, A and B:
 
 - Bitwise AND: $A \land B$ is 1 only if both A and B are 1.
@@ -258,4 +258,6 @@ The core of bitwise operations lies in binary logic. Let's understand this with 
 When we perform these operations on images, we're applying these logics pixel by pixel. For instance, if two images have a white pixel (255) at the same location, the result of a bitwise AND operation at that location will also be a white pixel. If only one image has a white pixel at a location, the result of a bitwise OR operation at that location will be a white pixel.
 
 By understanding and leveraging these basic bitwise operations, we can create masks, extract regions of interest, and implement various other image processing techniques in more advanced scenarios.
- 
+
+### Masking Techniques
+
