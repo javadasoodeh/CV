@@ -266,9 +266,12 @@ By understanding and leveraging these basic bitwise operations, we can create ma
 import cv2
 import numpy as np
 
+```
+```python
 # Load the image
 image = cv2.imread('HBD.jpg')
-
+```
+```python
 # Create a mask (binary image) with a rectangular region of interest (ROI)
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
 roi = (80, 100, 360, 300)  # (x, y, width, height)
