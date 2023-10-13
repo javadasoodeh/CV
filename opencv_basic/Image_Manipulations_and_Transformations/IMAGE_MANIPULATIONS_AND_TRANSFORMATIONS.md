@@ -280,6 +280,10 @@ cv2.rectangle(mask, (roi[0], roi[1]), (roi[0] + roi[2], roi[1] + roi[3]), 255, -
 # Apply the mask to the image
 masked_image = cv2.bitwise_and(image, image, mask=mask)
 
+```
+
+```python
+
 # Display the original image and the masked image
 cv2.imshow('Original Image', image)
 cv2.imshow('Mask', mask)
