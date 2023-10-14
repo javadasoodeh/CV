@@ -276,6 +276,9 @@ image = cv2.imread('HBD.jpg')
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
 roi = (80, 100, 360, 300)  # (x, y, width, height)
 cv2.rectangle(mask, (roi[0], roi[1]), (roi[0] + roi[2], roi[1] + roi[3]), 255, -1)
+```
+
+```python
 
 # Apply the mask to the image
 masked_image = cv2.bitwise_and(image, image, mask=mask)
