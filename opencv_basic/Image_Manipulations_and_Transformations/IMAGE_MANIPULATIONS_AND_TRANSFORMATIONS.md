@@ -268,6 +268,8 @@ import cv2
 import numpy as np
 
 ```
+
+#### Load an Image
 ```python
 # Load the image
 image = cv2.imread('HBD.jpg')
