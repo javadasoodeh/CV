@@ -274,6 +274,8 @@ import numpy as np
 # Load the image
 image = cv2.imread('HBD.jpg')
 ```
+
+#### Masking
 ```python
 # Create a mask (binary image) with a rectangular region of interest (ROI)
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
