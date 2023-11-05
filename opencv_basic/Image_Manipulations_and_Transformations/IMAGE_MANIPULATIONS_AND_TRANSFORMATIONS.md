@@ -261,4 +261,71 @@ By understanding and leveraging these basic bitwise operations, we can create ma
 
 ### Masking Techniques
 
-testing
+## Introduction
+
+Masking techniques in image processing allow us to focus on specific parts of an image, while ignoring the rest. This can be useful in various applications, such as object detection, where we want to isolate an object from the background. Essentially, a mask is a binary image that specifies which pixels of the original image are of interest: pixels where the mask is `1` (or `255` for an 8-bit image) are kept, while pixels where the mask is `0` are discarded.
+
+## Code Overview
+
+The provided code snippet demonstrates how to load an image using OpenCV, create a mask with a rectangular region of interest, apply this mask to the image, and then display the original, mask, and masked images. We will use OpenCV, a powerful library for image processing, and NumPy, a library for numerical operations in Python.
+
+## Code Breakdown
+
+Let's break down each part of the code:
+
+```python
+import cv2
+import numpy as np
+```
+
+Here we import the required libraries:
+- `cv2` is the OpenCV module for Python, used for image processing tasks.
+- `numpy` is a library for numerical computations in Python, which OpenCV uses for handling images as arrays.
+
+```python
+image = cv2.imread('../img/HBD.jpg')
+```
+
+The `imread` function from the `cv2` module reads the image from the specified path and returns it as a NumPy array. If the image is in color, the default color space for OpenCV is BGR (Blue, Green, Red).
+
+```python
+mask = np.zeros(image.shape[:2], dtype=np.uint8)
+```
+
+We create a new NumPy array filled with zeros (black) with the same height and width as our original image. This will serve as our mask. The `dtype=np.uint8` argument specifies that each element in the array will be an 8-bit unsigned integer, which is the standard for images.
+
+```python
+roi = (80, 100, 360, 300)  # (x, y, width, height)
+```
+
+This line defines the region of interest (ROI) as a rectangle, with the top-left corner at (x=80, y=100) and dimensions of 360 pixels in width and 300 pixels in height.
+
+```python
+cv2.rectangle(mask, (roi[0], roi[1]), (roi[0] + roi[2], roi[1] + roi[3]), 255, -1)
+```
+
+Using OpenCV's `rectangle` function, we draw a rectangle on the mask. The first two arguments are the mask and the top-left corner of the rectangle. The third argument is the bottom-right corner, which we calculate by adding the width and height to the x and y coordinates, respectively. The fourth argument is the color (255, which is white for a binary image), and the fifth argument `-1` indicates that the rectangle should be filled completely.
+
+```python
+masked_image = cv2.bitwise_and(image, image, mask=mask)
+```
+
+Here we apply the mask to the image. The `bitwise_and` function performs a bitwise AND operation between the image and itself, using the mask to determine which pixels to keep. Only the pixels where the mask is white (255) are retained in the resulting `masked_image`.
+
+```python
+cv2.imshow('Original Image', image)
+cv2.imshow('Mask', mask)
+cv2.imshow('Masked Image', masked_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+The `imshow` function is used to display the images in separate windows. `waitKey(0)` waits indefinitely for a key event, and `destroyAllWindows()` closes all the windows once a key is pressed.
+
+## Detailed Explanation
+
+When we apply the mask to the image with `bitwise_and`, it's like placing a sheet of paper with a hole cut out over the image. The hole in the paper (the white part of the mask) reveals the part of the image we are interested in, and the rest of the paper (the black part of the mask) covers the portions of the image we want to ignore.
+
+The use of a mask is a very powerful technique because it allows for complex operations on specific parts of the image. For instance, we could perform color transformations, filtering, or feature detection solely within the region defined by the mask.
+
+By understanding these fundamentals, you can start to explore more complex masking scenarios, such as irregular shapes, multiple regions of interest, and dynamic masks created through image processing techniques like thresholding and edge detection.
