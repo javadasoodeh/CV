@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Load the image
-image = cv2.imread('HBD.jpg')
+image = cv2.imread('../img/HBD.jpg')
 
 # Create a mask (binary image) with a rectangular region of interest (ROI)
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
