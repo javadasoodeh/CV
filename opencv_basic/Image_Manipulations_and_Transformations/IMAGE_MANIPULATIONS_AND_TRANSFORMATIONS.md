@@ -260,59 +260,60 @@ When we perform these operations on images, we're applying these logics pixel by
 By understanding and leveraging these basic bitwise operations, we can create masks, extract regions of interest, and implement various other image processing techniques in more advanced scenarios.
 
 ### Masking Techniques
-\#TODO need to add more examples and dive deeper to advanced level
 
-## Introduction
+#### Introduction
 
-Masking techniques in image processing allow us to focus on specific parts of an image, while ignoring the rest. This can be useful in various applications, such as object detection, where we want to isolate an object from the background. Essentially, a mask is a binary image that specifies which pixels of the original image are of interest: pixels where the mask is `1` (or `255` for an 8-bit image) are kept, while pixels where the mask is `0` are discarded.
+In image processing, "masking" refers to the practice of defining a region of interest in an image and then performing operations only within that region. It's akin to using a stencil to apply paint to certain parts of a canvas while protecting the rest. This technique is widely used in applications ranging from simple photo editing to complex computer vision tasks that require the identification and manipulation of specific parts of an image.
 
-## Code Overview
+When we talk about "techniques," we mean the various ways in which masking can be implemented. For our introduction, we'll focus on the most straightforward approach, known as binary masking, which is the use of binary images to control the visibility of the main image.
 
-The provided code snippet demonstrates how to load an image using OpenCV, create a mask with a rectangular region of interest, apply this mask to the image, and then display the original, mask, and masked images. We will use OpenCV, a powerful library for image processing, and NumPy, a library for numerical operations in Python.
+#### Code Overview
+We will go through the following process in our code:
+1. Load an image into our program.
+2. Define a binary mask, which is an array of zeros and ones where ones (or in our case, 255s) indicate the area of interest.
+3. Apply this mask to the original image so that only the area of interest is visible.
+4. Display the original image, the binary mask, and the masked image.
 
-## Code Breakdown
+#### Code Breakdown
+Let's explain each part of the code in detail.
 
-Let's break down each part of the code:
+##### Importing Libraries
 
 ```python
 import cv2
 import numpy as np
 ```
 
-Here we import the required libraries:
-- `cv2` is the OpenCV module for Python, used for image processing tasks.
-- `numpy` is a library for numerical computations in Python, which OpenCV uses for handling images as arrays.
+- `import cv2`: This line imports the OpenCV library into our Python script. OpenCV is a large library that provides tools for image and video processing. The "cv" in "cv2" stands for "computer vision."
+- `import numpy as np`: This imports the NumPy library and gives it the alias "np" for convenience. NumPy is a fundamental package for scientific computing in Python. It provides a high-performance multidimensional array object, which is a powerful data structure for representing images as grids of pixels.
+
+##### Loading the Image
 
 ```python
 image = cv2.imread('../img/HBD.jpg')
 ```
+- `cv2.imread()`: This function reads an image from the specified file. The argument `'../img/HBD.jpg'` is the file path to the image you want to load. It returns the image as a NumPy array, with the color channels in the order Blue-Green-Red (BGR).
 
-The `imread` function from the `cv2` module reads the image from the specified path and returns it as a NumPy array. If the image is in color, the default color space for OpenCV is BGR (Blue, Green, Red).
-
+### Creating the Mask
 ```python
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
-```
 
-We create a new NumPy array filled with zeros (black) with the same height and width as our original image. This will serve as our mask. The `dtype=np.uint8` argument specifies that each element in the array will be an 8-bit unsigned integer, which is the standard for images.
-
-```python
 roi = (80, 100, 360, 300)  # (x, y, width, height)
-```
 
-This line defines the region of interest (ROI) as a rectangle, with the top-left corner at (x=80, y=100) and dimensions of 360 pixels in width and 300 pixels in height.
-
-```python
 cv2.rectangle(mask, (roi[0], roi[1]), (roi[0] + roi[2], roi[1] + roi[3]), 255, -1)
 ```
+- `np.zeros()`: This function creates a new array, filled with zeros. The `image.shape[:2]` part retrieves the dimensions of the loaded image (height and width) but excludes the color channels. The result is a two-dimensional array (or grid) the same size as the image but only one layer deep, as we are creating a mask in grayscale.
+- `dtype=np.uint8`: This specifies that the array should be made up of 8-bit unsigned integers, which is the standard for images (ranges from 0 to 255).
+- `roi = (80, 100, 360, 300)`: This is a tuple defining the region of interest in the image. The numbers represent the top-left corner's x and y coordinates, and the width and height of the rectangle.
+- `cv2.rectangle()`: This function draws a rectangle on the mask. The first two arguments are the x and y coordinates of the top-left corner of the rectangle. The next two arguments are the x and y coordinates of the bottom-right corner. The color `255` is used to fill the rectangle, and `-1` indicates that the rectangle should be filled completely.
 
-Using OpenCV's `rectangle` function, we draw a rectangle on the mask. The first two arguments are the mask and the top-left corner of the rectangle. The third argument is the bottom-right corner, which we calculate by adding the width and height to the x and y coordinates, respectively. The fourth argument is the color (255, which is white for a binary image), and the fifth argument `-1` indicates that the rectangle should be filled completely.
-
+### Applying the Mask
 ```python
 masked_image = cv2.bitwise_and(image, image, mask=mask)
 ```
+- `cv2.bitwise_and()`: This function applies a bitwise AND operation to the pixels of two images. The AND operation is performed between each corresponding pixel of the two images. However, because we have provided the same image as both the first and second arguments, the operation is effectively just applied to one image. The third argument, `mask=mask`, tells the function to only perform the operation where the mask has white pixels (value 255).
 
-Here we apply the mask to the image. The `bitwise_and` function performs a bitwise AND operation between the image and itself, using the mask to determine which pixels to keep. Only the pixels where the mask is white (255) are retained in the resulting `masked_image`.
-
+### Displaying the Images
 ```python
 cv2.imshow('Original Image', image)
 cv2.imshow('Mask', mask)
@@ -320,13 +321,12 @@ cv2.imshow('Masked Image', masked_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-
-The `imshow` function is used to display the images in separate windows. `waitKey(0)` waits indefinitely for a key event, and `destroyAllWindows()` closes all the windows once a key is pressed.
+- `cv2.imshow()`: This function creates a window that displays an image. The first argument is the name of the window, and the second argument is the image to display.
+- `cv2.waitKey(0)`: This function waits for a key press. The `0` argument means it will wait indefinitely until a key is pressed.
+- `cv2.destroyAllWindows()`: This function closes all of the windows that were opened by the `imshow` function.
 
 ## Detailed Explanation
 
-When we apply the mask to the image with `bitwise_and`, it's like placing a sheet of paper with a hole cut out over the image. The hole in the paper (the white part of the mask) reveals the part of the image we are interested in, and the rest of the paper (the black part of the mask) covers the portions of the image we want to ignore.
+In the context of binary masking, the mask tells the computer which pixels of the original image should be kept and which should be discarded. When the `bitwise_and` operation is applied with the mask, pixels aligned with the white part of the mask are kept, while all others are set to black, effectively "masking" them out.
 
-The use of a mask is a very powerful technique because it allows for complex operations on specific parts of the image. For instance, we could perform color transformations, filtering, or feature detection solely within the region defined by the mask.
-
-By understanding these fundamentals, you can start to explore more complex masking scenarios, such as irregular shapes, multiple regions of interest, and dynamic masks created through image processing techniques like thresholding and edge detection.
+This is an essential technique in image processing, as it allows us to focus on specific parts of an image and perform operations only on those parts. It lays the foundation for more advanced operations such as background subtraction, object isolation, and region-based processing.
