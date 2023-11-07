@@ -294,7 +294,7 @@ image = cv2.imread('../img/HBD.jpg')
 ```
 - `cv2.imread()`: This function reads an image from the specified file. The argument `'../img/HBD.jpg'` is the file path to the image you want to load. It returns the image as a NumPy array, with the color channels in the order Blue-Green-Red (BGR).
 
-### Creating the Mask
+##### Creating the Mask
 ```python
 mask = np.zeros(image.shape[:2], dtype=np.uint8)
 
@@ -307,13 +307,13 @@ cv2.rectangle(mask, (roi[0], roi[1]), (roi[0] + roi[2], roi[1] + roi[3]), 255, -
 - `roi = (80, 100, 360, 300)`: This is a tuple defining the region of interest in the image. The numbers represent the top-left corner's x and y coordinates, and the width and height of the rectangle.
 - `cv2.rectangle()`: This function draws a rectangle on the mask. The first two arguments are the x and y coordinates of the top-left corner of the rectangle. The next two arguments are the x and y coordinates of the bottom-right corner. The color `255` is used to fill the rectangle, and `-1` indicates that the rectangle should be filled completely.
 
-### Applying the Mask
+##### Applying the Mask
 ```python
 masked_image = cv2.bitwise_and(image, image, mask=mask)
 ```
 - `cv2.bitwise_and()`: This function applies a bitwise AND operation to the pixels of two images. The AND operation is performed between each corresponding pixel of the two images. However, because we have provided the same image as both the first and second arguments, the operation is effectively just applied to one image. The third argument, `mask=mask`, tells the function to only perform the operation where the mask has white pixels (value 255).
 
-### Displaying the Images
+##### Displaying the Images
 ```python
 cv2.imshow('Original Image', image)
 cv2.imshow('Mask', mask)
@@ -325,7 +325,7 @@ cv2.destroyAllWindows()
 - `cv2.waitKey(0)`: This function waits for a key press. The `0` argument means it will wait indefinitely until a key is pressed.
 - `cv2.destroyAllWindows()`: This function closes all of the windows that were opened by the `imshow` function.
 
-## Detailed Explanation
+#### Detailed Explanation
 
 In the context of binary masking, the mask tells the computer which pixels of the original image should be kept and which should be discarded. When the `bitwise_and` operation is applied with the mask, pixels aligned with the white part of the mask are kept, while all others are set to black, effectively "masking" them out.
 
