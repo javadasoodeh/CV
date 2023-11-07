@@ -247,7 +247,7 @@ cv2.destroyAllWindows()
 
 `cv2.destroyAllWindows()`: Closes all OpenCV windows.
 
-##### Detailed Explanation
+#### Detailed Explanation
 The core of bitwise operations lies in binary logic. Let's understand this with a simple example. Consider two binary bits, A and B:
 
 - Bitwise AND: $A \land B$ is 1 only if both A and B are 1.
@@ -263,7 +263,7 @@ By understanding and leveraging these basic bitwise operations, we can create ma
 
 #### Introduction
 
-In image processing, "masking" refers to the practice of defining a region of interest in an image and then performing operations only within that region. It's akin to using a stencil to apply paint to certain parts of a canvas while protecting the rest. This technique is widely used in applications ranging from simple photo editing to complex computer vision tasks that require the identification and manipulation of specific parts of an image.
+In image processing, "masking" refers to the practice of defining a region of interest in an image and then performing operations only within that region. This technique is widely used in applications ranging from simple photo editing to complex computer vision tasks that require the identification and manipulation of specific parts of an image.
 
 When we talk about "techniques," we mean the various ways in which masking can be implemented. For our introduction, we'll focus on the most straightforward approach, known as binary masking, which is the use of binary images to control the visibility of the main image.
 
