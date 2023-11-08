@@ -1,5 +1,5 @@
 ## Image Manipulations and Transformations
-
+\# change the style (introduction, code, ...)
 ### Image Arithmetic and Mathematical Operations
 
 Image arithmetic and mathematical operations are fundamental tools in image processing. 
