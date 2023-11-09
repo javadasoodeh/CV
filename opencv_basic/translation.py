@@ -3,21 +3,8 @@ import cv2
 import numpy as np
 
 
-# Create an argument parser
-parser = argparse.ArgumentParser(description='Process an image file.')
-
-# Add an argument for the image file path
-parser.add_argument('--image_file', type=str, default="HBD.JPG", help='Path to the input image file.')
-
-# Parse the command-line arguments
-args = parser.parse_args()
-
 # Load the input image using the file path argument
-img = cv2.imread(args.image_file)
-
-# Check if the image was loaded successfully
-if img is None:
-    print('Error: Unable to load image file "{}"'.format(args.image_file))
+img = cv2.imread("HBD.JPG")
 
 # Get the image dimensions
 rows, cols = img.shape[:2]

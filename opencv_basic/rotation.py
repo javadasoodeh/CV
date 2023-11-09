@@ -1,5 +1,4 @@
 import cv2
-import argparse
 import math
 import numpy as np
 
@@ -40,15 +39,8 @@ def rotate(image, angle):
     return rotated
 
 
-# Set up the command-line argument parser
-parser = argparse.ArgumentParser(description='Load and save an image using OpenCV')
-parser.add_argument('--input_image', help='Path to the input image file', default='HBD.JPG')
-
-# Parse the command-line arguments
-args = parser.parse_args()
-
 # Load the image using OpenCV
-image = cv2.imread(args.input_image)
+image = cv2.imread("HBD.JPG")
 
 # Define the rotation angles
 angles = [30, 60, 90, 120, 150, 180]

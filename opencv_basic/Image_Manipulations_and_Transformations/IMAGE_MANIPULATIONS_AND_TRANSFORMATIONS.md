@@ -330,3 +330,8 @@ cv2.destroyAllWindows()
 In the context of binary masking, the mask tells the computer which pixels of the original image should be kept and which should be discarded. When the `bitwise_and` operation is applied with the mask, pixels aligned with the white part of the mask are kept, while all others are set to black, effectively "masking" them out.
 
 This is an essential technique in image processing, as it allows us to focus on specific parts of an image and perform operations only on those parts. It lays the foundation for more advanced operations such as background subtraction, object isolation, and region-based processing.
+
+
+### Spatial Operations: Translation, Rotation, Resizing, Flipping, Cropping
+
+In this section, we will delve into the foundational concepts of spatial operations in image processing, focusing on translation, rotation, resizing, flipping, and cropping. These operations are essential for manipulating the spatial arrangement of pixels in an image and are fundamental to various tasks in computer vision.
