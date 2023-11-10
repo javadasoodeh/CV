@@ -357,38 +357,38 @@ In the provided Python code, we use OpenCV to perform image rotation. The proces
 
 
 
-###### Deriving the Rotation Matrix Formulas Using Polar Coordinates
+##### Deriving the Rotation Matrix Formulas Using Polar Coordinates
 
 To understand the rotation matrix formulas, we use polar coordinates and trigonometric sum of angle formulas. This approach provides a geometric understanding of the rotation process.
 
-####### Polar Coordinates Representation
+###### Polar Coordinates Representation
 
 - Any point $(x, y)$ in a 2D plane can be represented in polar coordinates as $(r \cos \phi, r \sin \phi)$, where $r$ is the radius (distance from the origin) and $\phi$ is the angle with the positive x-axis.
-- $ x = r \cos \phi $ and $ y = r \sin \phi $.
+- $x = r \cos \phi$ and $y = r \sin \phi$.
 
-####### Rotating the Point
+###### Rotating the Point
 
 - When rotating this point by an angle $\theta$, the radius $r$ remains the same, but the angle $\phi$ increases by $\theta$.
 - The new coordinates $(x', y')$ after rotation are:
-  - $ x' = r \cos(\phi + \theta) $
-  - $ y' = r \sin(\phi + \theta) $
+  - $x' = r \cos(\phi + \theta)$
+  - $y' = r \sin(\phi + \theta)$
 
-####### Applying Sum of Angle Formulas
+###### Applying Sum of Angle Formulas
 
 - Using sum of angle formulas:
-  - $ \cos(\phi + \theta) = \cos \phi \cos \theta - \sin \phi \sin \theta $
-  - $ \sin(\phi + \theta) = \sin \phi \cos \theta + \cos \phi \sin \theta $
+  - $\cos(\phi + \theta) = \cos \phi \cos \theta - \sin \phi \sin \theta$
+  - $\sin(\phi + \theta) = \sin \phi \cos \theta + \cos \phi \sin \theta$
 - Substituting these, we get:
-  - $ x' = r \cos \phi \cos \theta - r \sin \phi \sin \theta $
-  - $ y' = r \sin \phi \cos \theta + r \cos \phi \sin \theta $
+  - $x' = r \cos \phi \cos \theta - r \sin \phi \sin \theta$
+  - $y' = r \sin \phi \cos \theta + r \cos \phi \sin \theta$
 
-####### Expressing in Cartesian Coordinates
+###### Expressing in Cartesian Coordinates
 
-- Recall $ x = r \cos \phi $ and $ y = r \sin \phi $, then:
-  - $ x' = x \cos \theta - y \sin \theta $
-  - $ y' = y \cos \theta + x \sin \theta $
+- Recall $x = r \cos \phi$ and $y = r \sin \phi$, then:
+  - $x' = x \cos \theta - y \sin \theta$
+  - $y' = y \cos \theta + x \sin \theta$
 
-####### Matrix Formulation
+###### Matrix Formulation
 
 - These equations in matrix form:
   $$
