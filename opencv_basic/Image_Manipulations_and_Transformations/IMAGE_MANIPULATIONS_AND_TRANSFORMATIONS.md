@@ -391,6 +391,7 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 ###### Matrix Formulation
 
 - These equations in matrix form:
+
   $$
   \begin{bmatrix}
   x' \\
@@ -406,4 +407,5 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
   y
   \end{bmatrix}
   $$
+
 - This is the rotation matrix, which rotates a point $(x, y)$ by $\theta$ counterclockwise.
