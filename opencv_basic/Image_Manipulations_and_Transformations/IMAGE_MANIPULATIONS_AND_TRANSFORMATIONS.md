@@ -392,6 +392,5 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 
 - These equations in matrix form:
 
-$$ \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} $$
-
+$$ \begin{aligned} \begin{bmatrix} x' \\ y' \end{bmatrix} &= \begin{bmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} \end{aligned} $$
 - This is the rotation matrix, which rotates a point $(x, y)$ by $\theta$ counterclockwise.
