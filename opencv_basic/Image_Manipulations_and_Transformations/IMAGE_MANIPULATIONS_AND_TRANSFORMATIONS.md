@@ -334,4 +334,24 @@ This is an essential technique in image processing, as it allows us to focus on 
 
 ### Spatial Operations: Translation, Rotation, Resizing, Flipping, Cropping
 
-In this section, we will delve into the foundational concepts of spatial operations in image processing, focusing on translation, rotation, resizing, flipping, and cropping. These operations are essential for manipulating the spatial arrangement of pixels in an image and are fundamental to various tasks in computer vision.
+In this section, we will delve into the foundational concepts of spatial operations in image processing, 
+focusing on translation, rotation, resizing, flipping, and cropping. These operations are essential for 
+manipulating the spatial arrangement of pixels in an image and are fundamental to 
+various tasks in computer vision.
+
+
+#### Rotation
+
+Rotation involves changing the orientation of an image by a certain angle. This operation is crucial in various applications like aligning images taken from different angles, data augmentation in machine learning, or correcting the orientation of scanned documents.
+
+Understanding rotation requires a grasp of basic geometry and linear algebra. When we rotate an image, we essentially move each pixel to a new location, following a circular path around a center point. The rotation angle determines how far each pixel moves along this path.
+
+##### Code Overview
+In the provided Python code, we use OpenCV to perform image rotation. The process involves:
+
+1- Loading an image using OpenCV.
+2- Defining a list of angles for rotation.
+3- Creating a rotation matrix for each angle.
+4- Applying the rotation to the image using the rotation matrix.
+5- Displaying the rotated images.
+

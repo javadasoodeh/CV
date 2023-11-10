@@ -3,6 +3,7 @@ import math
 import numpy as np
 
 
+# Optional(Just to know what is happening behind getRotationMatrix2D function)
 def get_rotation_matrix(center, angle, scale):
     # Convert the angle to radians
     theta = math.radians(angle)
@@ -15,8 +16,9 @@ def get_rotation_matrix(center, angle, scale):
     sin_theta = math.sin(theta)
 
     # Construct the rotation matrix
-    rotation_matrix = np.array([[cos_theta * scale, -sin_theta * scale, (1 - cos_theta) * center_x + sin_theta * center_y],
-                                [sin_theta * scale, cos_theta * scale, -sin_theta * center_x + (1 - cos_theta) * center_y]])
+    rotation_matrix = np.array(
+        [[cos_theta * scale, -sin_theta * scale, (1 - cos_theta) * center_x + sin_theta * center_y],
+         [sin_theta * scale, cos_theta * scale, -sin_theta * center_x + (1 - cos_theta) * center_y]])
 
     return rotation_matrix
 
@@ -47,7 +49,6 @@ angles = [30, 60, 90, 120, 150, 180]
 
 # Loop over the angles and points
 for angle in angles:
-
     # Rotate the image clockwise
     rotated_clockwise = rotate(image, -angle)
 
@@ -55,8 +56,8 @@ for angle in angles:
     rotated_counterclockwise = rotate(image, angle)
 
     # Show the rotated images side by side
-    cv2.imshow("Rotated Clockwise", rotated_clockwise)
-    cv2.imshow("Rotated Counterclockwise", rotated_counterclockwise)
+    cv2.imshow(f"Rotated Clockwise {angle} degree", rotated_clockwise)
+    cv2.imshow(f"Rotated Counterclockwise {angle} degree", rotated_counterclockwise)
     cv2.waitKey(0)
 
 cv2.destroyAllWindows()
