@@ -15,10 +15,13 @@ def get_rotation_matrix(center, angle, scale):
     cos_theta = math.cos(theta)
     sin_theta = math.sin(theta)
 
+    alpha = cos_theta * scale
+    beta = sin_theta * scale
+
     # Construct the rotation matrix
     rotation_matrix = np.array(
-        [[cos_theta * scale, -sin_theta * scale, (1 - cos_theta) * center_x + sin_theta * center_y],
-         [sin_theta * scale, cos_theta * scale, -sin_theta * center_x + (1 - cos_theta) * center_y]])
+        [[alpha, beta, (1 - alpha) * center_x - beta * center_y],
+         [-beta, alpha, beta * center_x + (1 - alpha) * center_y]])
 
     return rotation_matrix
 
@@ -32,6 +35,7 @@ def rotate(image, angle):
 
     # Get the rotation matrix using cv2.getRotationMatrix2D function
     # you also can use 'get_rotation_matrix()' function
+    # M = get_rotation_matrix(center, angle, 1.0)
     M = cv2.getRotationMatrix2D(center, angle, 1.0)
 
     # Rotate the image using cv2.warpAffine function
