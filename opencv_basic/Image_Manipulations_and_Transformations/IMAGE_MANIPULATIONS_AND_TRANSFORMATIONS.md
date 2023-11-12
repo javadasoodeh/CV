@@ -367,6 +367,7 @@ In 2D space, the rotation of a point $(x, y)$ around the origin $(0, 0)$ by an a
 $$
 x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) 
 $$
+
 $$
 y' = x \cdot \sin(\theta) + y \cdot \cos(\theta)
 $$
@@ -377,6 +378,7 @@ When rotating around a different point, say $(\text{center}_x, \text{center}_y)$
 $$
 x' = (x - \text{center}_x) \cdot \cos(\theta) - (y - \text{center}_y) \cdot \sin(\theta) + \text{center}_x
 $$
+
 $$
 y' = (x - \text{center}_x) \cdot \sin(\theta) + (y - \text{center}_y) \cdot \cos(\theta) + \text{center}_y
 $$
@@ -387,6 +389,7 @@ Expanding and rearranging the terms for $x'$ and $y'$, we obtain:
 $$
 x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) + (-\sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y) 
 $$
+
 $$
 y' = x \cdot \sin(\theta) + y \cdot \cos(\theta) + (\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_x)
 $$
