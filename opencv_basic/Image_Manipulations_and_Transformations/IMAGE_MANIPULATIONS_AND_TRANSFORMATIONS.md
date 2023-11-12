@@ -397,7 +397,7 @@ $$
 ###### Rotation Matrix for Image Processing
 Incorporating these into a 2x3 matrix for image processing, we get the rotation matrix:
 
-$$ \text{rotation\textunderscore matrix} = \begin{bmatrix} \cos(\theta) & -\sin(\theta) & -\sin(\theta) \cdot \text{center\textunderscore x} + (1 - \cos(\theta)) \cdot \text{center\textunderscore y} \\ \sin(\theta) & \cos(\theta) & \cos(\theta) \cdot \text{center\textunderscore x} + \sin(\theta) \cdot \text{center\textunderscore y} - \text{center\textunderscore y} \end{bmatrix} $$
+$$ \text{rotation\_matrix} = \begin{bmatrix} \cos(\theta) & -\sin(\theta) & -\sin(\theta) \cdot \text{center\_x} + (1 - \cos(\theta)) \cdot \text{center\_y} \\ \sin(\theta) & \cos(\theta) & \cos(\theta) \cdot \text{center\_x} + \sin(\theta) \cdot \text{center\_y} - \text{center\_y} \end{bmatrix} $$
 
 This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image around a specific point.
 
