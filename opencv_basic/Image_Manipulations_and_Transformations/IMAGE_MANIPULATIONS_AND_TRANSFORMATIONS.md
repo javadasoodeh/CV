@@ -349,13 +349,63 @@ Understanding rotation requires a grasp of basic geometry and linear algebra. Wh
 ##### Code Overview
 In the provided Python code, we use OpenCV to perform image rotation. The process involves:
 
-1- Loading an image using OpenCV.
-2- Defining a list of angles for rotation.
-3- Creating a rotation matrix for each angle.
-4- Applying the rotation to the image using the rotation matrix.
+1- Loading an image using OpenCV.  
+2- Defining a list of angles for rotation.  
+3- Creating a rotation matrix for each angle.  
+4- Applying the rotation to the image using the rotation matrix.  
 5- Displaying the rotated images.
 
 
+
+##### Understanding the Rotation Matrix with Center Translation
+
+To delve deeper into the rotation matrix and how it incorporates translation to rotate an image around a specific point, let's revisit and expand upon the previous explanation with additional information.
+
+###### Basic Concept of Rotation
+In 2D space, the rotation of a point $(x, y)$ around the origin $(0, 0)$ by an angle $\theta$ changes its coordinates to $(x', y')$, calculated as:
+
+$$
+x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) 
+$$
+$$
+y' = x \cdot \sin(\theta) + y \cdot \cos(\theta)
+$$
+
+###### Rotating Around an Arbitrary Center
+When rotating around a different point, say $(\text{center}_x, \text{center}_y)$, we first translate the point so that $(\text{center}_x, \text{center}_y)$ becomes the origin. After rotation, we translate back. The equations for the new coordinates $(x', y')$ become:
+
+$$
+x' = (x - \text{center}_x) \cdot \cos(\theta) - (y - \text{center}_y) \cdot \sin(\theta) + \text{center}_x
+$$
+$$
+y' = (x - \text{center}_x) \cdot \sin(\theta) + (y - \text{center}_y) \cdot \cos(\theta) + \text{center}_y
+$$
+
+###### Expansion and Rearrangement
+Expanding and rearranging the terms for $x'$ and $y'$, we obtain:
+
+$$
+x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) + (-\sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y) 
+$$
+$$
+y' = x \cdot \sin(\theta) + y \cdot \cos(\theta) + (\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_x)
+$$
+
+###### Rotation Matrix for Image Processing
+Incorporating these into a 2x3 matrix for image processing, we get the rotation matrix:
+
+$$
+\text{rotation\_matrix} = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta) & -\sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y \\
+\sin(\theta) & \cos(\theta) & \cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_y
+\end{bmatrix}
+$$
+
+This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image around a specific point.
+
+###### Understanding the Translation Component
+- The terms $(- \sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y)$ and $(\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
+- They ensure that the rotation appears as if it's occurring around the specified center point, rather than the top-left corner of the image.
 
 ##### Deriving the Rotation Matrix Formulas Using Polar Coordinates
 
