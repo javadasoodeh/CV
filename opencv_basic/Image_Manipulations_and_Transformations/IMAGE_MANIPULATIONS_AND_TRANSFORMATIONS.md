@@ -414,6 +414,8 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 - Any point $(x, y)$ in a 2D plane can be represented in polar coordinates as $(r \cos \phi, r \sin \phi)$, where $r$ is the radius (distance from the origin) and $\phi$ is the angle with the positive x-axis.
 - $x = r \cos \phi$ and $y = r \sin \phi$.
 
+![proof](/img/rotate5.png)
+
 ###### Rotating the Point
 
 - When rotating this point by an angle $\theta$, the radius $r$ remains the same, but the angle $\phi$ increases by $\theta$.
