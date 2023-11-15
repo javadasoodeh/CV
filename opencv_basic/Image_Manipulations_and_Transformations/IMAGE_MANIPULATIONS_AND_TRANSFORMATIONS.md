@@ -355,6 +355,9 @@ In the provided Python code, we use OpenCV to perform image rotation. The proces
 4- Applying the rotation to the image using the rotation matrix.  
 5- Displaying the rotated images.
 
+##### Detailed Explanation
+Understanding the Rotation Matrix
+The rotation matrix is a fundamental concept in linear algebra used to rotate points in a plane. It is a 2x3 matrix for 2D image rotation, defined as:
 
 
 ##### Understanding the Rotation Matrix with Center Translation
