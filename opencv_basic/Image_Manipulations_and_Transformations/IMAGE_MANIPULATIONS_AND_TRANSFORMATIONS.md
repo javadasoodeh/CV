@@ -357,7 +357,54 @@ In the provided Python code, we use OpenCV to perform image rotation. The proces
 
 ##### Detailed Explanation
 Understanding the Rotation Matrix
+
 The rotation matrix is a fundamental concept in linear algebra used to rotate points in a plane. It is a 2x3 matrix for 2D image rotation, defined as:
+
+### Deeper Dive into the Rotation Matrix Formula
+
+The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula you've mentioned:
+
+$$
+\text{rotation\_matrix} = \begin{bmatrix}
+\alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\
+-\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y
+\end{bmatrix}
+$$
+
+where:
+- $\alpha = \cos(\theta) \times \text{scale}$
+- $\beta = \sin(\theta) \times \text{scale}$
+
+#### Origin of the Formula
+
+1. **Basic Rotation Matrix**: 
+   - In 2D space, the basic rotation matrix for rotating a point $(x, y)$ around the origin (0,0) by an angle $\theta$ is given by:
+     $$
+     \begin{bmatrix}
+     \cos(\theta) & -\sin(\theta) \\
+     \sin(\theta) & \cos(\theta)
+     \end{bmatrix}
+     $$
+   - This matrix rotates points around the origin. However, for images, we often need to rotate around the image's center or another point, not just the origin.
+
+2. **Translation to Center**:
+   - To rotate around a center point $(\text{center}_x, \text{center}_y)$, we first translate the image so that the center becomes the origin. This involves shifting every point by $-\text{center}_x$ and $-\text{center}_y$.
+
+3. **Rotation and Re-translation**:
+   - After translating the image, we apply the basic rotation matrix and then translate the image back. This additional translation is where the $(1 - \alpha)$ and $\beta$ terms in the formula come into play.
+
+#### Breaking Down the Matrix
+
+- **First Row $[ \alpha, \beta, (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y ]$**:
+  - $\alpha$ and $\beta$ are responsible for the rotation.
+  - $(1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y$ adjusts the x-coordinate after rotation to ensure the rotation is around the center.
+
+- **Second Row $[ -\beta, \alpha, \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y ]$**:
+  - $-\beta$ and $\alpha$ also contribute to the rotation.
+  - $\beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y$ adjusts the y-coordinate similarly.
+
+#### Understanding Scale
+The `scale` factor is multiplied with $\cos(\theta)$ and $\sin(\theta)$ to allow for resizing of the image during rotation. A scale of 1 means the image size remains constant. 
 
 
 ##### Understanding the Rotation Matrix with Center Translation
