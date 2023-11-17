@@ -1,16 +1,20 @@
 ## Image Manipulations and Transformations
-\# change the style (introduction, code, ...)
+
 ### Image Arithmetic and Mathematical Operations
 
 Image arithmetic and mathematical operations are fundamental tools in image processing. 
 They allow us to manipulate the pixel values of an image, which can be crucial for various tasks
  such as enhancing the contrast of an image, isolating features of interest, or combining multiple images together.
 
+#### Code Overview 
+
 In this section, we'll explore basic arithmetic operations like addition, subtraction, 
 multiplication, and division, and we'll learn how to perform these operations 
 using two popular libraries in Python: NumPy and OpenCV.
 
-#### Importing Necessary Libraries
+#### Code Breakdown
+
+##### Importing Necessary Libraries
 
 Firstly, let's import the necessary libraries. We'll be using OpenCV and NumPy for this section. 
 OpenCV is a library specifically designed for computer vision tasks, 
@@ -21,7 +25,7 @@ import cv2
 import numpy as np
 ```
 
-#### Loading Images
+##### Loading Images
 
 We'll start by loading a grayscale image using OpenCV's `cv2.imread` function. 
 The `cv2.IMREAD_GRAYSCALE` flag tells OpenCV to load the image in grayscale mode.
@@ -40,7 +44,7 @@ which creates an array of the same shape and type as a given array, filled with 
 image2 = np.full_like(image1, 20)
 ```
 
-#### Arithmetic Operations using NumPy
+##### Arithmetic Operations using NumPy
 
 Now, let's perform basic arithmetic operations on these images using NumPy. 
 The `np.add`, `np.subtract`, `np.multiply`, and `np.divide` functions perform element-wise addition, 
@@ -60,7 +64,7 @@ the pixel value at position (0, 0) in `image1` is added to the pixel value at po
 and the result is stored in the corresponding position in `addition_numpy`. 
 This is done for every pixel position in the images.
 
-#### Arithmetic Operations using OpenCV
+##### Arithmetic Operations using OpenCV
 
 Now, let's perform the same arithmetic operations using OpenCV's functions. 
 The `cv2.add`, `cv2.subtract`, `cv2.multiply`, and `cv2.divide` functions perform the same operations 
@@ -81,6 +85,8 @@ it will be clipped to the nearest valid value. For example, if a pixel value in 
  
 **On the other hand**, NumPy performs modulo arithmetic for integer overflow. So, in the same example, 
  adding $10$ to a pixel value of $250$ will result in a value of $4$ in NumPy, as $(250+10)mod256=4$.
+ 
+###### Saturated Arithmetic (Optional)
  
 To make NumPy behave similarly to OpenCV in terms of arithmetic operations, 
 we can define functions for saturated arithmetic that ensure the results 
@@ -175,7 +181,6 @@ and division can invert the contrast.
 
 ### Bitwise Operations
 
-#### Introduction
 Bitwise operations are fundamental in digital image processing. They enable us to combine, manipulate, or extract specific parts of images based on their binary representations. In this section, we will use the OpenCV library, a powerful tool in computer vision, to perform these operations. While the operations are simple, they lay the foundation for more advanced image processing techniques.
 
 #### Code Overview
