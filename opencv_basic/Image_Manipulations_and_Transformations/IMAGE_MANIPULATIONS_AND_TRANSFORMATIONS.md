@@ -380,7 +380,7 @@ where:
 1. **Basic Rotation Matrix**: 
    - In 2D space, the basic rotation matrix for rotating a point $(x, y)$ around the origin (0,0) by an angle $\theta$ is given by:
      
-    $$ 
+$$ 
 \begin{bmatrix} 
     \cos \theta & -\sin \theta \\ 
     \sin \theta & \cos \theta 
