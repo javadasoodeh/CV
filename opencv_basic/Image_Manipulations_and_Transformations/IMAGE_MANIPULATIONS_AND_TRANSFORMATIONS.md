@@ -261,11 +261,17 @@ By understanding and leveraging these basic bitwise operations, we can create ma
 
 ### Masking Techniques
 
-#### Introduction
-
 In image processing, "masking" refers to the practice of defining a region of interest in an image and then performing operations only within that region. This technique is widely used in applications ranging from simple photo editing to complex computer vision tasks that require the identification and manipulation of specific parts of an image.
 
-When we talk about "techniques," we mean the various ways in which masking can be implemented. For our introduction, we'll focus on the most straightforward approach, known as binary masking, which is the use of binary images to control the visibility of the main image.
+1. **Binary Masking**: Uses binary images (black and white) to define the regions of interest in the main image.
+2. **Alpha Blending**: Involves using an alpha channel to blend images, controlling the transparency.
+3. **Color-based Masking**: Selects parts of an image based on specific color ranges.
+4. **Bitwise Operations**: Applies logical operations like AND, OR, XOR for masking.
+5. **Geometric Masking**: Uses geometric shapes (circles, rectangles, polygons) to define regions for masking.
+6. **Gradient Masks**: Creates masks based on gradient information, often used in edge detection.
+7. **Thresholding**: Segregates regions of interest by thresholding pixel values.
+
+For our introduction, we'll focus on the most straightforward approach, known as binary masking, which is the use of binary images to control the visibility of the main image.
 
 #### Code Overview
 We will go through the following process in our code:
@@ -342,7 +348,7 @@ various tasks in computer vision.
 
 #### Rotation
 
-Rotation involves changing the orientation of an image by a certain angle. This operation is crucial in various applications like aligning images taken from different angles, data augmentation in machine learning, or correcting the orientation of scanned documents.
+Rotation is a fundamental transformation in image processing, involving changing the orientation of an image by a certain angle. This operation is crucial in various applications like aligning images taken from different angles, data augmentation in machine learning, or correcting the orientation of scanned documents.
 
 Understanding rotation requires a grasp of basic geometry and linear algebra. When we rotate an image, we essentially move each pixel to a new location, following a circular path around a center point. The rotation angle determines how far each pixel moves along this path.
 
@@ -390,6 +396,15 @@ def get_rotation_matrix(center, angle, scale):
     return rotation_matrix
 ```
 
+- **Function Purpose**: This function creates a rotation matrix. In image processing, a rotation matrix is used to rotate an image around a specific point (the center) by a specified angle.
+- **Arguments**:
+    - \`center\`: A tuple (x, y) representing the center of rotation.
+    - \`angle\`: The angle in degrees by which the image is to be rotated.
+    - \`scale\`: A scaling factor. If set to 1, the image size remains the same.
+- **Conversion to Radians**: The angle is converted to radians (\`theta = math.radians(angle)\`) because trigonometric functions in Python's math module require angles in radians.
+- **Trigonometry**: \`cos_theta\` and \`sin_theta\` represent the cosine and sine of the angle, respectively. They are fundamental in calculating the new positions of pixels after rotation.
+- **Rotation Matrix Creation**: A 2x3 array is created using NumPy. This matrix is pivotal in determining how pixels in the original image are moved to new positions in the rotated image.
+
 ###### rotate Function
 ```python
 def rotate(image, angle):
@@ -409,6 +424,12 @@ def rotate(image, angle):
     # Return the rotated image
     return rotated
 ```
+
+- **Function Purpose**: This function rotates an image by a given angle.
+- **Image Dimensions**: (\`(h, w) = image.shape[:2]\`) retrieves the height and width of the image. This is important for calculating the center of the image and for ensuring the rotated image has the same dimensions as the original.
+- **Center of Rotation**: \`center = (w // 2, h // 2)\` calculates the center of the image. Rotation will occur around this point.
+- **Rotation Matrix (OpenCV)**: \`M = cv2.getRotationMatrix2D(center, angle, 1.0)\` uses OpenCV's function to create a rotation matrix. This matrix is then used to transform the image's pixels to their new positions.
+- **Applying Rotation**: \`cv2.warpAffine(image, M, (w, h))\` applies the rotation matrix to the image. This function handles the remapping of pixels from their original to new positions.
 
 ###### Main Execution Block
 
@@ -435,6 +456,11 @@ for angle in angles:
 
 cv2.destroyAllWindows()
 ```
+
+- **Loading Image**: \`cv2.imread("HBD.JPG")\` loads an image from the specified file.
+- **Rotation Angles**: A list of angles is defined to rotate the image by various degrees.
+- **Applying Rotation**: For each angle, the image is rotated both clockwise and counterclockwise. This is achieved by using positive and negative angles, respectively.
+- **Displaying Images**: \`cv2.imshow()\` displays the rotated images. \`cv2.waitKey(0)\` waits for a key press to proceed, and \`cv2.destroyAllWindows()\` closes the image windows.
 
 ##### Detailed Explanation
 
@@ -466,7 +492,7 @@ At the heart of rotation is the concept of coordinate transformation. Each pixel
  
 ##### Deeper Dive into the Rotation Matrix Formula (Optional)
 
-The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula you've mentioned:
+The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula:
 
 $$  
 \text{rotationMatrix} = \begin{bmatrix}
