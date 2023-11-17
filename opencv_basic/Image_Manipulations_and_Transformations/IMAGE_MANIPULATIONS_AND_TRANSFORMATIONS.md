@@ -365,7 +365,7 @@ The rotation matrix is a fundamental concept in linear algebra used to rotate po
 The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula you've mentioned:
 
 $$  
-\text{rotation\_matrix} = \begin{bmatrix}
+\text{rotationMatrix} = \begin{bmatrix}
     \alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\
     -\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y  
 \end{bmatrix}  
