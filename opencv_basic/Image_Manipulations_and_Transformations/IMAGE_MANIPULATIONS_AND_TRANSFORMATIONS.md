@@ -355,12 +355,116 @@ In the provided Python code, we use OpenCV to perform image rotation. The proces
 4- Applying the rotation to the image using the rotation matrix.  
 5- Displaying the rotated images.
 
-##### Detailed Explanation
-Understanding the Rotation Matrix
+##### Code Breakdown
 
+###### Importing Libraries
+
+```python
+import cv2
+import math
+import numpy as np
+```
+
+- `cv2`: This is the OpenCV library, used for image processing tasks.
+- `math`: A standard Python library for mathematical functions like `sin`, `cos`, and `radians`.
+- `numpy`: A library for numerical computations in Python. It provides support for arrays (like matrices), which are crucial in image processing.
+
+###### get_rotation_matrix Function
+
+```python
+def get_rotation_matrix(center, angle, scale):
+    # Convert the angle to radians
+    theta = math.radians(angle)
+
+    # Extract the center coordinates
+    center_x, center_y = center
+
+    # Calculate sine and cosine of the angle
+    cos_theta = math.cos(theta)
+    sin_theta = math.sin(theta)
+
+    # Construct the rotation matrix
+    rotation_matrix = np.array([[cos_theta * scale, -sin_theta * scale, (1 - cos_theta) * center_x + sin_theta * center_y],
+                                [sin_theta * scale, cos_theta * scale, -sin_theta * center_x + (1 - cos_theta) * center_y]])
+
+    return rotation_matrix
+```
+
+###### rotate Function
+```python
+def rotate(image, angle):
+    # Get the height and width of the image
+    (h, w) = image.shape[:2]
+
+    # Compute the center of the image
+    center = (w // 2, h // 2)
+
+    # Get the rotation matrix using cv2.getRotationMatrix2D function
+    # you also can use 'get_rotation_matrix()' function
+    M = cv2.getRotationMatrix2D(center, angle, 1.0)
+
+    # Rotate the image using cv2.warpAffine function
+    rotated = cv2.warpAffine(image, M, (w, h))
+
+    # Return the rotated image
+    return rotated
+```
+
+###### Main Execution Block
+
+```python
+# Load the image using OpenCV
+image = cv2.imread("HBD.JPG")
+
+# Define the rotation angles
+angles = [30, 60, 90, 120, 150, 180]
+
+# Loop over the angles and points
+for angle in angles:
+
+    # Rotate the image clockwise
+    rotated_clockwise = rotate(image, -angle)
+
+    # Rotate the image counterclockwise
+    rotated_counterclockwise = rotate(image, angle)
+
+    # Show the rotated images side by side
+    cv2.imshow("Rotated Clockwise", rotated_clockwise)
+    cv2.imshow("Rotated Counterclockwise", rotated_counterclockwise)
+    cv2.waitKey(0)
+
+cv2.destroyAllWindows()
+```
+
+##### Detailed Explanation
+
+###### Understanding the Rotation Matrix
 The rotation matrix is a fundamental concept in linear algebra used to rotate points in a plane. It is a 2x3 matrix for 2D image rotation, defined as:
 
-### Deeper Dive into the Rotation Matrix Formula
+$$
+\begin{bmatrix}
+\cos \theta & -\sin \theta & Tx \\\
+\sin \theta & \cos \theta & Ty
+\end{bmatrix}
+$$
+
+- $\theta$ is the rotation angle.
+- $\cos \theta$ and $\sin \theta$ define the rotation part.
+- $Tx$ and $Ty$ are translations applied after rotation, necessary to keep the image centered.
+
+###### cv2.getRotationMatrix2D
+This OpenCV function simplifies the creation of the rotation matrix. It requires the center of rotation, the rotation angle, and a scale factor (usually 1 for no scaling). 
+
+###### cv2.warpAffine
+This function applies the rotation matrix to the image. It maps the coordinates of the original image to the new coordinates after rotation. The function handles the interpolation and boundary issues that arise when pixels are moved.
+
+###### Handling Image Boundaries
+One challenge with rotation is that parts of the image might move outside the frame, getting clipped. To handle this, one can adjust the frame size or the center of rotation.
+
+###### Mathematical Foundations
+At the heart of rotation is the concept of coordinate transformation. Each pixel in the image is moved to a new location based on the rotation matrix. This operation is a combination of linear transformation (rotation) and translation. 
+ 
+##### Deeper Dive into the Rotation Matrix Formula (Optional)
 
 The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula you've mentioned:
 
@@ -375,7 +479,7 @@ where:
 - $\alpha = \cos(\theta) \times \text{scale}$
 - $\beta = \sin(\theta) \times \text{scale}$
 
-#### Origin of the Formula
+###### Origin of the Formula
 
 1. **Basic Rotation Matrix**: 
    - In 2D space, the basic rotation matrix for rotating a point $(x, y)$ around the origin (0,0) by an angle $\theta$ is given by:
@@ -396,7 +500,7 @@ $$
 3. **Rotation and Re-translation**:
    - After translating the image, we apply the basic rotation matrix and then translate the image back. This additional translation is where the $(1 - \alpha)$ and $\beta$ terms in the formula come into play.
 
-#### Breaking Down the Matrix
+###### Breaking Down the Matrix
 
 - **First Row $[ \alpha, \beta, (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y ]$**:
   - $\alpha$ and $\beta$ are responsible for the rotation.
@@ -406,11 +510,11 @@ $$
   - $-\beta$ and $\alpha$ also contribute to the rotation.
   - $\beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y$ adjusts the y-coordinate similarly.
 
-#### Understanding Scale
+###### Understanding Scale
 The `scale` factor is multiplied with $\cos(\theta)$ and $\sin(\theta)$ to allow for resizing of the image during rotation. A scale of 1 means the image size remains constant. 
 
 
-##### Understanding the Rotation Matrix with Center Translation
+##### Understanding the Rotation Matrix with Center Translation (Optional)
 
 To delve deeper into the rotation matrix and how it incorporates translation to rotate an image around a specific point, let's revisit and expand upon the previous explanation with additional information.
 
@@ -458,7 +562,7 @@ This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image ar
 - The terms $(- \sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y)$ and $(\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
 - They ensure that the rotation appears as if it's occurring around the specified center point, rather than the top-left corner of the image.
 
-##### Deriving the Rotation Matrix Formulas Using Polar Coordinates
+##### Deriving the Rotation Matrix Formulas Using Polar Coordinates (Optional)
 
 To understand the rotation matrix formulas, we use polar coordinates and trigonometric sum of angle formulas. This approach provides a geometric understanding of the rotation process.
 
