@@ -139,7 +139,7 @@ In the above code:
 Now, the results of these operations (`addition_numpy`, `subtraction_numpy`, `multiplication_numpy`, and `division_numpy`) should match the results obtained using OpenCV's functions (`addition_opencv`, `subtraction_opencv`, `multiplication_opencv`, and `division_opencv`).
 
 
-#### Displaying the Images and Results
+##### Displaying the Images and Results
 
 Now that we have performed the arithmetic operations, it's time to visualize the results. 
 This will help us understand the impact of these operations on the images.
@@ -403,11 +403,11 @@ def get_rotation_matrix(center, angle, scale):
 
 - **Function Purpose**: This function creates a rotation matrix. In image processing, a rotation matrix is used to rotate an image around a specific point (the center) by a specified angle.
 - **Arguments**:
-    - \`center\`: A tuple (x, y) representing the center of rotation.
-    - \`angle\`: The angle in degrees by which the image is to be rotated.
-    - \`scale\`: A scaling factor. If set to 1, the image size remains the same.
-- **Conversion to Radians**: The angle is converted to radians (\`theta = math.radians(angle)\`) because trigonometric functions in Python's math module require angles in radians.
-- **Trigonometry**: \`cos_theta\` and \`sin_theta\` represent the cosine and sine of the angle, respectively. They are fundamental in calculating the new positions of pixels after rotation.
+    - `center`: A tuple (x, y) representing the center of rotation.
+    - `angle`: The angle in degrees by which the image is to be rotated.
+    - `scale`: A scaling factor. If set to 1, the image size remains the same.
+- **Conversion to Radians**: The angle is converted to radians (`theta = math.radians(angle)`) because trigonometric functions in Python's math module require angles in radians.
+- **Trigonometry**: `cos_theta` and `sin_theta` represent the cosine and sine of the angle, respectively. They are fundamental in calculating the new positions of pixels after rotation.
 - **Rotation Matrix Creation**: A 2x3 array is created using NumPy. This matrix is pivotal in determining how pixels in the original image are moved to new positions in the rotated image.
 
 ###### rotate Function
@@ -431,10 +431,10 @@ def rotate(image, angle):
 ```
 
 - **Function Purpose**: This function rotates an image by a given angle.
-- **Image Dimensions**: (\`(h, w) = image.shape[:2]\`) retrieves the height and width of the image. This is important for calculating the center of the image and for ensuring the rotated image has the same dimensions as the original.
-- **Center of Rotation**: \`center = (w // 2, h // 2)\` calculates the center of the image. Rotation will occur around this point.
-- **Rotation Matrix (OpenCV)**: \`M = cv2.getRotationMatrix2D(center, angle, 1.0)\` uses OpenCV's function to create a rotation matrix. This matrix is then used to transform the image's pixels to their new positions.
-- **Applying Rotation**: \`cv2.warpAffine(image, M, (w, h))\` applies the rotation matrix to the image. This function handles the remapping of pixels from their original to new positions.
+- **Image Dimensions**: (`(h, w) = image.shape[:2]`) retrieves the height and width of the image. This is important for calculating the center of the image and for ensuring the rotated image has the same dimensions as the original.
+- **Center of Rotation**: `center = (w // 2, h // 2)` calculates the center of the image. Rotation will occur around this point.
+- **Rotation Matrix (OpenCV)**: `M = cv2.getRotationMatrix2D(center, angle, 1.0)` uses OpenCV's function to create a rotation matrix. This matrix is then used to transform the image's pixels to their new positions.
+- **Applying Rotation**: `cv2.warpAffine(image, M, (w, h))` applies the rotation matrix to the image. This function handles the remapping of pixels from their original to new positions.
 
 ###### Main Execution Block
 
@@ -462,10 +462,10 @@ for angle in angles:
 cv2.destroyAllWindows()
 ```
 
-- **Loading Image**: \`cv2.imread("HBD.JPG")\` loads an image from the specified file.
+- **Loading Image**: `cv2.imread("HBD.JPG")` loads an image from the specified file.
 - **Rotation Angles**: A list of angles is defined to rotate the image by various degrees.
 - **Applying Rotation**: For each angle, the image is rotated both clockwise and counterclockwise. This is achieved by using positive and negative angles, respectively.
-- **Displaying Images**: \`cv2.imshow()\` displays the rotated images. \`cv2.waitKey(0)\` waits for a key press to proceed, and \`cv2.destroyAllWindows()\` closes the image windows.
+- **Displaying Images**: `cv2.imshow()` displays the rotated images. `cv2.waitKey(0)` waits for a key press to proceed, and `cv2.destroyAllWindows()` closes the image windows.
 
 ##### Detailed Explanation
 
