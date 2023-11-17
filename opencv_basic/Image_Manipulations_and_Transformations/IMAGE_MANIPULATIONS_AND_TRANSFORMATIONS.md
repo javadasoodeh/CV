@@ -380,7 +380,13 @@ where:
 1. **Basic Rotation Matrix**: 
    - In 2D space, the basic rotation matrix for rotating a point $(x, y)$ around the origin (0,0) by an angle $\theta$ is given by:
      
-     $$ \begin{bmatrix} \cos \theta & -\sin \theta \\\ \sin \theta & \cos \theta \end{bmatrix} $$
+    $$ 
+\begin{bmatrix} 
+    \cos \theta & -\sin \theta \\ 
+    \sin \theta & \cos \theta 
+\end{bmatrix} 
+$$
+
      
    - This matrix rotates points around the origin. However, for images, we often need to rotate around the image's center or another point, not just the origin.
 
