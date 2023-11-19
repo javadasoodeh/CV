@@ -633,3 +633,11 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 $$ \begin{bmatrix} x' \\\ y' \end{bmatrix} = \begin{bmatrix} \cos \theta & -\sin \theta \\\ \sin \theta & \cos \theta \end{bmatrix} \begin{bmatrix} x \\\ y \end{bmatrix} $$
 
 - This is the rotation matrix, which rotates a point $(x, y)$ by $\theta$ counterclockwise.
+
+
+#### Cropping
+
+Cropping is a fundamental technique in image processing and computer vision. It refers to the process of extracting a subregion of an image, often to focus on a particular area or to remove unwanted parts. Cropping is widely used in various applications like photo editing, object detection, and feature extraction.
+
+In this section, we'll explore how to perform cropping using Python and OpenCV. 
+
