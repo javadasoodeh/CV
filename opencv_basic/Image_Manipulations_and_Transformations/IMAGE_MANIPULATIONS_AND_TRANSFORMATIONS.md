@@ -713,3 +713,46 @@ Let's delve into each part of the code for a comprehensive understanding.
 ###### Cropping and Memory Efficiency
 - The cropping operation in this code does not copy the selected region; it merely creates a view into the original array. This makes cropping very memory efficient in Python and OpenCV.
 
+#### Flipping
+
+##### Detailed Explanation For **`cv2.flip()`** Function
+
+To understand the mathematics behind flipping, let's consider a 2D image represented by a matrix or an array. 
+Each pixel in the image can be addressed by its row and column indices. 
+The top-left pixel corresponds to the coordinates (0, 0), and the bottom-right pixel corresponds to 
+the coordinates (rows-1, cols-1), where 'rows' and 'cols' represent the number of rows and columns 
+in the image, respectively.
+
+When flipping an image, we essentially reflect the pixels along a certain axis or axes. 
+The **`cv2.flip()`** function takes two parameters: the image to be flipped and the flipCode, 
+which determines the flipping direction.
+
+Here's a breakdown of the flipCode values and their mathematical representations:
+
+- **flipCode = 0: Vertical flipping**
+
+- This operation reflects the image pixels vertically, flipping it upside down.
+- The mathematical representation for vertical flipping is:
+
+    - new_row = (rows - 1) - current_row
+    - new_col = current_col
+
+- **flipCode > 0: Horizontal flipping**
+
+- This operation reflects the image pixels horizontally, flipping it from left to right.
+- The mathematical representation for horizontal flipping is:
+
+    - new_row = current_row
+    - new_col = (cols - 1) - current_col
+
+- **flipCode < 0: Horizontal and vertical flipping (both directions)**
+
+- This operation reflects the image pixels both horizontally and vertically, flipping it upside down and from right to left.
+- The mathematical representation for horizontal and vertical flipping is a combination of the previous two transformations:
+
+    - new_row = (rows - 1) - current_row
+    - new_col = (cols - 1) - current_col
+
+By applying these mathematical transformations to each pixel in the image, the cv2.flip() function effectively flips the image according to the specified flipCode.
+
+It's important to note that OpenCV optimizes the flipping operation using efficient matrix operations, taking advantage of the underlying hardware acceleration and optimizations provided by the OpenCV library.  
