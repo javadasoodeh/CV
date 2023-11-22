@@ -778,14 +778,14 @@ When flipping an image, we reflect the pixels along a certain axis:
 
 - **flipCode = 0: Vertical flipping**
   - Reflects the image pixels vertically, flipping it upside down.
-  - Mathematically: $$	ext{new\_row} = (	ext{rows} - 1) - 	ext{current\_row}, 	ext{new\_col} = 	ext{current\_col}$$
+  - Mathematically: $$	text{newRow} = (	text{rows} - 1) - 	text{currentRow}, 	text{newCol} = 	text{currentCol}$$
 
 - **flipCode > 0: Horizontal flipping**
   - Reflects the image pixels horizontally, flipping it from left to right.
-  - Mathematically: $$	ext{new\_row} = 	ext{current\_row}, 	ext{new\_col} = (	ext{cols} - 1) - 	ext{current\_col}$$
+  - Mathematically: $$	text{newRow} = 	text{currentRow}, 	text{newCol} = (	text{cols} - 1) - 	text{currentCol}$$
 
 - **flipCode < 0: Both directions**
   - Reflects the image pixels horizontally and vertically.
-  - Mathematically: $$	ext{new\_row} = (	ext{rows} - 1) - 	ext{current\_row}, 	ext{new\_col} = (	ext{cols} - 1) - 	ext{current\_col}$$
+  - Mathematically: $$	text{newRow} = (	text{rows} - 1) - 	text{currentRow}, 	text{newCol} = (	text{cols} - 1) - 	text{currentCol}$$
 
 By applying these transformations to each pixel, the `cv2.flip()` function flips the image as specified. OpenCV optimizes this operation using efficient matrix operations, leveraging hardware acceleration and internal optimizations.
