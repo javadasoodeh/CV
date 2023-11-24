@@ -789,3 +789,21 @@ When flipping an image, we reflect the pixels along a certain axis:
   - Mathematically: $$	\text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol}$$
 
 By applying these transformations to each pixel, the `cv2.flip()` function flips the image as specified. OpenCV optimizes this operation using efficient matrix operations, leveraging hardware acceleration and internal optimizations.
+
+
+#### Resizing
+
+##### Interpolation Methods: Advantages and Disadvantages
+
+Here is an overview of the advantages and disadvantages of each interpolation method:
+
+- cv2.INTER_NEAREST: Fastest method, but can result in pixelation and loss of image quality.
+- cv2.INTER_LINEAR: Produces smooth results, but may introduce blurring in certain cases.
+- cv2.INTER_CUBIC: Provides higher quality than linear interpolation but is slower.
+- cv2.INTER_LANCZOS4: Generates sharp and high-quality results but requires more computational resources.
+- cv2.INTER_AREA: Suitable for downsampling images, preserving details, and reducing aliasing artifacts.
+- cv2.INTER_LINEAR_EXACT: Bit exact bilinear interpolation, providing the highest accuracy but at a higher computational cost.
+
+Each method has its own strengths and weaknesses, and the choice depends on the specific requirements of 
+your application, such as the desired trade-off between speed and image quality, the nature of the image, 
+and the computational resources available.
