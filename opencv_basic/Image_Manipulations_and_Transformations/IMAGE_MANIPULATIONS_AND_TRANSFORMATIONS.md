@@ -780,7 +780,7 @@ When flipping an image, we reflect the pixels along a certain axis:
   - Reflects the image pixels vertically, flipping it upside down.
   
   - Mathematically: 
-   $$ \text{newRow} = 1 $$
+   $\text{newRow} = 1$
   
   
 - **flipCode > 0: Horizontal flipping**
