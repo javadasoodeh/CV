@@ -499,12 +499,7 @@ At the heart of rotation is the concept of coordinate transformation. Each pixel
 
 The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula:
 
-$$  
-\text{rotationMatrix} = \begin{bmatrix}
-    \alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\\
-    -\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y  
-\end{bmatrix}  
-$$
+
 
 where:
 - $\alpha = \cos \theta  \times \text{scale}$
@@ -629,7 +624,6 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 
 - These equations in matrix form:
 
-$$ \begin{bmatrix} x' \\\ y' \end{bmatrix} = \begin{bmatrix} \cos \theta & -\sin \theta \\\ \sin \theta & \cos \theta \end{bmatrix} \begin{bmatrix} x \\\ y \end{bmatrix} $$
 
 - This is the rotation matrix, which rotates a point $(x, y)$ by $\theta$ counterclockwise.
 
