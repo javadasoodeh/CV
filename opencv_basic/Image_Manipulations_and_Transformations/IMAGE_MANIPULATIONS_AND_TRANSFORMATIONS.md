@@ -1,3 +1,13 @@
+**Note to Users:**
+
+If you encounter an error stating "Unable to render expression" while viewing this page, please try the following steps:
+
+1. **Open this page in a Private or Incognito window** in your browser. This can help bypass issues related to browser cache or cookies that might be affecting the rendering.
+
+2. **View this page in a single tab**. Sometimes, having multiple tabs open can strain your system's resources (like RAM), which might impact the page's ability to render complex expressions.
+
+These steps often resolve issues related to resource limitations or caching problems in your browser.
+
 ## Image Manipulations and Transformations
 
 ### Image Arithmetic and Mathematical Operations
