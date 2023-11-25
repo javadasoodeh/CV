@@ -501,14 +501,14 @@ The formula for the rotation matrix in image processing is derived from the basi
 
 $$  
 \text{rotationMatrix} = \begin{bmatrix}
-    \alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\
+    \alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\\
     -\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y  
 \end{bmatrix}  
 $$
 
 where:
-- $\alpha = \cos(\theta) \times \text{scale}$
-- $\beta = \sin(\theta) \times \text{scale}$
+- $\alpha = \cos \theta  \times \text{scale}$
+- $\beta = \sin \theta  \times \text{scale}$
 
 ###### Origin of the Formula
 
@@ -517,7 +517,7 @@ where:
      
 $$ 
 \begin{bmatrix} 
-    \cos \theta & -\sin \theta \\ 
+    \cos \theta & -\sin \theta \\\ 
     \sin \theta & \cos \theta 
 \end{bmatrix} 
 $$
@@ -542,7 +542,7 @@ $$
   - $\beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y$ adjusts the y-coordinate similarly.
 
 ###### Understanding Scale
-The `scale` factor is multiplied with $\cos(\theta)$ and $\sin(\theta)$ to allow for resizing of the image during rotation. A scale of 1 means the image size remains constant. 
+The `scale` factor is multiplied with $\cos \theta $ and $\sin \theta $ to allow for resizing of the image during rotation. A scale of 1 means the image size remains constant. 
 
 
 ##### Understanding the Rotation Matrix with Center Translation (Optional)
@@ -553,33 +553,33 @@ To delve deeper into the rotation matrix and how it incorporates translation to 
 In 2D space, the rotation of a point $(x, y)$ around the origin $(0, 0)$ by an angle $\theta$ changes its coordinates to $(x', y')$, calculated as:
 
 $$
-x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) 
+x' = x \cdot \cos \theta  - y \cdot \sin \theta  
 $$
 
 $$
-y' = x \cdot \sin(\theta) + y \cdot \cos(\theta)
+y' = x \cdot \sin \theta  + y \cdot \cos \theta 
 $$
 
 ###### Rotating Around an Arbitrary Center
 When rotating around a different point, say $(\text{center}_x, \text{center}_y)$, we first translate the point so that $(\text{center}_x, \text{center}_y)$ becomes the origin. After rotation, we translate back. The equations for the new coordinates $(x', y')$ become:
 
 $$
-x' = (x - \text{center}_x) \cdot \cos(\theta) - (y - \text{center}_y) \cdot \sin(\theta) + \text{center}_x
+x' = (x - \text{center}_x) \cdot \cos \theta  - (y - \text{center}_y) \cdot \sin \theta  + \text{center}_x
 $$
 
 $$
-y' = (x - \text{center}_x) \cdot \sin(\theta) + (y - \text{center}_y) \cdot \cos(\theta) + \text{center}_y
+y' = (x - \text{center}_x) \cdot \sin \theta  + (y - \text{center}_y) \cdot \cos \theta  + \text{center}_y
 $$
 
 ###### Expansion and Rearrangement
 Expanding and rearranging the terms for $x'$ and $y'$, we obtain:
 
 $$
-x' = x \cdot \cos(\theta) - y \cdot \sin(\theta) + (-\sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y) 
+x' = x \cdot \cos \theta  - y \cdot \sin \theta  + (-\sin \theta  \cdot \text{center}_x + (1 - \cos \theta ) \cdot \text{center}_y) 
 $$
 
 $$
-y' = x \cdot \sin(\theta) + y \cdot \cos(\theta) + (\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_x)
+y' = x \cdot \sin \theta  + y \cdot \cos \theta  + (\cos \theta  \cdot \text{center}_x + \sin \theta  \cdot \text{center}_y - \text{center}_x)
 $$
 
 ###### Rotation Matrix for Image Processing
@@ -590,7 +590,7 @@ $$ \begin{bmatrix} \cos \theta & -\sin \theta & -\sin \theta \cdot center_x + (1
 This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image around a specific point.
 
 ###### Understanding the Translation Component
-- The terms $(- \sin(\theta) \cdot \text{center}_x + (1 - \cos(\theta)) \cdot \text{center}_y)$ and $(\cos(\theta) \cdot \text{center}_x + \sin(\theta) \cdot \text{center}_y - \text{center}_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
+- The terms $(- \sin \theta  \cdot \text{center}_x + (1 - \cos \theta ) \cdot \text{center}_y)$ and $(\cos \theta  \cdot \text{center}_x + \sin \theta  \cdot \text{center}_y - \text{center}_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
 - They ensure that the rotation appears as if it's occurring around the specified center point, rather than the top-left corner of the image.
 
 ##### Deriving the Rotation Matrix Formulas Using Polar Coordinates (Optional)
