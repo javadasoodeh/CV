@@ -499,12 +499,13 @@ At the heart of rotation is the concept of coordinate transformation. Each pixel
 
 The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula:
 
-******
+
+test
 
 $$  
 \text{rotationMatrix} = \begin{bmatrix}
-    \alpha & \beta & (1 - \alpha) \cdot center_x - \beta \cdot \text{center}_y \\\
-    -\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y  
+    \alpha & \beta & (1 - \alpha) \cdot center_x - \beta \cdot center_y \\\
+    -\beta & \alpha & \beta \cdot center_x + (1 - \alpha) \cdot center_y  
 \end{bmatrix}  
 $$
 
