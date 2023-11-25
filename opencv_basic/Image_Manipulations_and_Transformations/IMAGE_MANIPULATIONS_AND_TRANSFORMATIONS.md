@@ -778,7 +778,10 @@ When flipping an image, we reflect the pixels along a certain axis:
 
 - **flipCode = 0: Vertical flipping**
   - Reflects the image pixels vertically, flipping it upside down.
-  - Mathematically: $$ \text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = 	\text{currentCol} $$
+  
+  - Mathematically: 
+   $$ \text{newRow} = 1 $$
+  
   
 - **flipCode > 0: Horizontal flipping**
   - Reflects the image pixels horizontally, flipping it from left to right.
