@@ -499,7 +499,12 @@ At the heart of rotation is the concept of coordinate transformation. Each pixel
 
 The formula for the rotation matrix in image processing is derived from the basic principles of linear algebra and geometry. Let's delve into the details of the formula:
 
-
+$$  
+\text{rotationMatrix} = \begin{bmatrix}
+    \alpha & \beta & (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y \\\
+    -\beta & \alpha & \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y  
+\end{bmatrix}  
+$$
 
 where:
 - $\alpha = \cos \theta  \times \text{scale}$
@@ -580,6 +585,7 @@ $$
 ###### Rotation Matrix for Image Processing
 Incorporating these into a 2x3 matrix for image processing, we get the rotation matrix:
 
+$$ \begin{bmatrix} \cos \theta & -\sin \theta & -\sin \theta \cdot center_x + (1 - \cos \theta ) \cdot center_y \\\ \sin \theta & \cos \theta & \cos \theta \cdot center_x + \sin \theta \cdot center_y - center_y \end{bmatrix} $$
 
 This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image around a specific point.
 
@@ -624,6 +630,7 @@ To understand the rotation matrix formulas, we use polar coordinates and trigono
 
 - These equations in matrix form:
 
+$$ \begin{bmatrix} x' \\\ y' \end{bmatrix} = \begin{bmatrix} \cos \theta & -\sin \theta \\\ \sin \theta & \cos \theta \end{bmatrix} \begin{bmatrix} x \\\ y \end{bmatrix} $$
 
 - This is the rotation matrix, which rotates a point $(x, y)$ by $\theta$ counterclockwise.
 
@@ -771,15 +778,17 @@ When flipping an image, we reflect the pixels along a certain axis:
 
 - **flipCode = 0: Vertical flipping**
   - Reflects the image pixels vertically, flipping it upside down.
-  - Mathematically: $$	\text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = 	\text{currentCol}$$
-
+  - Mathematically: $$ \text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = 	\text{currentCol} $$
+  
 - **flipCode > 0: Horizontal flipping**
   - Reflects the image pixels horizontally, flipping it from left to right.
-  - Mathematically: $$	\text{newRow} = 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol}$$
+  - Mathematically: $$ \text{newRow} = 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol} $$
+
 
 - **flipCode < 0: Both directions**
   - Reflects the image pixels horizontally and vertically.
-  - Mathematically: $$	\text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol}$$
+  - Mathematically: $$ \text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol} $$
+
 
 By applying these transformations to each pixel, the `cv2.flip()` function flips the image as specified. OpenCV optimizes this operation using efficient matrix operations, leveraging hardware acceleration and internal optimizations.
 
