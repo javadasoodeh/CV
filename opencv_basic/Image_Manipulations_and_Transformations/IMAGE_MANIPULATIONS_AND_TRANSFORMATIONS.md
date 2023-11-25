@@ -536,7 +536,7 @@ $$
 
 ###### Breaking Down the Matrix
 
-- **First Row $[ \alpha, \beta, (1 - \alpha) \cdot center_x - \beta \cdot center}_y ]$**:
+- **First Row $[ \alpha, \beta, (1 - \alpha) \cdot center_x - \beta \cdot center_y ]$**:
   - $\alpha$ and $\beta$ are responsible for the rotation.
   - $(1 - \alpha) \cdot center_x - \beta \cdot center_y$ adjusts the x-coordinate after rotation to ensure the rotation is around the center.
 
