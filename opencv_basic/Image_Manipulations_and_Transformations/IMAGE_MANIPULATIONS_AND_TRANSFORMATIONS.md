@@ -503,15 +503,15 @@ The formula for the rotation matrix in image processing is derived from the basi
 test
 
 $$  
-\text{rotationMatrix} = \begin{bmatrix}
+rotationMatrix = \begin{bmatrix}
     \alpha & \beta & (1 - \alpha) \cdot center_x - \beta \cdot center_y \\\
     -\beta & \alpha & \beta \cdot center_x + (1 - \alpha) \cdot center_y  
 \end{bmatrix}  
 $$
 
 where:
-- $\alpha = \cos \theta  \times \text{scale}$
-- $\beta = \sin \theta  \times \text{scale}$
+- $\alpha = \cos \theta  \times scale$
+- $\beta = \sin \theta  \times scale$
 
 ###### Origin of the Formula
 
@@ -529,20 +529,20 @@ $$
    - This matrix rotates points around the origin. However, for images, we often need to rotate around the image's center or another point, not just the origin.
 
 2. **Translation to Center**:
-   - To rotate around a center point $(\text{center}_x, \text{center}_y)$, we first translate the image so that the center becomes the origin. This involves shifting every point by $-\text{center}_x$ and $-\text{center}_y$.
+   - To rotate around a center point $(center_x, center_y)$, we first translate the image so that the center becomes the origin. This involves shifting every point by $-center_x$ and $-center_y$.
 
 3. **Rotation and Re-translation**:
    - After translating the image, we apply the basic rotation matrix and then translate the image back. This additional translation is where the $(1 - \alpha)$ and $\beta$ terms in the formula come into play.
 
 ###### Breaking Down the Matrix
 
-- **First Row $[ \alpha, \beta, (1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y ]$**:
+- **First Row $[ \alpha, \beta, (1 - \alpha) \cdot center_x - \beta \cdot center}_y ]$**:
   - $\alpha$ and $\beta$ are responsible for the rotation.
-  - $(1 - \alpha) \cdot \text{center}_x - \beta \cdot \text{center}_y$ adjusts the x-coordinate after rotation to ensure the rotation is around the center.
+  - $(1 - \alpha) \cdot center_x - \beta \cdot center_y$ adjusts the x-coordinate after rotation to ensure the rotation is around the center.
 
-- **Second Row $[ -\beta, \alpha, \beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y ]$**:
+- **Second Row $[ -\beta, \alpha, \beta \cdot center_x + (1 - \alpha) \cdot center_y ]$**:
   - $-\beta$ and $\alpha$ also contribute to the rotation.
-  - $\beta \cdot \text{center}_x + (1 - \alpha) \cdot \text{center}_y$ adjusts the y-coordinate similarly.
+  - $\beta \cdot center_x + (1 - \alpha) \cdot center_y$ adjusts the y-coordinate similarly.
 
 ###### Understanding Scale
 The `scale` factor is multiplied with $\cos \theta $ and $\sin \theta $ to allow for resizing of the image during rotation. A scale of 1 means the image size remains constant. 
@@ -564,25 +564,25 @@ y' = x \cdot \sin \theta  + y \cdot \cos \theta
 $$
 
 ###### Rotating Around an Arbitrary Center
-When rotating around a different point, say $(\text{center}_x, \text{center}_y)$, we first translate the point so that $(\text{center}_x, \text{center}_y)$ becomes the origin. After rotation, we translate back. The equations for the new coordinates $(x', y')$ become:
+When rotating around a different point, say $(center_x, center_y)$, we first translate the point so that $(center_x, center_y)$ becomes the origin. After rotation, we translate back. The equations for the new coordinates $(x', y')$ become:
 
 $$
-x' = (x - \text{center}_x) \cdot \cos \theta  - (y - \text{center}_y) \cdot \sin \theta  + \text{center}_x
+x' = (x - center_x) \cdot \cos \theta  - (y - center_y) \cdot \sin \theta  + center_x
 $$
 
 $$
-y' = (x - \text{center}_x) \cdot \sin \theta  + (y - \text{center}_y) \cdot \cos \theta  + \text{center}_y
+y' = (x - center_x) \cdot \sin \theta  + (y - center_y) \cdot \cos \theta  + center_y
 $$
 
 ###### Expansion and Rearrangement
 Expanding and rearranging the terms for $x'$ and $y'$, we obtain:
 
 $$
-x' = x \cdot \cos \theta  - y \cdot \sin \theta  + (-\sin \theta  \cdot \text{center}_x + (1 - \cos \theta ) \cdot \text{center}_y) 
+x' = x \cdot \cos \theta  - y \cdot \sin \theta  + (-\sin \theta  \cdot center_x + (1 - \cos \theta ) \cdot center_y) 
 $$
 
 $$
-y' = x \cdot \sin \theta  + y \cdot \cos \theta  + (\cos \theta  \cdot \text{center}_x + \sin \theta  \cdot \text{center}_y - \text{center}_x)
+y' = x \cdot \sin \theta  + y \cdot \cos \theta  + (\cos \theta  \cdot center_x + \sin \theta  \cdot center_y - center_x)
 $$
 
 ###### Rotation Matrix for Image Processing
@@ -593,7 +593,7 @@ $$ \begin{bmatrix} \cos \theta & -\sin \theta & -\sin \theta \cdot center_x + (1
 This matrix is used in OpenCV's `cv2.warpAffine` function to rotate the image around a specific point.
 
 ###### Understanding the Translation Component
-- The terms $(- \sin \theta  \cdot \text{center}_x + (1 - \cos \theta ) \cdot \text{center}_y)$ and $(\cos \theta  \cdot \text{center}_x + \sin \theta  \cdot \text{center}_y - \text{center}_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
+- The terms $(- \sin \theta  \cdot center_x + (1 - \cos \theta ) \cdot center_y)$ and $(\cos \theta  \cdot center_x + \sin \theta  \cdot center_y - center_y)$ in the matrix are responsible for translating the image back after rotation around the new origin.
 - They ensure that the rotation appears as if it's occurring around the specified center point, rather than the top-left corner of the image.
 
 ##### Deriving the Rotation Matrix Formulas Using Polar Coordinates (Optional)
@@ -782,17 +782,17 @@ When flipping an image, we reflect the pixels along a certain axis:
 - **flipCode = 0: Vertical flipping**
   - Reflects the image pixels vertically, flipping it upside down.
   
-  - Mathematically: $\text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = 	\text{currentCol}$
+  - Mathematically: $newRow = (	rows - 1) - 	currentRow, 	newCol = 	currentCol$
   
   
 - **flipCode > 0: Horizontal flipping**
   - Reflects the image pixels horizontally, flipping it from left to right.
-  - Mathematically: $\text{newRow} = 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol}$
+  - Mathematically: $newRow = 	currentRow, 	newCol = (	cols - 1) - 	currentCol$
 
 
 - **flipCode < 0: Both directions**
   - Reflects the image pixels horizontally and vertically.
-  - Mathematically: $\text{newRow} = (	\text{rows} - 1) - 	\text{currentRow}, 	\text{newCol} = (	\text{cols} - 1) - 	\text{currentCol}$
+  - Mathematically: $newRow = (	rows - 1) - 	currentRow, 	newCol = (	cols - 1) - 	currentCol$
 
 
 By applying these transformations to each pixel, the `cv2.flip()` function flips the image as specified. OpenCV optimizes this operation using efficient matrix operations, leveraging hardware acceleration and internal optimizations.
