@@ -894,9 +894,9 @@ cv2.destroyAllWindows()
 
 This closes all the windows opened by OpenCV.
 
-##### Detailed Explanation
+#### Detailed Explanation
 
-###### Interpolation Methods
+##### Interpolation Methods
 
 - **Interpolation** in image processing is a method used to resize images. It works by using known data to estimate values at unknown points. Common methods include:
     - cv2.INTER_NEAREST: Fastest method, but can result in pixelation and loss of image quality.
