@@ -810,17 +810,147 @@ By applying these transformations to each pixel, the `cv2.flip()` function flips
 
 #### Resizing
 
-##### Interpolation Methods: Advantages and Disadvantages
+Resizing images is a fundamental operation in image processing and computer vision. It's essential for various applications, from adjusting the size of an image for web use to preprocessing images for machine learning models. In this section, we will explore how to resize images using Python and OpenCV.
 
-Here is an overview of the advantages and disadvantages of each interpolation method:
+To understand resizing, you should be familiar with basic Python. Don’t worry if you're new to libraries like NumPy or OpenCV; we will explain each step in detail.
 
-- cv2.INTER_NEAREST: Fastest method, but can result in pixelation and loss of image quality.
-- cv2.INTER_LINEAR: Produces smooth results, but may introduce blurring in certain cases.
-- cv2.INTER_CUBIC: Provides higher quality than linear interpolation but is slower.
-- cv2.INTER_LANCZOS4: Generates sharp and high-quality results but requires more computational resources.
-- cv2.INTER_AREA: Suitable for downsampling images, preserving details, and reducing aliasing artifacts.
-- cv2.INTER_LINEAR_EXACT: Bit exact bilinear interpolation, providing the highest accuracy but at a higher computational cost.
+#### Code Overview
+
+In our code example, we'll write a function called `resize_image` that takes an image, a new width, and an interpolation method as inputs. This function will:
+1. Retrieve the current dimensions of the image.
+2. Calculate the new dimensions while maintaining the aspect ratio.
+3. Resize the image using the specified interpolation method.
+4. Return the resized image.
+
+After defining this function, we'll use it to resize an image with different interpolation methods and display the results.
+
+#### Code Breakdown
+
+Let's break down the code into smaller parts:
+
+##### Importing OpenCV
+
+```python
+import cv2
+```
+
+OpenCV (Open Source Computer Vision Library) is a library of programming functions mainly aimed at real-time computer vision. Here, `cv2` is the Python interface for OpenCV.
+
+##### Defining the `resize_image` Function
+
+```python
+def resize_image(image, new_width, interpolation_method):
+    (height, width) = image.shape[:2]
+    ratio = new_width / width
+    new_height = int(height * ratio)
+    resized_image = cv2.resize(image, (new_width, new_height), interpolation=interpolation_method)
+    return resized_image
+```
+
+- **`image.shape[:2]`**: This retrieves the dimensions of the image. `image.shape` returns a tuple of the number of rows, columns, and channels (if the image is color). `[:2]` means we are only interested in the first two values (height and width).
+- **`ratio` and `new_height` calculation**: We maintain the aspect ratio of the image. The aspect ratio is the proportional relationship between the width and the height of the image. We calculate the ratio of the new width to the original width and apply it to the height to get `new_height`.
+- **`cv2.resize` function**: This is an OpenCV function that resizes the image. It takes the image, the new dimensions (as a tuple), and the interpolation method as arguments.
+
+###### Maintaining Aspect Ratio
+
+Maintaining the aspect ratio when resizing an image is crucial for preserving the original proportions and preventing distortion. Without this consideration, the resized image may appear stretched or squeezed, resulting in unnatural or disproportionate visuals. This is why our resize function carefully calculates the new height to maintain the aspect ratio based on the new width.
+
+###### Behind `cv2.resize`
+
+`cv2.resize` uses the specified interpolation method to calculate the pixel values in the resized image. For example, when enlarging an image, it needs to create new pixels. The interpolation method determines how these new pixels are calculated based on the surrounding pixels.
+
+
+##### Loading the Image and Defining Parameters
+
+```python
+
+image = cv2.imread('HBD.JPG')
+new_width = 600
+interpolation_methods = [cv2.INTER_NEAREST, cv2.INTER_LINEAR, cv2.INTER_CUBIC, cv2.INTER_LANCZOS4, cv2.INTER_AREA, cv2.INTER_LINEAR_EXACT]
+
+```
+
+- `cv2.imread` loads an image from the specified file. 
+- `new_width` is the desired width we want to resize our image to.
+- `interpolation_methods` is a list of different interpolation methods provided by OpenCV for resizing.
+
+##### Looping Over Interpolation Methods
+
+```python
+for interpolation_method in interpolation_methods:
+    resized_image = resize_image(image, new_width, interpolation_method)
+    cv2.imshow(f"Resized Image - {interpolation_method}", resized_image)
+    cv2.waitKey(0)
+
+```
+
+Here, we loop through each interpolation method, resize the image, and then display it using `cv2.imshow`. The window title includes the interpolation method used.
+
+##### Cleaning Up
+
+```python
+cv2.destroyAllWindows()
+```
+
+This closes all the windows opened by OpenCV.
+
+##### Detailed Explanation
+
+###### Interpolation Methods
+
+- **Interpolation** in image processing is a method used to resize images. It works by using known data to estimate values at unknown points. Common methods include:
+    - cv2.INTER_NEAREST: Fastest method, but can result in pixelation and loss of image quality.
+    - cv2.INTER_LINEAR: Produces smooth results, but may introduce blurring in certain cases.
+    - cv2.INTER_CUBIC: Provides higher quality than linear interpolation but is slower.
+    - cv2.INTER_LANCZOS4: Generates sharp and high-quality results but requires more computational resources.
+    - cv2.INTER_AREA: Suitable for downsampling images, preserving details, and reducing aliasing artifacts.
+    - cv2.INTER_LINEAR_EXACT: Bit exact bilinear interpolation, providing the highest accuracy but at a higher computational cost.
 
 Each method has its own strengths and weaknesses, and the choice depends on the specific requirements of 
 your application, such as the desired trade-off between speed and image quality, the nature of the image, 
-and the computational resources available.
+and the computational resources available. We've also included more information for you next.  
+
+###### Nearest-neighbor Interpolation (`cv2.INTER_NEAREST`)
+- Leads to a blocky image when upsampling due to lack of smooth transitions between pixels.
+- **How it works**:
+  1. **Pixel Selection**: For each pixel in the resized image, the algorithm locates the closest corresponding pixel in the original image.
+  2. **Direct Copy**: It directly copies the color value of the closest original pixel without considering any other neighboring pixels.
+  3. **No Smoothing**: Because it doesn't average or blend pixel values, the resulting image can have a blocky or pixelated appearance, especially when upscaled.
+
+###### Bilinear Interpolation (`cv2.INTER_LINEAR`)
+- Balances between quality and speed, suitable for general use cases.
+- **How it works**:
+  1. **Neighboring Pixels**: Identifies the four pixels in the original image that are closest to a particular pixel in the resized image.
+  2. **Distance Calculation**: Computes the distances of these four pixels from the target pixel location in the resized image.
+  3. **Weighted Average**: Calculates a weighted average based on these distances. Pixels closer to the target location contribute more to the final value.
+  4. **Smooth Transition**: This results in smoother transitions and less blockiness compared to nearest-neighbor interpolation.
+
+###### Bicubic Interpolation (`cv2.INTER_CUBIC`)
+- Better for photographic images where smooth gradients are more visually appealing.
+- **How it works**:
+  1. **Sixteen Pixel Neighborhood**: Expands the consideration to the 16 closest pixels around the target location in the original image.
+  2. **Cubic Polynomial**: Uses a cubic polynomial to calculate the weighted average of these pixels.
+  3. **Smoothing Effect**: The cubic formula provides a smoother gradient of color and intensity, leading to a more natural-looking image.
+  4. **Detail Preservation**: Better preserves the details when compared to bilinear interpolation, especially in upscaled images.
+
+###### Lanczos Interpolation (`cv2.INTER_LANCZOS4`)
+- Ideal for professional-quality image processing where detail preservation is key.
+- **How it works**:
+  1. **Large Neighborhood**: Considers a larger neighborhood of pixels than bicubic, often using a radius of 4 pixels.
+  2. **Windowed Sinc Function**: Utilizes a sinc function, which is a high-quality resampling method, with a window function to limit the number of pixels considered.
+  3. **Sharp and Detailed**: The Lanczos method is excellent at preserving edges and fine details, providing a high-quality resized image.
+  4. **Computational Intensity**: It's more computationally intensive, but the quality of the output often justifies the cost, especially in professional settings.
+
+###### Area-based Interpolation (`cv2.INTER_AREA`)
+- Best for downsizing, as it preserves essential features without much loss.
+- **How it works**:
+  1. **Pixel Area Relation**: When downsizing, it calculates the average of pixel values in regions corresponding to each pixel in the resized image.
+  2. **Area Averaging**: This averaging reduces noise and aliasing, making it excellent for reducing image size while preserving essential features.
+  3. **Detail Preservation in Downsampling**: The area-based method is particularly effective in maintaining image quality when the image is made smaller.
+
+###### Bit Exact Bilinear Interpolation (`cv2.INTER_LINEAR_EXACT`)
+- Necessary for applications where precision is paramount, despite its computational cost.
+- **How it works**:
+  1. **Precise Averaging**: Like bilinear interpolation, it considers the four closest pixels but uses an exact mathematical formula for averaging.
+  2. **No Approximations**: Avoids approximations or smoothing, ensuring that the output is as close to the original image's quality as possible.
+  3. **High Computational Cost**: This method is computationally expensive due to its precision, but is used in applications where accuracy is critical.
