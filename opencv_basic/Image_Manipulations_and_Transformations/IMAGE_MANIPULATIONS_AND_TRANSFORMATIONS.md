@@ -899,6 +899,7 @@ This closes all the windows opened by OpenCV.
 ##### Interpolation Methods
 
 - **Interpolation**; When resizing an image, we often need to either create new pixels (in case of enlarging the image) or combine existing pixels (in case of reducing the image size). Interpolation is the process by which we determine the color and intensity values of these new or combined pixels. This process uses known pixel values to estimate values at unknown points. Common methods include:
+
     - cv2.INTER_NEAREST: Fastest method, but can result in pixelation and loss of image quality.
     - cv2.INTER_LINEAR: Produces smooth results, but may introduce blurring in certain cases.
     - cv2.INTER_CUBIC: Provides higher quality than linear interpolation but is slower.
