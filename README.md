@@ -1,4 +1,4 @@
-# CV
+# Introduction to Computer Vision with Python and OpenCV
 Computer Vision, Machine Learning, and Deep Learning
 
 
